@@ -1,0 +1,41 @@
+$baseColor: #929d9e;
+$baseDarkColor: #413951;
+
+$accentColor: #3dbf52;
+$accentDarkColor: #3da64e;
+
+$secondColor: #f4bc7f;
+$secondDarkColor: #9566f2;
+
+$primaryColor: #0af;
+$errorColor: crimson;
+$successColor: #30bf6e;
+$warningColor: #ffef00;
+
+$gradientRed: #e91e63;
+$gradientBlue: #5d02ff;
+$gradientGreen: #89ff00;
+$gradientSkyBlue: #00bcd4;
+
+$textActive: #ccc;
+$textDark: #000;
+$textDisabled: #555;
+$textMain: #fff;
+
+:root {
+  --baseColor: #929d9e;
+  --baseDarkColor: #413951;
+  --secondColor: #f4bc7f;
+  --secondDarkColor: #9566f2;
+  --accentColor: #3dbf52;
+  --accentDarkColor: #3da64e;
+  --primaryColor: #0af;
+  --errorColor: crimson;
+  --successColor: #30bf6e;
+  --warningColor: #ffef00;
+  --textMain: #fff;
+  --textActive: #ccc;
+  --textDark: #000;
+  --textDisabled: #555;
+  --overlayColor: rgba(0, 0, 0, .95);
+}

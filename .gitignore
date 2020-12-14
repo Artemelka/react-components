@@ -1,0 +1,10 @@
+.idea
+.vscode
+coverage/
+node_modules/
+npm-debug.log
+lib/
+build/
+debug.log
+build-static-storybook
+.DS_Store
