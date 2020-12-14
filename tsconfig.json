@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "strict": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
+    "lib": ["dom", "es7"],
+    "outDir": "./lib/",
+    "esModuleInterop": true,
+    "declaration": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@artemelka/react-components": ["elements"]
+    }
+  },
+  "include": [
+    "./src/elements/**/*",
+    "declaration.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".storybook/",
+    "**/*.js",
+    "**/*.jsx",
+    "lib"
+  ]
+}

@@ -1,0 +1,16 @@
+.idea/
+.storybook/
+coverage/
+node_modules/
+src/
+storybook-static/
+.*
+scripts/
+package-lock.json
+tsconfig.json
+tslint.json
+npm-debug.log
+config/
+jest/
+debug.log
+jest.config.js

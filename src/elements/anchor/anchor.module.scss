@@ -1,0 +1,34 @@
+.Anchor {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  transition: color .3s;
+
+  &:hover,
+  &:focus {
+    color: var(--secondDarkColor);
+  }
+
+  &--active {
+    color: var(--accentDarkColor);
+
+    &:disabled {
+      color: var(--textDisabled);
+    }
+  }
+
+  &--disabled,
+  &:disabled {
+    color: var(--textDisabled);
+    cursor: default;
+
+    &:focus,
+    &:hover {
+      color: var(--textDisabled);
+    }
+  }
+}
