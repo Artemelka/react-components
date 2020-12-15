@@ -17,13 +17,13 @@
     "postcss-flexbugs-fixes": "4.2.0",
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
-    "react-text-mask": "5.4.3"
+    "classnames": "2.2.6"
   },
   "peerDependencies": {
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-transition-group": "4.3.0",
-    "classnames": "2.2.6"
+    
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
@@ -118,7 +118,8 @@
     "webpack-cli": "3.3.11",
     "webpack-merge": "4.2.2",
     "lodash-es": "4.17.15",
-    "@types/lodash-es": "4.17.3"
+    "@types/lodash-es": "4.17.3",
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
     "start": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
@@ -131,5 +132,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "pre-commit": {
+    "silent": false,
+    "color": true,
+    "run": [
+      "lint",
+      "test"
+    ]
   }
 }
