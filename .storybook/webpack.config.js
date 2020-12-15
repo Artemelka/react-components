@@ -12,7 +12,7 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 
 const commonConfig = {
     resolve: {
-        extensions: ['.ts', '.tsx', '.less'],
+        extensions: ['.ts', '.tsx', '.scss'],
         alias: {
             '@artemelka/react-components': path.resolve(__dirname, '../src/elements'),
             '@artemelka/storybook': path.resolve(__dirname, '../src/storybook'),
@@ -20,7 +20,6 @@ const commonConfig = {
     },
     module: {
         rules: [
-
             {
                 test: /\.js?$/,
                 use: [
@@ -107,17 +106,18 @@ const commonConfig = {
                         },
                     },
                     {
+                        loader: require.resolve('sass-loader'),
+                        options: {
+                            sourceMap: isEnvProduction,
+                        },
+                    },
+                    {
                         loader: require.resolve('resolve-url-loader'),
                         options: {
                             sourceMap: isEnvProduction,
                         }
                     },
-                    {
-                        loader: require.resolve('sass-loader'),
-                        options: {
-                            sourceMap: isEnvProduction,
-                        },
-                    }
+
                 ]
             }
         ],
