@@ -1,8 +1,8 @@
-import React, { StrictMode, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 const wrapperStyle = {
   padding: '20px 40px',
-  color: '#000',
+  color: '#FFF',
   // background: '#333',
   fontSize: '20px',
 };
