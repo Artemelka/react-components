@@ -1,6 +1,6 @@
 {
   "name": "@artemelka/react-components",
-  "version": "0.0.0-alfa-1",
+  "version": "0.0.0-alfa-2",
   "homepage": ".",
   "description": "library of ui components",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "peerDependencies": {
     "react": "16.13.0",
     "react-dom": "16.13.0",
-    "react-transition-group": "4.3.0",
+    "react-transition-group": "4.3.0"
     
   },
   "devDependencies": {
@@ -137,8 +137,7 @@
     "silent": false,
     "color": true,
     "run": [
-      "lint",
-      "test"
+      "lint"
     ]
   }
 }
