@@ -8,7 +8,7 @@ const CLASS_NAME = 'Window-loader';
 
 type LoaderProps = {
   inContainer?: boolean;
-}
+};
 
 export const WindowLoader: FC<LoaderProps> = ({
   inContainer,
