@@ -1,0 +1,61 @@
+@import '../styles/constants.module.scss';
+
+$circlesMaxDuration: 5;
+$animationTranslateSize: $circlesMaxDuration * 6px;
+$containerSize: $circlesMaxDuration * 20px;
+$animationTime: $circlesMaxDuration * 20s / 100;
+
+@keyframes loader {
+  0%, 100% {
+    transform: translateZ(-$animationTranslateSize);
+  }
+  50% {
+    transform: translateZ($animationTranslateSize);
+  }
+}
+
+.Window-loader {
+    align-items: center;
+    background-color: $overlayColor;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s;
+    z-index: 100;
+
+    &--in-container {
+        position: absolute;
+    }
+
+    &__content {
+        width: $containerSize;
+        height: $containerSize;
+        transform-style: preserve-3d;
+        transform: perspective(500px) rotateX(60deg);
+        position: relative;
+    }
+
+    &__circle {
+        position: absolute;
+        display: block;
+        border: 5px solid $secondDarkColor;
+        box-shadow: 0 5px 0 $secondDarkColor, inset 0 5px 0 $secondDarkColor;
+        box-sizing: border-box;
+        border-radius: 50%;
+        animation: loader $animationTime ease-in-out infinite;
+
+      @for $i from 1 to $circlesMaxDuration + 1 {
+        &:nth-child(#{$i}) {
+          top: $i * 10 - 10px;
+          left: $i * 10 - 10px;
+          right: $i * 10 - 10px;
+          bottom: $i * 10 - 10px;
+          animation-delay: ($circlesMaxDuration - $i) * 100ms;
+        }
+      }
+    }
+}
