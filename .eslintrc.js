@@ -57,7 +57,7 @@ module.exports = {
       }
     ],
     'react-hooks/exhaustive-deps': 'error',
-    'react/forbid-dom-props': [2, { forbid: ['style'] }],
+    'react/forbid-dom-props': 0, // [2, { forbid: ['style'] }],
     'react/jsx-filename-extension': 'off',
     'import/no-extraneous-dependencies': [
       'error',
@@ -92,14 +92,15 @@ module.exports = {
         aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
-    'max-lines': [
-      'error',
-      {
-        max: 300,
-        skipBlankLines: true,
-        skipComments: true,
-      },
-    ],
+    'max-lines': 0,
+    //   [
+    //   'error',
+    //   {
+    //     max: 300,
+    //     skipBlankLines: true,
+    //     skipComments: true,
+    //   },
+    // ],
     'function-paren-newline': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react/default-props-match-prop-types': 0,
@@ -123,6 +124,7 @@ module.exports = {
     'no-case-declarations': 0,
     'no-extra-boolean-cast': 0,
     'react/state-in-constructor': 0,
+    'react/no-did-update-set-state': 0,
     'no-async-promise-executor': 0,
     'max-classes-per-file': ['error', 2],
     'class-methods-use-this': 0,

@@ -5,5 +5,5 @@ export {
   Clock,
   CLOCK_TIME_ZONES,
   CLOCK_TIME_ZONES_COLLECTION,
-  ClockProps
+  ClockProps,
 } from './clock';
