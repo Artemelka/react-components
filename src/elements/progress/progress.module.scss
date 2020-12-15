@@ -1,0 +1,213 @@
+@import "../styles/constants.module.scss";
+
+@mixin progress-size-mixin($size) {
+  height: $size;
+
+  & .Progress__status {
+    height: $size;
+  }
+
+  & .Progress__text {
+    font-size: $size;
+  }
+}
+
+.Progress {
+  padding: 5px 30px;
+  position: relative;
+
+  &--circular {
+    display: inline-block;
+    padding: 0;
+  }
+
+  &__circle {
+    &-line,
+    &-status {
+      fill: none;
+    }
+
+    &-line {
+      stroke: transparent;
+
+      &--with-contour {
+        stroke: rgba($textMain, .3);
+      }
+    }
+
+    &-status {
+      stroke: $secondColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke-dashoffset .2s;
+
+      &--dark {
+        stroke: $secondDarkColor;
+      }
+
+      &--primary {
+        stroke: $primaryColor;
+      }
+
+      &--error {
+        stroke: $errorColor;
+      }
+
+      &--success {
+        stroke: $successColor;
+      }
+
+      &--warning {
+        stroke: $warningColor;
+      }
+    }
+
+    &-text {
+      fill: $textMain;
+    }
+  }
+
+  &__title {
+    color: $secondColor;
+
+    &--dark {
+      color: $secondDarkColor;
+    }
+
+    &--error {
+      color: $errorColor;
+    }
+
+    &--success {
+      color: $successColor;
+    }
+
+    &--warning {
+      color: $warningColor;
+    }
+
+    &--primary {
+      color: $primaryColor;
+    }
+
+    &--with-contour {
+      background-color: $secondColor;
+      border-radius: 6px;
+      color: #fff;
+      display: inline-block;
+      padding: 4px 6px;
+
+      &.Progress__title--dark {
+        background-color: $secondDarkColor;
+      }
+
+      &.Progress__title--error {
+        background-color: $errorColor;
+      }
+
+      &.Progress__title--success {
+        background-color: $successColor;
+      }
+
+      &.Progress__title--warning {
+        background-color: $warningColor;
+      }
+
+      &.Progress__title--primary {
+        background-color: $primaryColor;
+      }
+    }
+
+    &--size {
+      &-s {
+        font-size: 10px;
+      }
+
+      &-m {
+        font-size: 12px;
+      }
+
+      &-l {
+        font-size: 16px;
+      }
+
+      &-xl {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__line {
+    border-radius: 3px;
+    position: relative;
+
+    &--size {
+      &-x {
+        @include progress-size-mixin(2px);
+      }
+
+      &-m {
+        @include progress-size-mixin(8px);
+      }
+
+      &-l {
+        @include progress-size-mixin(16px);
+      }
+
+      &-xl {
+        @include progress-size-mixin(24px);
+      }
+    }
+
+    &--with-contour {
+      background-color: rgba($textMain, .3);
+    }
+  }
+
+  &__text {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__status {
+    border-radius: 3px;
+    left: 0;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    transition: width .5s, background-color .5s;
+    vertical-align: middle;
+
+    &--base {
+      background-color: $secondColor;
+    }
+
+    &--dark {
+      background-color: $secondDarkColor;
+    }
+
+    &--primary {
+      background-color: $primaryColor;
+    }
+
+    &--error {
+      background-color: $errorColor;
+    }
+
+    &--success {
+      background-color: $successColor;
+    }
+
+    &--warning {
+      background-color: $warningColor;
+    }
+  }
+}
