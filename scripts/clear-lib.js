@@ -7,6 +7,4 @@ const paths = glob.sync(
   `${pathToLib}/**/?(stories|__tests__|__test__|tests|test)`,
 );
 
-paths.forEach(item => {
-  rimraf.sync(item);
-});
+paths.forEach(item => rimraf.sync(item));

@@ -3,11 +3,13 @@ const path = require('path');
 const glob = require('glob');
 
 const pathToElements = path.resolve('src/elements');
-const stylesPath = glob.sync(
-  `${pathToElements}/**/*.?(svg|less|sass|scss|css)`,
-);
+const stylesPath = glob.sync(`${pathToElements}/**/*.?(svg|less|sass|scss|css)`);
+const assetsPath = glob.sync(`${pathToElements}/**/*.?(png|jpg|jpeg)`);
+const allPath = assetsPath.concat(stylesPath);
 
-const filterPath = stylesPath.filter(item => !item.includes('stories'));
+const filterPath = allPath.filter(item =>
+  !item.includes('stories')
+);
 
 filterPath.forEach(item => {
   if (!item) {

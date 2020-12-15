@@ -1,6 +1,6 @@
 {
   "name": "@artemelka/react-components",
-  "version": "0.0.0-alfa-5",
+  "version": "0.0.0-alfa-6",
   "homepage": ".",
   "description": "library of ui components",
   "license": "MIT",
@@ -120,7 +120,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
-    "build": "tsc && node scripts/clear-lib.ts && node scripts/copy-style.ts",
+    "build": "tsc && node scripts/clear-lib.js && node scripts/copy-style.js",
     "build-storybook-static": "build-storybook -c .storybook -o public",
     "lint": "npx eslint . --ext .ts,.js,.tsx --fix && stylelint \"src/**/*.(scss|css)\" --fix",
     "test:watch": "jest --watch",
