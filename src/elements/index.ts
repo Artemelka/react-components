@@ -5,7 +5,6 @@ export {
   CLOCK_TIME_ZONES_COLLECTION,
   ClockProps,
 } from './clock';
-// export { Loader } from './loader';
 export {
   ProgressCircular,
   ProgressText,
@@ -13,3 +12,4 @@ export {
   progressStatuses,
   circleSize,
 } from './progress';
+export { WindowLoader } from './loader';
