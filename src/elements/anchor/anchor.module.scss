@@ -1,3 +1,5 @@
+@import "../styles/constants.module.scss";
+
 .Anchor {
   background-color: transparent;
   border: none;
@@ -10,25 +12,25 @@
 
   &:hover,
   &:focus {
-    color: var(--secondDarkColor);
+    color: $secondDarkColor;
   }
 
   &--active {
-    color: var(--accentDarkColor);
+    color: $accentDarkColor;
 
     &:disabled {
-      color: var(--textDisabled);
+      color: $textDisabled;
     }
   }
 
   &--disabled,
   &:disabled {
-    color: var(--textDisabled);
+    color: $textDisabled;
     cursor: default;
 
     &:focus,
     &:hover {
-      color: var(--textDisabled);
+      color: $textDisabled;
     }
   }
 }

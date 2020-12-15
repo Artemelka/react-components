@@ -13,7 +13,7 @@ storiesOf('Anchor', module)
     component: Anchor,
     componentSubtitle: 'Компонент для реализации гиперссылок и псевдоссылок',
   })
-  .add('Anchor', () => {
+  .add('Anchor', ({ StoriesItemWrapper }: any) => {
     const cn = classNames.bind(style);
     const getAnchorClassName = ({
       active,
@@ -26,39 +26,47 @@ storiesOf('Anchor', module)
 
     return (
       <>
-        <Anchor
-          active={boolean('Active', false)}
-          disabled={boolean('Disabled', false)}
-          href={PROJECT_LINK}
-          newPage
-          onClick={action('newPage-link-click')}
-        >
-          ссылка на GitHub откроется в новом окне
-        </Anchor>
-        <Anchor
-          active={boolean('Active', false)}
-          disabled={boolean('Disabled', false)}
-          onClick={action('link-click')}
-        >
-          псевдо-ссылка
-        </Anchor>
-        <Anchor
-          active={boolean('Active', false)}
-          disabled={boolean('Disabled', false)}
-          href={PROJECT_LINK}
-          onClick={action('active-link-click')}
-        >
-          ссылка c props href & onClick без newPage
-        </Anchor>
-        <h2>Компонент принимает кастомные стили</h2>
-        <Anchor
-          active={boolean('Active', false)}
-          disabled={boolean('Disabled', false)}
-          href={PROJECT_LINK}
-          setCustomClassName={getAnchorClassName}
-        >
-          ссылка c кастомными стилями
-        </Anchor>
+        <StoriesItemWrapper>
+          <Anchor
+            active={boolean('Active', false)}
+            disabled={boolean('Disabled', false)}
+            href={PROJECT_LINK}
+            newPage
+            onClick={action('newPage-link-click')}
+          >
+            ссылка на GitHub откроется в новом окне
+          </Anchor>
+        </StoriesItemWrapper>
+        <StoriesItemWrapper>
+          <Anchor
+            active={boolean('Active', false)}
+            disabled={boolean('Disabled', false)}
+            onClick={action('link-click')}
+          >
+            псевдо-ссылка
+          </Anchor>
+        </StoriesItemWrapper>
+        <StoriesItemWrapper>
+          <Anchor
+            active={boolean('Active', false)}
+            disabled={boolean('Disabled', false)}
+            href={PROJECT_LINK}
+            onClick={action('active-link-click')}
+          >
+            ссылка c props href & onClick без newPage
+          </Anchor>
+        </StoriesItemWrapper>
+        <StoriesItemWrapper>
+          <h2>Компонент принимает кастомные стили</h2>
+          <Anchor
+            active={boolean('Active', false)}
+            disabled={boolean('Disabled', false)}
+            href={PROJECT_LINK}
+            setCustomClassName={getAnchorClassName}
+          >
+            ссылка c кастомными стилями
+          </Anchor>
+        </StoriesItemWrapper>
       </>
     );
   });
