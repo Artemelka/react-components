@@ -18,10 +18,8 @@ storiesOf('Window-loader', module)
     <>
       <h2>Container</h2>
       <div style={wrapperStyle}>
-        <p>content this loading data</p>
-        {boolean('show loader', true) && (
-          <WindowLoader inContainer={boolean('in container', true)} />
-        )}
+        <p>content with position relative</p>
+        <WindowLoader inContainer={boolean('in container', true)} />
       </div>
     </>
   ));

@@ -1,36 +1,46 @@
-@import "../styles/constants.module.scss";
-
 .Anchor {
   background-color: transparent;
   border: none;
   color: inherit;
   cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
   outline: none;
   padding: 0;
   text-decoration: none;
   transition: color .3s;
 
+  &:visited {
+    color: var(--secondaryColor);
+  }
+
   &:hover,
   &:focus {
-    color: $secondDarkColor;
+    color: var(--activeColor);
   }
 
   &--active {
-    color: $accentDarkColor;
+    color: var(--accentColor);
+    cursor: default;
+
+    &:visited {
+      color: var(--accentColor);
+    }
 
     &:disabled {
-      color: $textDisabled;
+      color: var(--disabledColor);
     }
   }
 
   &--disabled,
   &:disabled {
-    color: $textDisabled;
+    color: var(--disabledColor);
     cursor: default;
 
     &:focus,
-    &:hover {
-      color: $textDisabled;
+    &:hover,
+    &:visited {
+      color: var(--disabledColor);
     }
   }
 }

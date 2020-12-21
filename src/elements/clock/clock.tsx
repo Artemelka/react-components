@@ -47,17 +47,16 @@ export class Clock extends Component<ClockProps, ClockState> {
     return getDegreesFromTime(getTime({ timeZone }));
   };
 
-  getInitialState = (): ClockState => {
-    return this.props.alarmTime
-      ? {
-          ...this.getDegrees(this.props.timeZone),
-          alarm: getAlarmDegrees({ alarmTime: this.props.alarmTime }),
-        }
-      : this.getDegrees(this.props.timeZone);
-  };
+  getInitialState = (): ClockState => (this.props.alarmTime
+    ? ({
+      ...this.getDegrees(this.props.timeZone),
+      alarm: getAlarmDegrees({ alarmTime: this.props.alarmTime }),
+    }) : this.getDegrees(this.props.timeZone));
 
   render() {
-    const { alarm, hour, min, sec } = this.state;
+    const {
+      alarm, hour, min, sec,
+    } = this.state;
     const { size } = this.props;
 
     return (

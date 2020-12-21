@@ -1,4 +1,3 @@
-@import "../styles/constants.module.scss";
 
 @mixin progress-size-mixin($size) {
   height: $size;
@@ -31,90 +30,78 @@
       stroke: transparent;
 
       &--with-contour {
-        stroke: rgba($textMain, .3);
+        stroke: var(--progressContourColor);
       }
     }
 
     &-status {
-      stroke: $secondColor;
+      stroke: var(--secondaryColor);
       stroke-linecap: round;
       stroke-linejoin: round;
       transition: stroke-dashoffset .2s;
 
-      &--dark {
-        stroke: $secondDarkColor;
-      }
-
       &--primary {
-        stroke: $primaryColor;
+        stroke: var(--primaryColor);
       }
 
       &--error {
-        stroke: $errorColor;
+        stroke: var(--errorColor);
       }
 
       &--success {
-        stroke: $successColor;
+        stroke: var(--successColor);
       }
 
       &--warning {
-        stroke: $warningColor;
+        stroke: var(--warningColor);
       }
     }
 
     &-text {
-      fill: $textMain;
+      fill: var(--mainColor);
     }
   }
 
   &__title {
-    color: $secondColor;
-
-    &--dark {
-      color: $secondDarkColor;
-    }
+    color: var(--secondaryColor);
 
     &--error {
-      color: $errorColor;
+      color: var(--errorColor),;
     }
 
     &--success {
-      color: $successColor;
+      color: var(--successColor);
     }
 
     &--warning {
-      color: $warningColor;
+      color: var(--warningColor);
     }
 
     &--primary {
-      color: $primaryColor;
+      color: var(--primaryColor);
     }
 
     &--with-contour {
-      background-color: $secondColor;
+      background-color: var(--secondaryColor);
       border-radius: 6px;
-      color: #fff;
+      color: var(--mainColor);
       display: inline-block;
       padding: 4px 6px;
 
-      &.Progress__title--dark {
-        background-color: $secondDarkColor;
-      }
-
       &.Progress__title--error {
-        background-color: $errorColor;
+        background-color: var(--errorColor);
       }
 
       &.Progress__title--success {
-        background-color: $successColor;
+        background-color: var(--successColor);
       }
 
       &.Progress__title--warning {
-        background-color: $warningColor;
+        background-color: var(--warningColor);
       }
 
       &.Progress__title--primary {
-        background-color: $primaryColor;
+        background-color: var(--primaryColor);
       }
     }
 
@@ -160,13 +147,13 @@
     }
 
     &--with-contour {
-      background-color: rgba($textMain, .3);
+      background-color: var(--progressContourColor);
     }
   }
 
   &__text {
     align-items: center;
-    color: #fff;
+    color: var(--mainColor);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -187,27 +174,23 @@
     vertical-align: middle;
 
     &--base {
-      background-color: $secondColor;
-    }
-
-    &--dark {
-      background-color: $secondDarkColor;
+      background-color: var(--secondaryColor);
     }
 
     &--primary {
-      background-color: $primaryColor;
+      background-color: var(--primaryColor);
     }
 
     &--error {
-      background-color: $errorColor;
+      background-color: var(--errorColor);
     }
 
     &--success {
-      background-color: $successColor;
+      background-color: var(--successColor);
     }
 
     &--warning {
-      background-color: $warningColor;
+      background-color: var(--warningColor);
     }
   }
 }

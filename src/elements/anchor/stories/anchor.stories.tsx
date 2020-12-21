@@ -1,72 +1,37 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text, select } from '@storybook/addon-knobs';
 import { Anchor } from '@artemelka/react-components';
-import style from './custom-anchor.module.scss';
 
-const PROJECT_LINK = 'https://github.com/Artemelka/ReactUiLibrary';
+const PROJECT_LINK = 'https://github.com/Artemelka/react-components';
+
+const TARGET_OPTIONS = ['_blank', '_self', '_parent', '_top'];
 
 storiesOf('Anchor', module)
   .addParameters({
     component: Anchor,
     componentSubtitle: 'Компонент для реализации гиперссылок и псевдоссылок',
   })
-  .add('Anchor', ({ StoriesItemWrapper }: any) => {
-    const cn = classNames.bind(style);
-    const getAnchorClassName = ({
-      active,
-      disabled,
-    }: Record<string, boolean>) =>
-      cn('Link', {
-        'Link--active': active,
-        'Link--disabled': disabled,
-      });
-
-    return (
-      <>
-        <StoriesItemWrapper>
-          <Anchor
-            active={boolean('Active', false)}
-            disabled={boolean('Disabled', false)}
-            href={PROJECT_LINK}
-            newPage
-            onClick={action('newPage-link-click')}
-          >
-            ссылка на GitHub откроется в новом окне
-          </Anchor>
-        </StoriesItemWrapper>
-        <StoriesItemWrapper>
-          <Anchor
-            active={boolean('Active', false)}
-            disabled={boolean('Disabled', false)}
-            onClick={action('link-click')}
-          >
-            псевдо-ссылка
-          </Anchor>
-        </StoriesItemWrapper>
-        <StoriesItemWrapper>
-          <Anchor
-            active={boolean('Active', false)}
-            disabled={boolean('Disabled', false)}
-            href={PROJECT_LINK}
-            onClick={action('active-link-click')}
-          >
-            ссылка c props href & onClick без newPage
-          </Anchor>
-        </StoriesItemWrapper>
-        <StoriesItemWrapper>
-          <h2>Компонент принимает кастомные стили</h2>
-          <Anchor
-            active={boolean('Active', false)}
-            disabled={boolean('Disabled', false)}
-            href={PROJECT_LINK}
-            setCustomClassName={getAnchorClassName}
-          >
-            ссылка c кастомными стилями
-          </Anchor>
-        </StoriesItemWrapper>
-      </>
-    );
-  });
+  .add('Anchor', ({ StoriesItemWrapper }: any) => (
+    <StoriesItemWrapper>
+      <Anchor
+        active={boolean('active', false)}
+        disabled={boolean('disabled', false)}
+        download={boolean('download', false)}
+        href={text('href', PROJECT_LINK)}
+        id={text('id', 'link')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        onFocus={action('onFocus')}
+        onKeyPress={action('onKeyPress')}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        target={select('target', TARGET_OPTIONS, TARGET_OPTIONS[0])}
+        title={text('title', 'link')}
+        withPreventedEvent={boolean('withPreventedEvent', true)}
+      >
+        ссылка на GitHub
+      </Anchor>
+    </StoriesItemWrapper>
+  ));

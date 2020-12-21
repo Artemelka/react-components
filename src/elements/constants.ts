@@ -5,8 +5,7 @@ export const NOTIFICATION_ROOT = 'notification-root';
 
 // ROOT CLASS NAME
 export const PAGE_MODAL_CONTAINER_CLASS_NAME = 'Page__modal-container';
-export const PAGE_NOTIFICATION_CONTAINER_CLASS_NAME =
-  'Page__notification-container';
+export const PAGE_NOTIFICATION_CONTAINER_CLASS_NAME = 'Page__notification-container';
 export const TAG_NAME_DIV = 'div';
 
 // URL

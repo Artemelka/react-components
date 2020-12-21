@@ -7,6 +7,7 @@ const loaderCircleItems = [...new Array(5)];
 const CLASS_NAME = 'Window-loader';
 
 type LoaderProps = {
+  /** меняет значение position на absolute */
   inContainer?: boolean;
 };
 

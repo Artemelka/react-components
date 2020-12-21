@@ -1,5 +1,3 @@
-@import "../styles/constants.module.scss";
-
 $circlesMaxDuration: 5;
 $animationTranslateSize: $circlesMaxDuration * 6px;
 $containerSize: $circlesMaxDuration * 20px;
@@ -17,7 +15,7 @@ $animationTime: $circlesMaxDuration * 20s / 100;
 
 .Window-loader {
   align-items: center;
-  background-color: $overlayColor;
+  background-color: var(--overlayColor);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -42,9 +40,9 @@ $animationTime: $circlesMaxDuration * 20s / 100;
 
   &__circle {
     animation: loader $animationTime ease-in-out infinite;
-    border: 5px solid $secondDarkColor;
+    border: 5px solid var(--secondaryColor);
     border-radius: 50%;
-    box-shadow: 0 5px 0 $secondDarkColor, inset 0 5px 0 $secondDarkColor;
+    box-shadow: 0 5px 0 var(--secondaryColor), inset 0 5px 0 var(--secondaryColor);
     box-sizing: border-box;
     display: block;
     position: absolute;

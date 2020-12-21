@@ -6,13 +6,13 @@ export type ProgressStatusType =
   | 'BASE';
 
 export type ProgressBaseProps = {
-  /** Флаг темного цвета индикатора */
-  darkColor?: boolean;
   /** Значение индикатора в % */
   percent: number;
-  /** Размер индикатора (принимает значения константы CircleSize) */
+  /** Размер индикатора (принимает значения константы CIRCLE_SIZE) */
   size?: string;
-  /** параметр цветового отображения индикатора (принимает значения константы ProgressStatus, зависит от singleColor) */
+  /** параметр цветового отображения индикатора
+   * (принимает значения константы PROGRESS_STATUSES, зависит от singleColor)
+   * */
   status?: ProgressStatusType;
   /** Флаг отображения контура индикатора */
   withContour?: boolean;
@@ -26,5 +26,6 @@ export type ProgressProps = ProgressBaseProps & {
 };
 
 export type ProgressTextProps = ProgressBaseProps & {
+  /** Текст перед индикатором */
   label?: string;
 };

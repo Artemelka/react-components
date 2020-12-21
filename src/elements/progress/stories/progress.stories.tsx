@@ -5,8 +5,8 @@ import {
   ProgressCircular,
   ProgressLinear,
   ProgressText,
-  circleSize,
-  progressStatuses,
+  CIRCLE_SIZE,
+  PROGRESS_STATUSES,
 } from '@artemelka/react-components';
 
 const ProgressSelectOptions = {
@@ -28,11 +28,10 @@ storiesOf('Progress', module)
   .add('Circular', ({ StoriesItemWrapper }: any) => (
     <StoriesItemWrapper>
       <ProgressCircular
-        darkColor={boolean('darkColor', false)}
         percent={number('percent', 50, ProgressSelectOptions)}
         singleColor={boolean('single color', true)}
-        size={select('size', circleSize, circleSize.M)}
-        status={select('status', progressStatuses, progressStatuses.BASE)}
+        size={select('size', CIRCLE_SIZE, CIRCLE_SIZE.M)}
+        status={select('status', PROGRESS_STATUSES, PROGRESS_STATUSES.BASE)}
         withContour={boolean('withContour', false)}
         withText={boolean('withText', false)}
       />
@@ -41,11 +40,10 @@ storiesOf('Progress', module)
   .add('Linear', ({ StoriesItemWrapper }: any) => (
     <StoriesItemWrapper>
       <ProgressLinear
-        darkColor={boolean('darkColor', false)}
         percent={number('percent', 50, ProgressSelectOptions)}
         singleColor={boolean('single color', true)}
-        size={select('size', circleSize, circleSize.M)}
-        status={select('status', progressStatuses, progressStatuses.BASE)}
+        size={select('size', CIRCLE_SIZE, CIRCLE_SIZE.M)}
+        status={select('status', PROGRESS_STATUSES, PROGRESS_STATUSES.BASE)}
         withContour={boolean('withContour', false)}
         withText={boolean('withText', false)}
       />
@@ -54,11 +52,10 @@ storiesOf('Progress', module)
   .add('Text', ({ StoriesItemWrapper }: any) => (
     <StoriesItemWrapper>
       <ProgressText
-        darkColor={boolean('darkColor', false)}
         label="Custom label"
         percent={number('percent', 50, ProgressSelectOptions)}
-        size={select('size', circleSize, circleSize.M)}
-        status={select('status', progressStatuses, progressStatuses.BASE)}
+        size={select('size', CIRCLE_SIZE, CIRCLE_SIZE.M)}
+        status={select('status', PROGRESS_STATUSES, PROGRESS_STATUSES.BASE)}
         withContour={boolean('withContour', false)}
       />
     </StoriesItemWrapper>

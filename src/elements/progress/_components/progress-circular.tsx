@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { getValidPercent, getStatuses } from '../_utils';
-import { CIRCLE_SIZE_CONFIG, circleSize, progressStatuses } from '../constants';
+import { CIRCLE_SIZE_CONFIG, CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressProps } from '../types';
 import style from '../progress.module.scss';
 
@@ -9,15 +9,16 @@ const cn = classNames.bind(style);
 
 export const ProgressCircular = memo(
   ({
-    darkColor,
     percent: value,
     singleColor,
-    size = circleSize.L,
-    status = progressStatuses.BASE,
+    size = CIRCLE_SIZE.L,
+    status = PROGRESS_STATUSES.BASE,
     withContour,
     withText,
   }: ProgressProps) => {
-    const { isBase, isError, isPrimary, isSuccess, isWarning } = useMemo(
+    const {
+      isError, isPrimary, isSuccess, isWarning,
+    } = useMemo(
       () => getStatuses(Boolean(singleColor && status), value, status),
       [singleColor, status, value],
     );
@@ -55,7 +56,6 @@ export const ProgressCircular = memo(
           />
           <circle
             className={cn('Progress__circle-status', {
-              'Progress__circle-status--dark': darkColor && isBase,
               'Progress__circle-status--error': isError,
               'Progress__circle-status--primary': isPrimary,
               'Progress__circle-status--success': isSuccess,

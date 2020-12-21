@@ -1,10 +1,7 @@
 import { SyntheticEvent } from 'react';
 
-type CustomClassNameParams = { active: boolean; disabled: boolean };
-
-export type CustomEvent = SyntheticEvent & {
-  keyCode: number;
-  which: number;
+export type LinkEvent = {
+  event: SyntheticEvent<HTMLAnchorElement>;
+  href?: string;
+  id?: string;
 };
-
-export type GetCustomClassName = (params: CustomClassNameParams) => string;

@@ -9,7 +9,7 @@ export {
   ProgressCircular,
   ProgressText,
   ProgressLinear,
-  progressStatuses,
-  circleSize,
+  PROGRESS_STATUSES,
+  CIRCLE_SIZE,
 } from './progress';
 export { WindowLoader } from './loader';

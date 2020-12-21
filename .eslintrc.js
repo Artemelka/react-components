@@ -2,8 +2,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'airbnb',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'plugin:security/recommended',
@@ -19,15 +17,6 @@ module.exports = {
   },
   plugins: ['import', 'react-hooks', 'security', 'unused-imports'],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        trailingComma: 'all',
-        useTabs: false,
-        printWidth: 80,
-      },
-    ],
     'no-implied-eval': 2,
     'jsx-a11y/media-has-caption': 'off',
     'import/prefer-default-export': 0,
@@ -132,6 +121,7 @@ module.exports = {
     'security/detect-object-injection': 0,
     'security/detect-non-literal-regexp': 0,
     'security/detect-non-literal-fs-filename': 0,
+    'implicit-arrow-linebreak': 0,
   },
   settings: {
     'import/resolver': {

@@ -1,11 +1,11 @@
-export const circleSize = {
+export const CIRCLE_SIZE = {
   S: 'S',
   M: 'M',
   L: 'L',
   XL: 'XL',
 };
 
-export const progressStatuses: Record<
+export const PROGRESS_STATUSES: Record<
   string,
   'ERROR' | 'SUCCESS' | 'WARNING' | 'PRIMARY' | 'BASE'
 > = {
@@ -17,19 +17,19 @@ export const progressStatuses: Record<
 };
 
 export const CIRCLE_SIZE_CONFIG = {
-  [circleSize.S]: {
+  [CIRCLE_SIZE.S]: {
     strokeWidth: 2,
     radius: 20,
   },
-  [circleSize.M]: {
+  [CIRCLE_SIZE.M]: {
     strokeWidth: 3,
     radius: 40,
   },
-  [circleSize.L]: {
+  [CIRCLE_SIZE.L]: {
     strokeWidth: 4,
     radius: 60,
   },
-  [circleSize.XL]: {
+  [CIRCLE_SIZE.XL]: {
     strokeWidth: 5,
     radius: 80,
   },
