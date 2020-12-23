@@ -1,15 +1,10 @@
 <style>
-  @font-face {
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
+  @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+
+  body {
+    font-family: Jura, sans-serif;
   }
 
-  @font-face {
-    font-display: swap;
-    font-style: normal;
-    font-weight: 700;
-  }
   :root {
     --alfa-full: 1;
     --alfa-easy: .9;
@@ -24,6 +19,7 @@
     --errorColor: rgba(220, 20, 60, var(--alfa-full));
     --warningColor: rgba(255, 239, 0, var(--alfa-full));
     --overlayColor: rgba(0, 0, 0, var(--alfa-easy));
+    --overlayLightColor: rgba(255, 255, 255, var(--alfa-easy));
     --activeColor: rgba(149, 102, 242, var(--alfa-full));
     --clockShadowWhiteColor: rgba(255, 255, 255, .05);
     --clockShadowBlackColor: rgba(0, 0, 0, var(--alfa-hard));

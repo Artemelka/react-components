@@ -5,6 +5,8 @@ export {
   CLOCK_TIME_ZONES_COLLECTION,
   ClockProps,
 } from './clock';
+export { WindowLoader } from './window-loader';
+export { Overlay } from './overlay';
 export {
   ProgressCircular,
   ProgressText,
@@ -12,4 +14,4 @@ export {
   PROGRESS_STATUSES,
   CIRCLE_SIZE,
 } from './progress';
-export { WindowLoader } from './loader';
+export { Text } from './text';
