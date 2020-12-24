@@ -1,4 +1,4 @@
-export type ProgressStatusType =
+export type ProgressStatus =
   | 'ERROR'
   | 'SUCCESS'
   | 'WARNING'
@@ -13,7 +13,7 @@ export type ProgressBaseProps = {
   /** параметр цветового отображения индикатора
    * (принимает значения константы PROGRESS_STATUSES, зависит от singleColor)
    * */
-  status?: ProgressStatusType;
+  status?: ProgressStatus;
   /** Флаг отображения контура индикатора */
   withContour?: boolean;
 };

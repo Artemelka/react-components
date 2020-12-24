@@ -22,12 +22,28 @@ $animationTime: $circlesMaxDuration * 20s / 100;
 
   &__circle {
     animation: loader $animationTime ease-in-out infinite;
-    border: 5px solid var(--secondaryColor);
+    border: 5px solid;
     border-radius: 50%;
-    box-shadow: 0 5px 0 var(--secondaryColor), inset 0 5px 0 var(--secondaryColor);
     box-sizing: border-box;
     display: block;
     position: absolute;
+
+    &--main {
+      border-color: var(--activeColor);
+      box-shadow: 0 5px 0 var(--activeColor), inset 0 5px 0 var(--activeColor);
+    }
+    &--accent {
+      border-color: var(--accentColor);
+      box-shadow: 0 5px 0 var(--accentColor), inset 0 5px 0 var(--accentColor);
+    }
+    &--primary {
+      border-color: var(--primaryColor);
+      box-shadow: 0 5px 0 var(--primaryColor), inset 0 5px 0 var(--primaryColor);
+    }
+    &--secondary {
+      border-color: var(--secondaryColor);
+      box-shadow: 0 5px 0 var(--secondaryColor), inset 0 5px 0 var(--secondaryColor);
+    }
 
     @for $i from 1 to $circlesMaxDuration + 1 {
       &:nth-child(#{$i}) {
