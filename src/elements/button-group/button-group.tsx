@@ -42,7 +42,7 @@ export const ButtonGroup = memo(({
     }, index) => (
       <li
         className={cn(`${CLASS_NAME}__item`, {
-          [`${CLASS_NAME}__item--separated`]: variant === 'only-text'
+          [`${CLASS_NAME}__item--separated`]: variant === 'only-text',
         })}
       >
         <Button
