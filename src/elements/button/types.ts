@@ -14,3 +14,9 @@ export type ButtonKeyboardEvent = ButtonEvent & {
 export type ButtonFocusEvent = ButtonEvent & {
   event: FocusEvent<HTMLButtonElement>;
 };
+
+export type ButtonSize = 'small' | 'medium' | 'big';
+
+export type ButtonVariant = 'base' | 'filled' | 'only-text';
+
+export type ButtonThemeColor = 'main' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';

@@ -5,7 +5,7 @@ import { Text } from '@artemelka/react-components';
 
 const ALIGN: Array<string> = ['center', 'left', 'right'];
 const TAG_NAMES = ['span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
-const FONT_SIZE = ['light', 'regular', 'medium', 'semi-bold', 'bold'];
+const FONT_WEIGHT = ['light', 'regular', 'medium', 'semi-bold', 'bold'];
 
 storiesOf('Text', module)
   .addParameters({
@@ -20,7 +20,7 @@ storiesOf('Text', module)
         align={select('align', ALIGN, ALIGN[2])}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        fontSize={select('fontSize', FONT_SIZE, FONT_SIZE[0])}
+        fontWeight={select('fontSize', FONT_WEIGHT, FONT_WEIGHT[0])}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         tagName={select('tagName', TAG_NAMES, TAG_NAMES[0])}

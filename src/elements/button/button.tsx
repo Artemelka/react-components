@@ -10,30 +10,54 @@ import React, {
 } from 'react';
 import classNames from 'classnames/bind';
 import { KEY_CODES } from '../constants';
-import { ButtonMouseEvent, ButtonKeyboardEvent, ButtonFocusEvent } from './types';
+import {
+  ButtonFocusEvent,
+  ButtonKeyboardEvent,
+  ButtonMouseEvent,
+  ButtonSize,
+  ButtonThemeColor,
+  ButtonVariant,
+} from './types';
 import style from './button.module.scss';
 
 const cn = classNames.bind(style);
 const CLASS_NAME = 'Button';
 
 type ButtonProps = {
+  /** Объект для формирования рефа */
   buttonRef?: RefObject<HTMLButtonElement>;
+  /** Флаг неактивного состояния */
   disabled?: boolean;
+  /** Елемент иконки */
   icon?: ReactNode;
+  /** уникальный идентификатор (возвращается в onClick) */
   id?: string | number;
+  /** Флаг для скругления левых углов кнопки */
   isLeftRound?: boolean;
+  /** Флаг для скругления правых углов кнопки */
   isRightRound?: boolean;
+  /** Колбек события потери фокуса */
   onBlur?: (buttonFocusEvent: ButtonFocusEvent) => void;
+  /** Колбек события клика */
   onClick?: (buttonClickEvent: ButtonMouseEvent) => void;
+  /** Колбек события фокуса */
   onFocus?: (buttonFocusEvent: ButtonFocusEvent) => void;
+  /** Колбек события клавиатуры (нажатие клавиши) */
   onKeyDown?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
+  /** Колбек события клавиатуры (общий) */
   onKeyPress?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
+  /** Колбек события клавиатуры (отпуск клавиши) */
   onKeyUp?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
-  size?: 'small' | 'medium' | 'big';
+  /** Задает размер кнопки */
+  size?: ButtonSize;
+  /** Задает цветовую тему кнопки */
+  themeColor?: ButtonThemeColor;
+  /**  */
   type?: 'button' | 'submit' | 'reset';
+  /** Содержимое кнопки */
   value?: string;
-  variant?: 'base' | 'filled' | 'only-text';
-  themeColor?: 'main' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';
+  /** Задает вид кнопки */
+  variant?: ButtonVariant;
 };
 
 export const Button = memo(({

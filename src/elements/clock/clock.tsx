@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { ClockView } from './components/clock-view';
 import { getTime, getDegreesFromTime, getAlarmDegrees } from './utils';
-import { ClockProps, ClockState } from './types';
+import { ClockSize, ClockState } from './types';
+
+export type ClockProps = {
+  /** Время срабатывания будильника */
+  alarmTime?: string;
+  /** Колбэк срабатывания будильника */
+  onAlarm?: () => void;
+  /** Задает размер часов */
+  size: ClockSize;
+  /** временная зона часов */
+  timeZone?: string;
+};
 
 export class Clock extends Component<ClockProps, ClockState> {
   intervalId: any;
