@@ -5,9 +5,12 @@ import style from './overlay.module.scss';
 const cn = classNames.bind(style);
 const CLASS_NAME = 'Overlay';
 type OverlayProps = PropsWithChildren<{
-    inContainer?: boolean;
-    isLightColor?: boolean;
-    isTransparent?: boolean;
+  /** Изменяет значение свойства position с fixed на absolute */
+  inContainer?: boolean;
+  /** Флаг для изменения цвета затемнения на светлый */
+  isLightColor?: boolean;
+  /** Флаг делающий прозрачным слой затемнения */
+  isTransparent?: boolean;
 }>;
 
 export const Overlay = memo(({

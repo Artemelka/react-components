@@ -9,7 +9,12 @@ export {
   ButtonFocusEvent,
   ButtonKeyboardEvent,
   ButtonMouseEvent,
+  ButtonSize,
+  ButtonThemeColor,
+  ButtonVariant,
 } from './button/types';
+export { ButtonGroup } from './button-group';
+export { ButtonGroupItem } from './button-group/types';
 export {
   Clock,
   CLOCK_TIME_ZONES,
@@ -26,6 +31,6 @@ export {
 } from './progress';
 export { ProgressStatus } from './progress/types';
 export { Text } from './text';
-export { TextAlign, TextFontSize, TextTagName } from './text/types';
+export { TextAlign, TextFontWeight, TextTagName } from './text/types';
 export { WindowLoader } from './window-loader';
 export { WindowLoaderThemeColor } from './window-loader/types';
