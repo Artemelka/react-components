@@ -1,12 +1,14 @@
 import React, {
+  FocusEvent,
+  KeyboardEvent,
   memo,
+  MouseEvent,
   ReactElement,
   RefObject,
-  SyntheticEvent,
   useCallback,
 } from 'react';
 import classNames from 'classnames/bind';
-import { LinkEvent } from './types';
+import { AnchorFocusEvent, AnchorMouseEvent, AnchorKeyboardEvent } from './types';
 import style from './anchor.module.scss';
 
 const cn = classNames.bind(style);
@@ -27,13 +29,13 @@ export type AnchorProps = {
   /** Идентификатор ссылки (возвращается в onClick) */
   id?: string;
   /** Колбек события потери фокуса */
-  onBlur?: (event: SyntheticEvent<HTMLAnchorElement>) => void;
+  onBlur?: (linkFocusEvent: AnchorFocusEvent) => void;
   /** Колбек события клика */
-  onClick?: (linkEvent: LinkEvent) => void;
+  onClick?: (linkMouseEvent: AnchorMouseEvent) => void;
   /** Колбек события фокуса */
-  onFocus?: (event: SyntheticEvent<HTMLAnchorElement>) => void;
+  onFocus?: (linkFocusEvent: AnchorFocusEvent) => void;
   /** Колбек события клавиатуры */
-  onKeyPress?: (linkEvent: LinkEvent) => void;
+  onKeyPress?: (linkKeyboardEvent: AnchorKeyboardEvent) => void;
   /** Список URL-адресов разделенных пробелами
    * (При переходе по ссылке браузер отправляет POST запросы с текстом PING)
    * */
@@ -69,7 +71,7 @@ export const Anchor = memo(
     title,
     withPreventedEvent,
   }: AnchorProps) => {
-    const handleClick = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
+    const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
       if (withPreventedEvent || disabled) {
         event.preventDefault();
       }
@@ -79,7 +81,7 @@ export const Anchor = memo(
       }
     }, [disabled, href, id, withPreventedEvent, onClick]);
 
-    const handleKeyPress = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
+    const handleKeyPress = useCallback((event: KeyboardEvent<HTMLAnchorElement>) => {
       if (withPreventedEvent || disabled) {
         event.preventDefault();
       }
@@ -87,17 +89,17 @@ export const Anchor = memo(
       onKeyPress({ event, href, id });
     }, [disabled, href, id, onKeyPress, withPreventedEvent]);
 
-    const handleFocus = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
+    const handleFocus = useCallback((event: FocusEvent<HTMLAnchorElement>) => {
       if (!disabled) {
-        onFocus(event);
+        onFocus({ event, href, id });
       }
-    }, [disabled, onFocus]);
+    }, [disabled, href, id, onFocus]);
 
-    const handleBlur = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
+    const handleBlur = useCallback((event: FocusEvent<HTMLAnchorElement>) => {
       if (!disabled) {
-        onBlur(event);
+        onBlur({ event, href, id });
       }
-    }, [disabled, onBlur]);
+    }, [disabled, href, id, onBlur]);
 
     return (
       <a

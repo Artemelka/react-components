@@ -4,10 +4,11 @@ export type ClockTime = {
   sec: number;
 };
 
+export type ClockSize = 'small' | 'medium' | 'large';
 export type ClockProps = {
   alarmTime?: string;
   onAlarm?: () => void;
-  size: 'small' | 'medium' | 'large';
+  size: ClockSize;
   timeZone?: string;
 };
 

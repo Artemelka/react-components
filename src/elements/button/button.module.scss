@@ -1,0 +1,240 @@
+$border-radius: 12px;
+
+.Button {
+  align-items: center;
+  border: 1px solid;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  transition: box-shadow, .3s;
+
+  &::after,
+  &::before {
+    background-color: var(--progressContourColor);
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: width .2s;
+    width: 0;
+    z-index: 1;
+  }
+
+  &::after {
+    left: 50%;
+  }
+
+  &::before {
+    right: 50%;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 6px var(--buttonShadowColor);
+  }
+
+  &:active,
+  &--active {
+    &::after,
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &--big {
+    font-size: 26px;
+    padding: 15px 30px;
+  }
+  &--medium {
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+  &--small {
+    font-size: 14px;
+    padding: 4px 12px;
+  }
+
+  &--main {
+    background-color: var(--activeColor);
+    border-color: var(--activeColor);
+    color: var(--activeColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--activeColor);
+    }
+  }
+  &--accent {
+    background-color: var(--accentColor);
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--accentColor);
+    }
+  }
+  &--primary {
+    background-color: var(--primaryColor);
+    border-color: var(--primaryColor);
+    color: var(--primaryColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--primaryColor);
+    }
+  }
+  &--secondary {
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+    color: var(--secondaryColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--secondaryColor);
+    }
+  }
+  &--success {
+    background-color: var(--successColor);
+    border-color: var(--successColor);
+    color: var(--successColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--successColor);
+    }
+  }
+  &--error {
+    background-color: var(--errorColor);
+    border-color: var(--errorColor);
+    color: var(--errorColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--errorColor);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+
+    &::after,
+    &::before {
+      width: 0;
+    }
+  }
+  &--disabled {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    color: var(--mainColor);
+    cursor: default;
+
+    &::after,
+    &::before {
+      width: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--mainColor);
+      box-shadow: none;
+      opacity: 1;
+    }
+  }
+
+  &--base {
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+  &--filled {
+    color: var(--baseColor);
+  }
+  &--only-text {
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &--round {
+    &-left {
+      border-bottom-left-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
+
+    &-right {
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
+
+  &--icon {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 50%;
+    padding: 0;
+
+    &:disabled {
+      background-color: transparent;
+      color: var(--mainColor);
+    }
+
+    &-big {
+      height: 58px;
+      width: 58px;
+    }
+    &-medium {
+      height: 34px;
+      width: 34px;
+    }
+    &-small {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+
+    &--only-icon {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  &__icon-left {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: -4px;
+    padding-right: 8px;
+
+    &--only {
+      margin-left: 0;
+      padding-right: 0;
+    }
+  }
+}
