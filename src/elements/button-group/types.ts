@@ -13,5 +13,5 @@ export type ButtonGroupItem = {
   onClick?: (buttonClickEvent: ButtonMouseEvent) => void;
   onFocus?: (buttonFocusEvent: ButtonFocusEvent) => void;
   onKeyPress?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
-  value: string;
+  value?: string;
 };

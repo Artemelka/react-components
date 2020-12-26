@@ -6,6 +6,7 @@ export {
 } from './anchor/types';
 export { Button } from './button';
 export {
+  ButtonAlignText,
   ButtonFocusEvent,
   ButtonKeyboardEvent,
   ButtonMouseEvent,
@@ -21,6 +22,12 @@ export {
   CLOCK_TIME_ZONES_COLLECTION,
 } from './clock';
 export { ClockSize } from './clock/types';
+export { CollapsePanel } from './collapse-panel';
+export {
+  CollapseContentActionsAlign,
+  CollapseHeaderActionConfig,
+  ContentButtonGroupItem,
+} from './collapse-panel/types';
 export { Overlay } from './overlay';
 export {
   ProgressCircular,

@@ -1,0 +1,50 @@
+.Collapse-panel {
+  border: 0 solid transparent;
+  border-radius: 2px;
+  box-shadow: 0 0 2px var(--mainColor);
+  color: var(--baseColor);
+  overflow: hidden;
+  transition: height .5s;
+
+  &--theme {
+    &-main {
+      box-shadow: 0 0 2px var(--activeColor);
+      color: var(--activeColor);
+    }
+
+    &-accent {
+      box-shadow: 0 0 2px var(--accentColor);
+      color: var(--accentColor);
+    }
+
+    &-secondary {
+      box-shadow: 0 0 2px var(--secondaryColor);
+      color: var(--secondaryColor);
+    }
+
+    &-primary {
+      box-shadow: 0 0 2px var(--primaryColor);
+      color: var(--primaryColor);
+    }
+
+    &-success {
+      box-shadow: 0 0 2px var(--successColor);
+      color: var(--successColor);
+    }
+
+    &-error {
+      box-shadow: 0 0 2px var(--errorColor);
+      color: var(--errorColor);
+    }
+  }
+
+  &--disabled {
+    //border-color: var(--disabledColor);
+    box-shadow: 0 0 2px var(--disabledColor);
+  }
+
+  &--empty {
+    //border-color: transparent;
+    box-shadow: none;
+  }
+}

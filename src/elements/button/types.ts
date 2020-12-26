@@ -15,8 +15,9 @@ export type ButtonFocusEvent = ButtonEvent & {
   event: FocusEvent<HTMLButtonElement>;
 };
 
+export type ButtonAlignText = 'left' | 'center' | 'right';
 export type ButtonSize = 'small' | 'medium' | 'big';
 
 export type ButtonVariant = 'base' | 'filled' | 'only-text';
 
-export type ButtonThemeColor = 'main' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';
+export type ButtonThemeColor = 'base' | 'main' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';

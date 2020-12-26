@@ -5,10 +5,11 @@ import { boolean, text, select } from '@storybook/addon-knobs';
 import Delete from '@material-ui/icons/Delete';
 import { Button } from '@artemelka/react-components';
 
+const ALIGN_TEXT = ['left', 'center', 'right'];
 const BUTTON_TYPES = ['button', 'submit', 'reset'];
 const BUTTON_SIZES = ['big', 'medium', 'small'];
 const BUTTON_VARIANTS = ['base', 'filled', 'only-text'];
-const THEME_COLOR = ['main', 'accent', 'primary', 'secondary', 'success', 'error'];
+const THEME_COLOR = ['base', 'main', 'accent', 'primary', 'secondary', 'success', 'error'];
 
 storiesOf('Button', module)
   .addParameters({
@@ -18,9 +19,13 @@ storiesOf('Button', module)
   .add('Button', ({ StoriesItemWrapper }: any) => (
     <StoriesItemWrapper>
       <Button
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        alignText={select('alignText', ALIGN_TEXT,ALIGN_TEXT[2])}
         disabled={boolean('disabled', false)}
         icon={<Delete fontSize="inherit" />}
         id={text('id', 'test')}
+        isFullWidth={boolean('isFullWidth', false)}
         isLeftRound={boolean('isLeftRound', false)}
         isRightRound={boolean('isRightRound', false)}
         onBlur={action('onBlur')}
