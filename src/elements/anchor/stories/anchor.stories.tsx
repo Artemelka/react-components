@@ -15,23 +15,28 @@ storiesOf('Anchor', module)
   })
   .add('Anchor', ({ StoriesItemWrapper }: any) => (
     <StoriesItemWrapper>
-      <Anchor
-        active={boolean('active', false)}
-        disabled={boolean('disabled', false)}
-        download={boolean('download', false)}
-        href={text('href', PROJECT_LINK)}
-        id={text('id', 'link')}
-        onBlur={action('onBlur')}
-        onClick={action('onClick')}
-        onFocus={action('onFocus')}
-        onKeyPress={action('onKeyPress')}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        target={select('target', TARGET_OPTIONS, TARGET_OPTIONS[0])}
-        title={text('title', 'link')}
-        withPreventedEvent={boolean('withPreventedEvent', true)}
-      >
-        ссылка на GitHub
-      </Anchor>
+      <p style={{ color: 'var(--baseColor)' }}>
+        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper,
+        nisl in ultricies consectetur, sapien dui vestibulum mauris, ${' '}`}
+        <Anchor
+          active={boolean('active', false)}
+          disabled={boolean('disabled', false)}
+          download={boolean('download', false)}
+          href={text('href', PROJECT_LINK)}
+          id={text('id', 'link')}
+          onBlur={action('onBlur')}
+          onClick={action('onClick')}
+          onFocus={action('onFocus')}
+          onKeyPress={action('onKeyPress')}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          target={select('target', TARGET_OPTIONS, TARGET_OPTIONS[0])}
+          title={text('title', 'link')}
+          withPreventedEvent={boolean('withPreventedEvent', true)}
+        >
+          ссылка на GitHub
+        </Anchor>
+        {`${' '} vitae sagittis turpis sapien quis felis. Phasellus venenatis accumsan urna nec imperdiet.`}
+      </p>
     </StoriesItemWrapper>
   ));

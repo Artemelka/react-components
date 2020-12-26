@@ -1,7 +1,7 @@
 .Anchor {
   background-color: transparent;
   border: none;
-  color: inherit;
+  color: var(--primaryColor);
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
@@ -10,21 +10,24 @@
   text-decoration: none;
   transition: color .3s;
 
-  &:visited {
+  &:hover,
+  &:focus {
     color: var(--secondaryColor);
   }
 
-  &:hover,
-  &:focus {
-    color: var(--activeColor);
+  &--native {
+    &:visited {
+      color: var(--accentColor);
+    }
   }
 
   &--active {
-    color: var(--accentColor);
-    cursor: default;
+    color: var(--activeColor);
+    cursor: auto;
 
-    &:visited {
-      color: var(--accentColor);
+    &:hover,
+    &:focus {
+      color: var(--activeColor);
     }
 
     &:disabled {
@@ -35,7 +38,7 @@
   &--disabled,
   &:disabled {
     color: var(--disabledColor);
-    cursor: default;
+    cursor: auto;
 
     &:focus,
     &:hover,

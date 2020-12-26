@@ -6,6 +6,7 @@ import React, {
   ReactElement,
   RefObject,
   useCallback,
+  useMemo,
 } from 'react';
 import classNames from 'classnames/bind';
 import { AnchorFocusEvent, AnchorMouseEvent, AnchorKeyboardEvent } from './types';
@@ -69,44 +70,49 @@ export const Anchor = memo(
     rel = 'noreferrer noopener',
     target = '_blank',
     title,
-    withPreventedEvent,
+    withPreventedEvent = true,
   }: AnchorProps) => {
+    const isClickable = useMemo(() => !disabled && !active, [active, disabled]);
+
     const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
       if (withPreventedEvent || disabled) {
         event.preventDefault();
       }
 
-      if (!disabled) {
+      if (isClickable) {
         onClick({ event, href, id });
       }
-    }, [disabled, href, id, withPreventedEvent, onClick]);
+    }, [disabled, href, id, isClickable, withPreventedEvent, onClick]);
 
     const handleKeyPress = useCallback((event: KeyboardEvent<HTMLAnchorElement>) => {
       if (withPreventedEvent || disabled) {
         event.preventDefault();
       }
 
-      onKeyPress({ event, href, id });
-    }, [disabled, href, id, onKeyPress, withPreventedEvent]);
+      if (isClickable) {
+        onKeyPress({ event, href, id });
+      }
+    }, [disabled, href, id, isClickable, onKeyPress, withPreventedEvent]);
 
     const handleFocus = useCallback((event: FocusEvent<HTMLAnchorElement>) => {
-      if (!disabled) {
+      if (isClickable) {
         onFocus({ event, href, id });
       }
-    }, [disabled, href, id, onFocus]);
+    }, [href, id, isClickable, onFocus]);
 
     const handleBlur = useCallback((event: FocusEvent<HTMLAnchorElement>) => {
-      if (!disabled) {
+      if (isClickable) {
         onBlur({ event, href, id });
       }
-    }, [disabled, href, id, onBlur]);
+    }, [href, id, isClickable, onBlur]);
 
     return (
       <a
         ref={anchorRef}
         className={cn('Anchor', {
-          'Anchor--active': active,
+          'Anchor--active': active && withPreventedEvent,
           'Anchor--disabled': disabled,
+          'Anchor--native': !withPreventedEvent,
         })}
         download={download}
         href={href}
@@ -116,6 +122,7 @@ export const Anchor = memo(
         onKeyPress={handleKeyPress}
         ping={ping}
         rel={rel}
+        tabIndex={!withPreventedEvent && (active || disabled) ? -1 : 0}
         target={target}
         title={title}
       >
