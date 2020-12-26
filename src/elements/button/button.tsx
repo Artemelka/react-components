@@ -11,6 +11,7 @@ import React, {
 import classNames from 'classnames/bind';
 import { KEY_CODES } from '../constants';
 import {
+  ButtonAlignText,
   ButtonFocusEvent,
   ButtonKeyboardEvent,
   ButtonMouseEvent,
@@ -24,6 +25,8 @@ const cn = classNames.bind(style);
 const CLASS_NAME = 'Button';
 
 type ButtonProps = {
+  /** Задает горизонтальное выравнивание контента (работает только при isFullWidth: true) */
+  alignText?: ButtonAlignText;
   /** Объект для формирования рефа */
   buttonRef?: RefObject<HTMLButtonElement>;
   /** Флаг неактивного состояния */
@@ -32,6 +35,8 @@ type ButtonProps = {
   icon?: ReactNode;
   /** уникальный идентификатор (возвращается в onClick) */
   id?: string | number;
+  /** Флаг устанавливает свойство width: 100% */
+  isFullWidth?: boolean;
   /** Флаг для скругления левых углов кнопки */
   isLeftRound?: boolean;
   /** Флаг для скругления правых углов кнопки */
@@ -61,10 +66,12 @@ type ButtonProps = {
 };
 
 export const Button = memo(({
+  alignText = 'center',
   buttonRef,
   disabled,
   icon,
   id,
+  isFullWidth,
   isLeftRound,
   isRightRound,
   onBlur = () => false,
@@ -127,14 +134,17 @@ export const Button = memo(({
       ref={buttonRef}
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--active`]: isActive,
+        [`${CLASS_NAME}--align-${alignText}`]: alignText,
         [`${CLASS_NAME}--disabled`]: disabled,
+        [`${CLASS_NAME}--full-width`]: isFullWidth,
         [`${CLASS_NAME}--round-left`]: isLeftRound,
         [`${CLASS_NAME}--round-right`]: isRightRound,
         [`${CLASS_NAME}--icon`]: !value,
         [`${CLASS_NAME}--icon-${size}`]: !value && size,
-        [`${CLASS_NAME}--${themeColor}`]: themeColor,
-        [`${CLASS_NAME}--${size}`]: size,
+        [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+        [`${CLASS_NAME}--size-${size}`]: size,
         [`${CLASS_NAME}--${variant}`]: variant,
+        [`${CLASS_NAME}--${variant}-base`]: themeColor === 'base',
       })}
       disabled={disabled}
       onBlur={handleBlur}

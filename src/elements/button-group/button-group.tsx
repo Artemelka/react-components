@@ -15,6 +15,8 @@ const CLASS_NAME = 'Button-group';
 type ButtonGroupPropsType = {
   /** Массив пармаетров для кнопок (принемает не все параметры Button) */
   buttons: Array<ButtonGroupItem>;
+  /** Флаг для отображения кнопок с иконками */
+  isOnlyIcons?: boolean;
   /** Задает размер кнопок */
   size?: ButtonSize;
   /** Задает цветовую тему кнопок */
@@ -25,6 +27,7 @@ type ButtonGroupPropsType = {
 
 export const ButtonGroup = memo(({
   buttons,
+  isOnlyIcons,
   size,
   themeColor,
   variant,
@@ -41,13 +44,14 @@ export const ButtonGroup = memo(({
       value,
     }, index) => (
       <li
+        key={value || id || index}
         className={cn(`${CLASS_NAME}__item`, {
           [`${CLASS_NAME}__item--separated`]: variant === 'only-text',
+          [`${CLASS_NAME}__item--only-icon`]: isOnlyIcons,
         })}
       >
         <Button
           disabled={disabled}
-          icon={icon}
           id={id}
           isLeftRound={index === 0}
           isRightRound={index === buttons.length - 1}
@@ -58,8 +62,8 @@ export const ButtonGroup = memo(({
           size={size}
           themeColor={themeColor}
           type="button"
-          value={value}
           variant={variant}
+          {...(isOnlyIcons ? { icon } : { value })}
         />
       </li>
     ))}

@@ -22,5 +22,14 @@
         border: none;
       }
     }
+
+    &--only-icon {
+      border-right: none;
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }

@@ -1,0 +1,36 @@
+.Collapse-content {
+  box-sizing: border-box;
+
+  &--clickable {
+    padding: 4px;
+  }
+
+  &__main {
+    color: var(--baseColor);
+  }
+
+  &__actions {
+    border: 0 solid;
+    border-top-width: 1px;
+    margin-top: 24px;
+    padding: 12px 24px;
+
+    &--align {
+      &-left {
+        text-align: left;
+      }
+      &-center {
+        text-align: center;
+      }
+      &-right {
+        text-align: right;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    margin-right: 12px;
+    vertical-align: top;
+  }
+}

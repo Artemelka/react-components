@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { Overlay } from '@artemelka/react-components';
 
 const wrapperStyle: CSSProperties = {
@@ -26,8 +27,9 @@ storiesOf('Overlay', module)
           inContainer={boolean('inContainer', false)}
           isLightColor={boolean('isLightColor', false)}
           isTransparent={boolean('isTransparent', false)}
+          onOverlayClick={action('onOverlayClick')}
         >
-          активный контент
+          <p>активный контент</p>
         </Overlay>
       </div>
     </StoriesItemWrapper>
