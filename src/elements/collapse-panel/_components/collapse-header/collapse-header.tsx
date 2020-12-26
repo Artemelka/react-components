@@ -19,6 +19,7 @@ type CollapseHeaderProps = {
   alignText?: ButtonAlignText;
   closeOpenIcon?: ReactNode;
   disabled?: boolean;
+  emptyStyle?: boolean;
   hasAction: boolean;
   headerRef: RefObject<HTMLDivElement>;
   id?: string | number;
@@ -34,6 +35,7 @@ export const CollapseHeader = memo(({
   alignText = 'left',
   closeOpenIcon,
   disabled,
+  emptyStyle,
   hasAction,
   headerRef,
   id,
@@ -61,7 +63,7 @@ export const CollapseHeader = memo(({
             onClick={onOpenClick}
             size={size}
             themeColor={themeColor}
-            variant="base"
+            variant={emptyStyle ? 'only-text' : 'base'}
           />
         </div>
         <div
@@ -78,7 +80,7 @@ export const CollapseHeader = memo(({
               isOnlyIcons
               size={size}
               themeColor={themeColor}
-              variant="base"
+              variant={emptyStyle ? 'only-text' : 'base'}
             />
           </div>
         )}

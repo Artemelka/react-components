@@ -8,8 +8,8 @@
 
   &--theme {
     &-main {
-      box-shadow: 0 0 2px var(--activeColor);
-      color: var(--activeColor);
+      //box-shadow: 0 0 2px var(--activeColor);
+      //color: var(--activeColor);
     }
 
     &-accent {
@@ -39,12 +39,10 @@
   }
 
   &--disabled {
-    //border-color: var(--disabledColor);
     box-shadow: 0 0 2px var(--disabledColor);
   }
 
   &--empty {
-    //border-color: transparent;
     box-shadow: none;
   }
 }
