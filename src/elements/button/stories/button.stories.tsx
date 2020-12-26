@@ -21,7 +21,7 @@ storiesOf('Button', module)
       <Button
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        alignText={select('alignText', ALIGN_TEXT,ALIGN_TEXT[2])}
+        alignText={select('alignText', ALIGN_TEXT, ALIGN_TEXT[2])}
         disabled={boolean('disabled', false)}
         icon={<Delete fontSize="inherit" />}
         id={text('id', 'test')}
