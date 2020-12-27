@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import {text, select, boolean} from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import Add from '@material-ui/icons/Add';
 import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUp from '@material-ui/icons/ArrowDropUp';

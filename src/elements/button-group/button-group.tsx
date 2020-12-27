@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { Button } from '../button';
 import {
@@ -41,57 +41,60 @@ export const ButtonGroup = memo(({
   size,
   themeColor,
   variant,
-}: ButtonGroupPropsType) => (
-  <ul
-    className={cn(CLASS_NAME, {
-      [`${CLASS_NAME}--full-width`]: isFullWidth && !isOnlyIcons && isVertical,
-      [`${CLASS_NAME}--vertical`]: isVertical,
-    })}
-  >
-    {buttons.map(({
-      disabled,
-      icon,
-      id,
-      onBlur,
-      onClick,
-      onFocus,
-      onKeyPress,
-      value,
-    }, index) => (
-      <li
-        key={value || id || index}
-        className={cn(`${CLASS_NAME}__item`, {
-          [`${CLASS_NAME}__item--separated`]: variant === 'only-text' && value,
-          [`${CLASS_NAME}__item--separated-filled`]: variant === 'filled' && value,
-          [`${CLASS_NAME}__item--separated-vertical`]: variant === 'only-text' && value && isVertical,
-          [`${CLASS_NAME}__item--separated-vertical-filled`]: variant === 'filled' && value && isVertical,
-          [`${CLASS_NAME}__item--only-icon`]: isOnlyIcons,
-          [`${CLASS_NAME}__item--only-icon-vertical`]: isOnlyIcons && isVertical,
-          [`${CLASS_NAME}__item--vertical`]: isVertical,
-        })}
-      >
-        <Button
-          alignText={alignText}
-          disabled={disabled}
-          id={id}
-          isFullWidth={isVertical}
-          onBlur={onBlur}
-          onClick={onClick}
-          onFocus={onFocus}
-          onKeyPress={onKeyPress}
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // @ts-ignore
-          roundSide={
-            ((index === 0) && (isVertical ? 'top' : 'left'))
-            || ((index === buttons.length - 1) && (isVertical ? 'bottom' : 'right'))
-          }
-          size={size}
-          themeColor={themeColor}
-          type="button"
-          variant={variant}
-          {...(isOnlyIcons ? { icon } : { value })}
-        />
-      </li>
-    ))}
-  </ul>
-));
+}: ButtonGroupPropsType) => {
+  const startRoundSide = useMemo(() => (isVertical ? 'top' : 'left'), [isVertical]);
+  const endRoundSide = useMemo(() => (isVertical ? 'bottom' : 'right'), [isVertical]);
+
+  return (
+    <ul
+      className={cn(CLASS_NAME, {
+        [`${CLASS_NAME}--full-width`]: isFullWidth && !isOnlyIcons && isVertical,
+        [`${CLASS_NAME}--vertical`]: isVertical,
+      })}
+    >
+      {buttons.map(({
+        disabled,
+        icon,
+        id,
+        onBlur,
+        onClick,
+        onFocus,
+        onKeyPress,
+        value,
+      }, index) => (
+        <li
+          key={value || id || index}
+          className={cn(`${CLASS_NAME}__item`, {
+            [`${CLASS_NAME}__item--separated`]: variant === 'only-text' && value,
+            [`${CLASS_NAME}__item--separated-filled`]: variant === 'filled' && value,
+            [`${CLASS_NAME}__item--separated-vertical`]: variant === 'only-text' && value && isVertical,
+            [`${CLASS_NAME}__item--separated-vertical-filled`]: variant === 'filled' && value && isVertical,
+            [`${CLASS_NAME}__item--only-icon`]: isOnlyIcons,
+            [`${CLASS_NAME}__item--only-icon-vertical`]: isOnlyIcons && isVertical,
+            [`${CLASS_NAME}__item--vertical`]: isVertical,
+          })}
+        >
+          <Button
+            alignText={alignText}
+            disabled={disabled}
+            id={id}
+            isFullWidth={isVertical}
+            onBlur={onBlur}
+            onClick={onClick}
+            onFocus={onFocus}
+            onKeyPress={onKeyPress}
+            roundSide={
+              ((index === 0 && startRoundSide) || (index === buttons.length - 1 && endRoundSide))
+              || undefined
+            }
+            size={size}
+            themeColor={themeColor}
+            type="button"
+            variant={variant}
+            {...(isOnlyIcons ? { icon } : { value })}
+          />
+        </li>
+      ))}
+    </ul>
+  );
+});
