@@ -47,7 +47,7 @@ $border-radius: 12px;
   }
 
   &:active,
-  &--active {
+  &--focused {
     &::after,
     &::before {
       width: 100%;
@@ -92,17 +92,6 @@ $border-radius: 12px;
       &:hover,
       &:focus {
         box-shadow: 0 0 6px var(--baseColor);
-      }
-    }
-
-    &-main {
-      background-color: var(--activeColor);
-      border-color: var(--activeColor);
-      color: var(--activeColor);
-
-      &:hover,
-      &:focus {
-        box-shadow: 0 0 6px var(--activeColor);
       }
     }
     &-accent {
@@ -157,6 +146,23 @@ $border-radius: 12px;
     }
   }
 
+  &--active {
+    background-color: var(--activeColor);
+    border-color: var(--activeColor);
+    box-shadow: 0 0 6px var(--activeColor);
+    color: var(--activeColor);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px var(--activeColor);
+      opacity: 1;
+    }
+
+    &-disabled {
+      box-shadow: none;
+    }
+  }
+
   &:disabled {
     cursor: default;
 
@@ -185,33 +191,40 @@ $border-radius: 12px;
     }
   }
 
-  &--base {
-    background-color: transparent;
-
-    &:hover,
-    &:focus {
-      background-color: transparent;
-    }
-  }
-  &--filled {
-    color: var(--baseColor);
-
+  &--variant {
     &-base {
-      color: var(--mainColor);
-    }
+      background-color: transparent;
 
-    &:disabled {
-      color: var(--mainColor);
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
     }
-  }
-  &--only-text {
-    background-color: transparent;
-    border-color: transparent;
+    &-filled {
+      color: var(--baseColor);
 
-    &:hover,
-    &:focus {
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 6px var(--baseColor);
+      }
+
+      &-base {
+        color: var(--mainColor);
+      }
+
+      &:disabled {
+        color: var(--baseColor);
+      }
+    }
+    &-only-text {
       background-color: transparent;
       border-color: transparent;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border-color: transparent;
+      }
     }
   }
 
@@ -219,7 +232,16 @@ $border-radius: 12px;
     width: 100%;
   }
 
+  &--rounded {
+    border-radius: 0;
+  }
+
   &--round {
+    &-bottom {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
     &-left {
       border-bottom-left-radius: $border-radius;
       border-top-left-radius: $border-radius;
@@ -229,17 +251,28 @@ $border-radius: 12px;
       border-bottom-right-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
+
+    &-top {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+
   }
 
   &--icon {
-    background-color: transparent;
-    border-color: transparent;
     border-radius: 50%;
     padding: 0;
 
     &:disabled {
       background-color: transparent;
       color: var(--disabledColor);
+    }
+
+    &-active {
+      &:disabled {
+        color: var(--baseColor);
+      }
     }
 
     &-big {

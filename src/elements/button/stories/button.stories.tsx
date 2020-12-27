@@ -7,9 +7,10 @@ import { Button } from '@artemelka/react-components';
 
 const ALIGN_TEXT = ['left', 'center', 'right'];
 const BUTTON_TYPES = ['button', 'submit', 'reset'];
+const BUTTON_ROUND = [undefined, 'bottom', 'left', 'right', 'top'];
 const BUTTON_SIZES = ['big', 'medium', 'small'];
 const BUTTON_VARIANTS = ['base', 'filled', 'only-text'];
-const THEME_COLOR = ['base', 'main', 'accent', 'primary', 'secondary', 'success', 'error'];
+const THEME_COLOR = ['base', 'accent', 'primary', 'secondary', 'success', 'error'];
 
 storiesOf('Button', module)
   .addParameters({
@@ -25,15 +26,17 @@ storiesOf('Button', module)
         disabled={boolean('disabled', false)}
         icon={<Delete fontSize="inherit" />}
         id={text('id', 'test')}
+        isActive={boolean('isActive', false)}
         isFullWidth={boolean('isFullWidth', false)}
-        isLeftRound={boolean('isLeftRound', false)}
-        isRightRound={boolean('isRightRound', false)}
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         onFocus={action('onFocus')}
         onKeyDown={action('onKeyDown')}
         onKeyPress={action('onKeyPress')}
         onKeyUp={action('onKeyUp')}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        roundSide={select('roundSide', BUTTON_ROUND, BUTTON_ROUND[0])}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         size={select('size', BUTTON_SIZES, BUTTON_SIZES[1])}

@@ -16,8 +16,11 @@ export type ButtonFocusEvent = ButtonEvent & {
 };
 
 export type ButtonAlignText = 'left' | 'center' | 'right';
+
 export type ButtonSize = 'small' | 'medium' | 'big';
 
 export type ButtonVariant = 'base' | 'filled' | 'only-text';
 
-export type ButtonThemeColor = 'base' | 'main' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';
+export type ButtonRound = 'bottom' | 'left' | 'right' | 'top';
+
+export type ButtonThemeColor = 'base' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';

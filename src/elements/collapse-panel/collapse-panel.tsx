@@ -113,6 +113,7 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
           alignText={this.props.alignText}
           closeOpenIcon={this.props.isOpen ? closeIcon : openIcon}
           disabled={this.props.disabled}
+          emptyStyle={this.props.emptyStyle}
           hasAction={Boolean(this.props.headerActions)}
           headerRef={this.summaryRef}
           id={this.props.id}

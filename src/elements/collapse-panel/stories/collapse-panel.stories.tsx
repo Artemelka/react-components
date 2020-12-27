@@ -10,7 +10,7 @@ import { CollapsePanel } from '@artemelka/react-components';
 import { LOREM } from '../../constants';
 
 const ALIGN_TEXT = [undefined, 'left', 'center', 'right'];
-const THEME_COLOR = [undefined, 'main', 'accent', 'primary', 'secondary', 'success', 'error'];
+const THEME_COLOR = [undefined, 'accent', 'primary', 'secondary', 'success', 'error'];
 const BUTTON_SIZES = [undefined, 'big', 'medium', 'small'];
 
 storiesOf('CollapsePanel', module)

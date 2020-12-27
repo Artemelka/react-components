@@ -15,6 +15,7 @@ import {
   ButtonFocusEvent,
   ButtonKeyboardEvent,
   ButtonMouseEvent,
+  ButtonRound,
   ButtonSize,
   ButtonThemeColor,
   ButtonVariant,
@@ -35,12 +36,10 @@ type ButtonProps = {
   icon?: ReactNode;
   /** уникальный идентификатор (возвращается в onClick) */
   id?: string | number;
+  /** Флаг активного состояния кнопки */
+  isActive?: boolean;
   /** Флаг устанавливает свойство width: 100% */
   isFullWidth?: boolean;
-  /** Флаг для скругления левых углов кнопки */
-  isLeftRound?: boolean;
-  /** Флаг для скругления правых углов кнопки */
-  isRightRound?: boolean;
   /** Колбек события потери фокуса */
   onBlur?: (buttonFocusEvent: ButtonFocusEvent) => void;
   /** Колбек события клика */
@@ -53,6 +52,8 @@ type ButtonProps = {
   onKeyPress?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
   /** Колбек события клавиатуры (отпуск клавиши) */
   onKeyUp?: (buttonKeyboardEvent: ButtonKeyboardEvent) => void;
+  /** Задает сторону скругления углов кнопки */
+  roundSide?: ButtonRound;
   /** Задает размер кнопки */
   size?: ButtonSize;
   /** Задает цветовую тему кнопки */
@@ -71,22 +72,22 @@ export const Button = memo(({
   disabled,
   icon,
   id,
+  isActive,
   isFullWidth,
-  isLeftRound,
-  isRightRound,
   onBlur = () => false,
   onClick = () => false,
   onFocus = () => false,
   onKeyDown = () => false,
   onKeyPress = () => false,
   onKeyUp = () => false,
+  roundSide,
   size = 'medium',
-  themeColor = 'main',
+  themeColor = 'base',
   type = 'button',
   value,
   variant = 'base',
 }: ButtonProps) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleBlur = useCallback((event: FocusEvent<HTMLButtonElement>) => {
     onBlur({ event, id });
@@ -105,7 +106,7 @@ export const Button = memo(({
   const handleKeyDown = useCallback((event: KeyboardEvent<HTMLButtonElement>) => {
     if (!disabled) {
       if (KEY_CODES.ENTER === event.keyCode) {
-        setIsActive(true);
+        setIsFocused(true);
       }
 
       onKeyDown({ event, id });
@@ -121,7 +122,7 @@ export const Button = memo(({
   const handleKeyUp = useCallback((event: KeyboardEvent<HTMLButtonElement>) => {
     if (!disabled) {
       if (KEY_CODES.ENTER === event.keyCode) {
-        setIsActive(false);
+        setIsFocused(false);
       }
 
       onKeyUp({ event, id });
@@ -134,19 +135,22 @@ export const Button = memo(({
       ref={buttonRef}
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--active`]: isActive,
+        [`${CLASS_NAME}--active-disabled`]: isActive && disabled,
         [`${CLASS_NAME}--align-${alignText}`]: alignText,
         [`${CLASS_NAME}--disabled`]: disabled,
+        [`${CLASS_NAME}--focused`]: isFocused,
         [`${CLASS_NAME}--full-width`]: isFullWidth,
-        [`${CLASS_NAME}--round-left`]: isLeftRound,
-        [`${CLASS_NAME}--round-right`]: isRightRound,
+        [`${CLASS_NAME}--rounded`]: roundSide,
+        [`${CLASS_NAME}--round-${roundSide}`]: roundSide,
         [`${CLASS_NAME}--icon`]: !value,
+        [`${CLASS_NAME}--icon-active`]: !value && isActive,
         [`${CLASS_NAME}--icon-${size}`]: !value && size,
         [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
         [`${CLASS_NAME}--size-${size}`]: size,
-        [`${CLASS_NAME}--${variant}`]: variant,
-        [`${CLASS_NAME}--${variant}-base`]: themeColor === 'base',
+        [`${CLASS_NAME}--variant-${variant}`]: variant,
+        [`${CLASS_NAME}--variant-${variant}-base`]: themeColor === 'base',
       })}
-      disabled={disabled}
+      disabled={disabled || isActive}
       onBlur={handleBlur}
       onClick={handleClick}
       onFocus={handleFocus}
