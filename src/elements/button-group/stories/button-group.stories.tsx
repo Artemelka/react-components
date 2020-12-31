@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { select, boolean } from '@storybook/addon-knobs';
 import Add from '@material-ui/icons/Add';
 import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
@@ -12,6 +12,7 @@ const ALIGN_TEXT = ['left', 'center', 'right'];
 const BUTTON_SIZES = [undefined, 'big', 'medium', 'small'];
 const BUTTON_VARIANTS = [undefined, 'base', 'filled', 'only-text'];
 const THEME_COLOR = [undefined, 'base', 'accent', 'primary', 'secondary', 'success', 'error'];
+const BUTTONS_ID = [1, 2, 3, 4, 5];
 
 storiesOf('ButtonGroup', module)
   .addParameters({
@@ -22,27 +23,29 @@ storiesOf('ButtonGroup', module)
     <StoriesItemWrapper>
       <StoriesItemWrapper>
         <ButtonGroup
+          activeId={BUTTONS_ID[2]}
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           alignText={select('alignText', ALIGN_TEXT, ALIGN_TEXT[2])}
           buttons={[
             {
-              disabled: boolean('disabled first', false),
+              id: BUTTONS_ID[0],
               onClick: action('first onClick'),
-              value: text('text first item', 'first'),
+              value: 'first',
             }, {
-              disabled: boolean('disabled second', false),
+              id: BUTTONS_ID[1],
+              disabled: true,
               onClick: action('second onClick'),
-              value: text('text second item', 'second'),
+              value: 'second',
             }, {
-              disabled: boolean('disabled third', false),
+              id: BUTTONS_ID[2],
               icon: <Delete fontSize="inherit" />,
               onClick: action('third onClick'),
-              value: text('text third item', 'third'),
+              value: 'third',
             }, {
-              disabled: boolean('disabled fourth', false),
+              id: BUTTONS_ID[3],
               onClick: action('fourth onClick'),
-              value: text('text fourth item', 'fourth'),
+              value: 'fourth',
             },
           ]}
           isFullWidth={boolean('isFullWidth', false)}
@@ -60,21 +63,23 @@ storiesOf('ButtonGroup', module)
       </StoriesItemWrapper>
       <StoriesItemWrapper>
         <ButtonGroup
+          activeId={BUTTONS_ID[2]}
           buttons={[
             {
-              disabled: boolean('disabled first', false),
+              id: BUTTONS_ID[0],
               icon: <ArrowDropDown fontSize="inherit" />,
               onClick: action('first onClick'),
             }, {
-              disabled: boolean('disabled second', false),
+              id: BUTTONS_ID[1],
+              disabled: true,
               icon: <ArrowDropUp fontSize="inherit" />,
               onClick: action('second onClick'),
             }, {
-              disabled: boolean('disabled third', false),
+              id: BUTTONS_ID[2],
               icon: <Delete fontSize="inherit" />,
               onClick: action('third onClick'),
             }, {
-              disabled: boolean('disabled fourth', false),
+              id: BUTTONS_ID[3],
               icon: <Add fontSize="inherit" />,
               onClick: action('fourth onClick'),
             },
