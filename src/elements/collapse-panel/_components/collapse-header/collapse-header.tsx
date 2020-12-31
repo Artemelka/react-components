@@ -67,9 +67,7 @@ export const CollapseHeader = memo(({
     )}
     {!customPanel && hasAction && actionButtons && (
       <>
-        <div
-          className={cn(`${CLASS_NAME}__icon`)}
-        >
+        <div className={cn(`${CLASS_NAME}__icon`)}>
           <Button
             disabled={disabled}
             icon={closeOpenIcon}
