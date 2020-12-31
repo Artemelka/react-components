@@ -6,6 +6,7 @@ import {
   ButtonMouseEvent,
   ButtonSize,
   ButtonThemeColor,
+  ButtonVariant,
 } from '../../../button/types';
 import { ButtonGroup } from '../../../button-group';
 import { ButtonGroupItem } from '../../../button-group/types';
@@ -19,15 +20,15 @@ type CollapseHeaderProps = {
   alignText?: ButtonAlignText;
   closeOpenIcon?: ReactNode;
   disabled?: boolean;
-  emptyStyle?: boolean;
   hasAction: boolean;
   headerRef: RefObject<HTMLDivElement>;
   id?: string | number;
   isOpen: boolean;
-  onOpenClick: (buttonEvent: ButtonMouseEvent) => void;
+  onPanelClick: (buttonEvent: ButtonMouseEvent) => void;
   size?: ButtonSize;
   themeColor?: ButtonThemeColor;
   title: string;
+  variant?: ButtonVariant;
 };
 
 export const CollapseHeader = memo(({
@@ -35,22 +36,26 @@ export const CollapseHeader = memo(({
   alignText = 'left',
   closeOpenIcon,
   disabled,
-  emptyStyle,
   hasAction,
   headerRef,
   id,
   isOpen,
-  onOpenClick,
+  onPanelClick,
   size = 'medium',
-  themeColor,
+  themeColor = 'base',
   title,
+  variant = 'base',
 }: CollapseHeaderProps) => (
   <div
     ref={headerRef}
     className={cn(`${CLASS_NAME}`, {
       [`${CLASS_NAME}--clickable`]: !hasAction,
       [`${CLASS_NAME}--disabled`]: disabled,
+      [`${CLASS_NAME}--disabled-filled`]: disabled && variant === 'filled',
       [`${CLASS_NAME}--opened`]: isOpen,
+      [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+      [`${CLASS_NAME}--variant-${variant}`]: variant,
+      [`${CLASS_NAME}--variant-${variant}-no-action`]: !hasAction && variant === 'filled',
     })}
   >
     {hasAction && actionButtons ? (
@@ -60,10 +65,10 @@ export const CollapseHeader = memo(({
             disabled={disabled}
             icon={closeOpenIcon}
             id={id}
-            onClick={onOpenClick}
+            onClick={onPanelClick}
             size={size}
             themeColor={themeColor}
-            variant={emptyStyle ? 'only-text' : 'base'}
+            variant={variant}
           />
         </div>
         <div
@@ -80,7 +85,7 @@ export const CollapseHeader = memo(({
               isOnlyIcons
               size={size}
               themeColor={themeColor}
-              variant={emptyStyle ? 'only-text' : 'base'}
+              variant={variant}
             />
           </div>
         )}
@@ -91,11 +96,11 @@ export const CollapseHeader = memo(({
         disabled={disabled}
         id={id}
         isFullWidth
-        onClick={onOpenClick}
+        onClick={onPanelClick}
         size={size}
         themeColor={themeColor}
         value={title}
-        variant="only-text"
+        variant={variant === 'base' ? 'only-text' : variant}
       />
     )}
   </div>

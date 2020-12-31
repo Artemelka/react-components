@@ -10,8 +10,9 @@ import { CollapsePanel } from '@artemelka/react-components';
 import { LOREM } from '../../constants';
 
 const ALIGN_TEXT = [undefined, 'left', 'center', 'right'];
-const THEME_COLOR = [undefined, 'accent', 'primary', 'secondary', 'success', 'error'];
+const THEME_COLOR = [undefined, 'base', 'accent', 'primary', 'secondary', 'success', 'error'];
 const BUTTON_SIZES = [undefined, 'big', 'medium', 'small'];
+const BUTTON_VARIANTS = [undefined, 'base', 'filled', 'only-text'];
 
 storiesOf('CollapsePanel', module)
   .addParameters({
@@ -49,7 +50,6 @@ storiesOf('CollapsePanel', module)
           // @ts-ignore
           contentActionsAlign={select('contentActionsAlign', ALIGN_TEXT, ALIGN_TEXT[0])}
           disabled={boolean('disabled', false)}
-          emptyStyle={boolean('emptyStyle', false)}
           headerActions={{
             openIcon: <ArrowDropDown fontSize="inherit" />,
             closeIcon: <ArrowDropUp fontSize="inherit" />,
@@ -69,7 +69,7 @@ storiesOf('CollapsePanel', module)
           }}
           id={text('id', 'panel id')}
           isOpen={boolean('isOpen', false)}
-          onChange={action('onChange')}
+          onClick={action('onClick')}
           panelTitle={text('panelTitle', 'Panel title')}
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
@@ -77,6 +77,9 @@ storiesOf('CollapsePanel', module)
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           themeColor={select('themeColor', THEME_COLOR, THEME_COLOR[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
         >
           {text('children', LOREM)}
         </CollapsePanel>
@@ -87,10 +90,10 @@ storiesOf('CollapsePanel', module)
           // @ts-ignore
           alignText={select('alignText', ALIGN_TEXT, ALIGN_TEXT[0])}
           disabled={boolean('disabled', false)}
-          emptyStyle={boolean('emptyStyle', false)}
+          // emptyStyle={boolean('emptyStyle', false)}
           id={text('id', 'panel id')}
           isOpen={boolean('isOpen', false)}
-          onChange={action('onChange')}
+          onClick={action('onClick')}
           panelTitle={text('panelTitle', 'Panel title')}
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
@@ -98,6 +101,9 @@ storiesOf('CollapsePanel', module)
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           themeColor={select('themeColor', THEME_COLOR, THEME_COLOR[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
         >
           {text('children', LOREM)}
         </CollapsePanel>

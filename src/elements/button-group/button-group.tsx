@@ -14,6 +14,8 @@ const cn = classNames.bind(style);
 const CLASS_NAME = 'Button-group';
 
 type ButtonGroupPropsType = {
+  /** Устанавливает флаг isActive у кнопки с переанным id */
+  activeId?: string | number;
   /** Задает горизонтальное выравнивание контента кнопок */
   alignText?: ButtonAlignText;
   /** Массив пармаетров для кнопок (принемает не все параметры Button) */
@@ -33,6 +35,7 @@ type ButtonGroupPropsType = {
 };
 
 export const ButtonGroup = memo(({
+  activeId = '',
   alignText,
   buttons,
   isFullWidth,
@@ -78,6 +81,7 @@ export const ButtonGroup = memo(({
             alignText={alignText}
             disabled={disabled}
             id={id}
+            isActive={activeId === id}
             isFullWidth={isVertical}
             onBlur={onBlur}
             onClick={onClick}
@@ -92,6 +96,8 @@ export const ButtonGroup = memo(({
             type="button"
             variant={variant}
             {...(isOnlyIcons ? { icon } : { value })}
+            {...(index === 0 ? { roundSide: startRoundSide } : {})}
+            {...(index === buttons.length - 1 ? { roundSide: endRoundSide } : {})}
           />
         </li>
       ))}

@@ -10,6 +10,7 @@ import {
   ButtonMouseEvent,
   ButtonSize,
   ButtonThemeColor,
+  ButtonVariant,
 } from '../button/types';
 import { CollapseContent, CollapseHeader } from './_components';
 import {
@@ -31,8 +32,6 @@ export type CollapsePanelProps = PropsWithChildren<{
   contentActionsAlign?: CollapseContentActionsAlign;
   /** Флаг неактивного состояния панели */
   disabled?: boolean;
-  /** Флаг отключает визуальное оформление панели */
-  emptyStyle?: boolean;
   /** Конфиг дополнительных кнопок на панели
    * (отключает клик на самой панели, для открытия панели появляется кнопка в левой части)
    * необходимо передать иконки открытия/закрытия */
@@ -42,13 +41,15 @@ export type CollapsePanelProps = PropsWithChildren<{
   /** Флаг состояния панели (открыта/закрыта) */
   isOpen: boolean;
   /** Колбек события клика */
-  onChange?: (panelId?: string | number) => void;
+  onClick?: (panelId?: string | number) => void;
   /** Заголовок панели */
   panelTitle: string;
   /** Задает размер панели */
   size?: ButtonSize;
   /** Задает цветовую тему панели */
   themeColor?: ButtonThemeColor;
+  /** Задает вид панели */
+  variant?: ButtonVariant;
 }>;
 
 export class CollapsePanel extends PureComponent<CollapsePanelProps> {
@@ -82,11 +83,11 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
     }
   };
 
-  handleChange = ({ event, id }: ButtonMouseEvent) => {
-    const { onChange = () => false } = this.props;
+  handlePanelClick = ({ event, id }: ButtonMouseEvent) => {
+    const { onClick = () => false } = this.props;
 
     event.stopPropagation();
-    onChange(id);
+    onClick(id);
   };
 
   render() {
@@ -104,7 +105,7 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
         ref={this.panelRef}
         className={cn(CLASS_NAME, {
           [`${CLASS_NAME}--disabled`]: this.props.disabled,
-          [`${CLASS_NAME}--empty`]: this.props.emptyStyle,
+          [`${CLASS_NAME}--variant-${this.props.variant}`]: this.props.variant,
           [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
         })}
       >
@@ -113,15 +114,15 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
           alignText={this.props.alignText}
           closeOpenIcon={this.props.isOpen ? closeIcon : openIcon}
           disabled={this.props.disabled}
-          emptyStyle={this.props.emptyStyle}
           hasAction={Boolean(this.props.headerActions)}
           headerRef={this.summaryRef}
           id={this.props.id}
           isOpen={this.props.isOpen}
-          onOpenClick={this.handleChange}
+          onPanelClick={this.handlePanelClick}
           size={this.props.size}
           themeColor={themeColor}
           title={this.props.panelTitle}
+          variant={this.props.variant}
         />
         <CollapseContent
           actionButtons={this.props.contentActions}
@@ -130,6 +131,7 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
           disabled={this.props.disabled}
           id={this.props.id}
           isClickable={!Boolean(this.props.headerActions)}
+          isOpen={this.props.isOpen}
           size={this.props.size}
           themeColor={themeColor}
         >

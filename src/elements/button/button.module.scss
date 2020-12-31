@@ -2,7 +2,7 @@ $border-radius: 12px;
 
 .Button {
   align-items: center;
-  border: 1px solid;
+  border: none;
   border-radius: 2px;
   box-sizing: border-box;
   color: var(--baseColor);
@@ -72,26 +72,42 @@ $border-radius: 12px;
     &-big {
       font-size: 26px;
       padding: 15px 30px;
+
+      &-base {
+        padding: 14px 29px;
+      }
     }
     &-medium {
       font-size: 16px;
       padding: 8px 14px;
+
+      &-base {
+        padding: 7px 13px;
+      }
     }
     &-small {
       font-size: 14px;
       padding: 4px 12px;
+
+      &-base {
+        padding: 3px 11px;
+      }
     }
   }
 
   &--theme {
     &-base {
-      background-color: var(--baseColor);
-      border-color: var(--baseColor);
+      background-color: var(--mainColor);
+      border-color: var(--mainColor);
       color: var(--baseColor);
 
       &:hover,
       &:focus {
         box-shadow: 0 0 6px var(--baseColor);
+
+        &:disabled {
+          box-shadow: none;
+        }
       }
     }
     &-accent {
@@ -149,12 +165,12 @@ $border-radius: 12px;
   &--active {
     background-color: var(--activeColor);
     border-color: var(--activeColor);
-    box-shadow: 0 0 6px var(--activeColor);
+    box-shadow: none;
     color: var(--activeColor);
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 6px var(--activeColor);
+      box-shadow: none;
       opacity: 1;
     }
 
@@ -172,10 +188,73 @@ $border-radius: 12px;
     }
   }
 
+  &--variant {
+    &-base {
+      background-color: transparent;
+      border: 1px solid;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+
+        &:disabled {
+          background-color: transparent;
+        }
+      }
+
+      &:disabled {
+        background-color: transparent;
+      }
+    }
+    &-filled {
+      color: var(--baseColor);
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 6px var(--baseColor);
+
+        &:disabled {
+          box-shadow: none;
+        }
+      }
+
+      &-no-icon {
+        color: var(--baseColor);
+      }
+
+      &-base {
+
+        &:disabled {
+          color: var(--mainColor);
+        }
+      }
+    }
+
+    &-only-text {
+      background-color: transparent;
+      border-color: transparent;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border-color: transparent;
+
+        &:disabled {
+          background-color: transparent;
+        }
+      }
+
+      &:disabled {
+        background-color: transparent;
+      }
+    }
+  }
+
   &--disabled {
     background-color: var(--disabledColor);
     border-color: var(--disabledColor);
-    color: var(--disabledColor);
+    box-shadow: none;
+    color: var(--mainColor);
     cursor: default;
 
     &::after,
@@ -188,43 +267,6 @@ $border-radius: 12px;
       background-color: var(--disabledColor);
       box-shadow: none;
       opacity: 1;
-    }
-  }
-
-  &--variant {
-    &-base {
-      background-color: transparent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-    }
-    &-filled {
-      color: var(--baseColor);
-
-      &:hover,
-      &:focus {
-        box-shadow: 0 0 6px var(--baseColor);
-      }
-
-      &-base {
-        color: var(--mainColor);
-      }
-
-      &:disabled {
-        color: var(--baseColor);
-      }
-    }
-    &-only-text {
-      background-color: transparent;
-      border-color: transparent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-color: transparent;
-      }
     }
   }
 
@@ -263,17 +305,6 @@ $border-radius: 12px;
   &--icon {
     border-radius: 50%;
     padding: 0;
-
-    &:disabled {
-      background-color: transparent;
-      color: var(--disabledColor);
-    }
-
-    &-active {
-      &:disabled {
-        color: var(--baseColor);
-      }
-    }
 
     &-big {
       height: 58px;

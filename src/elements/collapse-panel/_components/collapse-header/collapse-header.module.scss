@@ -10,9 +10,68 @@
   padding: 8px 16px;
   transition: color .3s, border .5s ease-in;
 
+  &--theme {
+    &-base {
+      background-color: var(--mainColor);
+      border-color: var(--mainColor);
+      color: var(--baseColor);
+    }
+
+    &-accent {
+      background-color: var(--accentColor);
+      border-color: var(--accentColor);
+      color: var(--accentColor);
+    }
+
+    &-secondary {
+      background-color: var(--secondaryColor);
+      border-color: var(--secondaryColor);
+      color: var(--secondaryColor);
+    }
+
+    &-primary {
+      background-color: var(--primaryColor);
+      border-color: var(--primaryColor);
+      color: var(--primaryColor);
+    }
+
+    &-success {
+      background-color: var(--successColor);
+      border-color: var(--successColor);
+      color: var(--successColor);
+    }
+
+    &-error {
+      background-color: var(--errorColor);
+      border-color: var(--errorColor);
+      color: var(--errorColor);
+    }
+  }
+
+  &--variant {
+    &-base {
+      background-color: transparent;
+    }
+    &-filled {
+      color: var(--baseColor);
+
+      &-no-action {
+        background-color: transparent;
+      }
+    }
+    &-only-text {
+      background-color: transparent;
+    }
+  }
+
   &--disabled {
     border-color: var(--disabledColor);
     color: var(--disabledColor);
+
+    &-filled {
+      background-color: var(--disabledColor);
+      color: var(--mainColor);
+    }
   }
 
   &--opened {

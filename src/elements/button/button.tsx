@@ -143,12 +143,12 @@ export const Button = memo(({
         [`${CLASS_NAME}--rounded`]: roundSide,
         [`${CLASS_NAME}--round-${roundSide}`]: roundSide,
         [`${CLASS_NAME}--icon`]: !value,
-        [`${CLASS_NAME}--icon-active`]: !value && isActive,
         [`${CLASS_NAME}--icon-${size}`]: !value && size,
         [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
         [`${CLASS_NAME}--size-${size}`]: size,
+        [`${CLASS_NAME}--size-${size}-base`]: size && variant === 'base',
         [`${CLASS_NAME}--variant-${variant}`]: variant,
-        [`${CLASS_NAME}--variant-${variant}-base`]: themeColor === 'base',
+        [`${CLASS_NAME}--variant-${variant}-no-icon`]: themeColor === 'base' && value,
       })}
       disabled={disabled || isActive}
       onBlur={handleBlur}

@@ -15,6 +15,7 @@ type CollapseContentProps = PropsWithChildren<{
   disabled?: boolean;
   id?: string | number;
   isClickable?: boolean;
+  isOpen?: boolean;
   size?: ButtonSize;
   themeColor?: ButtonThemeColor;
 }>;
@@ -27,6 +28,7 @@ export const CollapseContent = memo(({
   disabled: mainDisabled,
   id: mainId,
   isClickable,
+  isOpen,
   size,
   themeColor: mainThemeColor,
 }: CollapseContentProps) => (
@@ -43,6 +45,8 @@ export const CollapseContent = memo(({
       <div
         className={cn(`${CLASS_NAME}__actions`, {
           [`${CLASS_NAME}__actions--align-${actionsAlign}`]: actionsAlign,
+          [`${CLASS_NAME}__actions--open`]: isOpen,
+          [`${CLASS_NAME}__actions--theme-${mainThemeColor}`]: mainThemeColor,
         })}
       >
         {actionButtons.map(({
