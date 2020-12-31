@@ -55,9 +55,11 @@ storiesOf('CollapsePanel', module)
             closeIcon: <ArrowDropUp fontSize="inherit" />,
             actionsConfig: [
               {
+                id: 'Add id',
                 icon: <Add fontSize="inherit" />,
                 onClick: action('Add onClick'),
               }, {
+                id: 'Delete id',
                 icon: <Delete fontSize="inherit" />,
                 onClick: action('Delete onClick'),
               }, {

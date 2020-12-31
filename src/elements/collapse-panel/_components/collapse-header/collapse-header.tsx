@@ -16,7 +16,7 @@ const cn = classNames.bind(style);
 const CLASS_NAME = 'Collapse-header';
 
 type CollapseHeaderProps = {
-  actionButtons?: Array<ButtonGroupItem>;
+  actionButtons: Array<ButtonGroupItem>;
   alignText?: ButtonAlignText;
   closeOpenIcon?: ReactNode;
   customPanel?: ReactNode;
@@ -65,7 +65,7 @@ export const CollapseHeader = memo(({
         {customPanel}
       </div>
     )}
-    {!customPanel && hasAction && actionButtons && (
+    {!customPanel && hasAction && (
       <>
         <div className={cn(`${CLASS_NAME}__icon`)}>
           <Button
@@ -85,7 +85,7 @@ export const CollapseHeader = memo(({
         >
           {title}
         </div>
-        {!disabled && (
+        {!disabled && Boolean(actionButtons.length) && (
           <div className={cn(`${CLASS_NAME}__action`)}>
             <ButtonGroup
               buttons={actionButtons}
