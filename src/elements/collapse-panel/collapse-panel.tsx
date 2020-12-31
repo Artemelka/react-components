@@ -1,5 +1,6 @@
 import React, {
   PureComponent,
+  ReactNode,
   RefObject,
   createRef,
   PropsWithChildren,
@@ -30,6 +31,8 @@ export type CollapsePanelProps = PropsWithChildren<{
   contentActions?: Array<ContentButtonGroupItem>;
   /** Задает горизонтальное выравнивание кнопок экшенов в контентной области панели */
   contentActionsAlign?: CollapseContentActionsAlign;
+  /** Кастомный компонент панели */
+  customPanel?: ReactNode;
   /** Флаг неактивного состояния панели */
   disabled?: boolean;
   /** Конфиг дополнительных кнопок на панели
@@ -113,6 +116,7 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
           actionButtons={actionsConfig}
           alignText={this.props.alignText}
           closeOpenIcon={this.props.isOpen ? closeIcon : openIcon}
+          customPanel={this.props.customPanel}
           disabled={this.props.disabled}
           hasAction={Boolean(this.props.headerActions)}
           headerRef={this.summaryRef}

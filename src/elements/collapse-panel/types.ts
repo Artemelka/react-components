@@ -10,7 +10,7 @@ export type ContentButtonGroupItem = ButtonGroupItem & {
 export type CollapseHeaderActionConfig = {
   openIcon: ReactNode;
   closeIcon: ReactNode;
-  actionsConfig: Array<ContentButtonGroupItem>;
+  actionsConfig?: Array<ContentButtonGroupItem>;
 };
 
 export type CollapseContentActionsAlign = 'left' | 'center' | 'right';
