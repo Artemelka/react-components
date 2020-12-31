@@ -55,9 +55,11 @@ storiesOf('CollapsePanel', module)
             closeIcon: <ArrowDropUp fontSize="inherit" />,
             actionsConfig: [
               {
+                id: 'Add id',
                 icon: <Add fontSize="inherit" />,
                 onClick: action('Add onClick'),
               }, {
+                id: 'Delete id',
                 icon: <Delete fontSize="inherit" />,
                 onClick: action('Delete onClick'),
               }, {
@@ -91,6 +93,37 @@ storiesOf('CollapsePanel', module)
           alignText={select('alignText', ALIGN_TEXT, ALIGN_TEXT[0])}
           disabled={boolean('disabled', false)}
           // emptyStyle={boolean('emptyStyle', false)}
+          id={text('id', 'panel id')}
+          isOpen={boolean('isOpen', false)}
+          onClick={action('onClick')}
+          panelTitle={text('panelTitle', 'Panel title')}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          size={select('size', BUTTON_SIZES, BUTTON_SIZES[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          themeColor={select('themeColor', THEME_COLOR, THEME_COLOR[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
+        >
+          {text('children', LOREM)}
+        </CollapsePanel>
+      </StoriesItemWrapper>
+      <StoriesItemWrapper>
+        <CollapsePanel
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          alignText={select('alignText', ALIGN_TEXT, ALIGN_TEXT[0])}
+          customPanel={
+            <div>
+              <input id="collapseCheckbox" type="checkbox" />
+              <label htmlFor="collapseCheckbox">Custom panel with Checkbox</label>
+              <br />
+              <input type="button" value="CLICK" />
+            </div>
+          }
+          disabled={boolean('disabled', false)}
           id={text('id', 'panel id')}
           isOpen={boolean('isOpen', false)}
           onClick={action('onClick')}

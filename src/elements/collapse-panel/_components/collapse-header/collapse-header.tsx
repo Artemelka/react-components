@@ -16,9 +16,10 @@ const cn = classNames.bind(style);
 const CLASS_NAME = 'Collapse-header';
 
 type CollapseHeaderProps = {
-  actionButtons?: Array<ButtonGroupItem>;
+  actionButtons: Array<ButtonGroupItem>;
   alignText?: ButtonAlignText;
   closeOpenIcon?: ReactNode;
+  customPanel?: ReactNode;
   disabled?: boolean;
   hasAction: boolean;
   headerRef: RefObject<HTMLDivElement>;
@@ -35,6 +36,7 @@ export const CollapseHeader = memo(({
   actionButtons,
   alignText = 'left',
   closeOpenIcon,
+  customPanel,
   disabled,
   hasAction,
   headerRef,
@@ -58,7 +60,12 @@ export const CollapseHeader = memo(({
       [`${CLASS_NAME}--variant-${variant}-no-action`]: !hasAction && variant === 'filled',
     })}
   >
-    {hasAction && actionButtons ? (
+    {customPanel && (
+      <div className={cn(`${CLASS_NAME}__custom-panel`)}>
+        {customPanel}
+      </div>
+    )}
+    {!customPanel && hasAction && (
       <>
         <div className={cn(`${CLASS_NAME}__icon`)}>
           <Button
@@ -78,7 +85,7 @@ export const CollapseHeader = memo(({
         >
           {title}
         </div>
-        {!disabled && (
+        {!disabled && Boolean(actionButtons.length) && (
           <div className={cn(`${CLASS_NAME}__action`)}>
             <ButtonGroup
               buttons={actionButtons}
@@ -90,7 +97,8 @@ export const CollapseHeader = memo(({
           </div>
         )}
       </>
-    ) : (
+    )}
+    {!hasAction && !customPanel && (
       <Button
         alignText={alignText}
         disabled={disabled}
