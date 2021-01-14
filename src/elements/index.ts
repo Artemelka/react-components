@@ -28,6 +28,7 @@ export {
   CollapseHeaderActionConfig,
   ContentButtonGroupItem,
 } from './collapse-panel/types';
+export { Input } from './input';
 export { Overlay } from './overlay';
 export {
   ProgressCircular,
