@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import { Anchor } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const PROJECT_LINK = 'https://github.com/Artemelka/react-components';
 
@@ -13,8 +14,8 @@ storiesOf('Anchor', module)
     component: Anchor,
     componentSubtitle: 'Компонент для реализации гиперссылок и псевдоссылок',
   })
-  .add('Anchor', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Anchor', () => (
+    <StoriesItem>
       <p style={{ color: 'var(--baseColor)' }}>
         {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper,
         nisl in ultricies consectetur, sapien dui vestibulum mauris, ${' '}`}
@@ -38,5 +39,5 @@ storiesOf('Anchor', module)
         </Anchor>
         {`${' '} vitae sagittis turpis sapien quis felis. Phasellus venenatis accumsan urna nec imperdiet.`}
       </p>
-    </StoriesItemWrapper>
+    </StoriesItem>
   ));

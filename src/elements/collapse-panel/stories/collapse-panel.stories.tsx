@@ -8,6 +8,7 @@ import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
 import { CollapsePanel } from '@artemelka/react-components';
 import { LOREM } from '../../constants';
+import { StoriesItem } from '../../_story-components';
 
 const ALIGN_TEXT = [undefined, 'left', 'center', 'right'];
 const THEME_COLOR = [undefined, 'base', 'accent', 'primary', 'secondary', 'success', 'error'];
@@ -19,9 +20,9 @@ storiesOf('CollapsePanel', module)
     component: CollapsePanel,
     componentSubtitle: 'Компонент для отображения ????',
   })
-  .add('CollapsePanel', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
-      <StoriesItemWrapper>
+  .add('CollapsePanel', () => (
+    <StoriesItem>
+      <StoriesItem>
         <CollapsePanel
           contentActions={[
             {
@@ -85,8 +86,8 @@ storiesOf('CollapsePanel', module)
         >
           {text('children', LOREM)}
         </CollapsePanel>
-      </StoriesItemWrapper>
-      <StoriesItemWrapper>
+      </StoriesItem>
+      <StoriesItem>
         <CollapsePanel
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
@@ -109,8 +110,8 @@ storiesOf('CollapsePanel', module)
         >
           {text('children', LOREM)}
         </CollapsePanel>
-      </StoriesItemWrapper>
-      <StoriesItemWrapper>
+      </StoriesItem>
+      <StoriesItem>
         <CollapsePanel
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
@@ -140,6 +141,6 @@ storiesOf('CollapsePanel', module)
         >
           {text('children', LOREM)}
         </CollapsePanel>
-      </StoriesItemWrapper>
-    </StoriesItemWrapper>
+      </StoriesItem>
+    </StoriesItem>
   ));

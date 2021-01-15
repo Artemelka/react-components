@@ -7,6 +7,7 @@ import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
 import Delete from '@material-ui/icons/Delete';
 import { ButtonGroup } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const ALIGN_TEXT = ['left', 'center', 'right'];
 const BUTTON_SIZES = [undefined, 'big', 'medium', 'small'];
@@ -19,9 +20,9 @@ storiesOf('ButtonGroup', module)
     component: ButtonGroup,
     componentSubtitle: 'Компонент для реализации группы кнопок',
   })
-  .add('ButtonGroup', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
-      <StoriesItemWrapper>
+  .add('ButtonGroup', () => (
+    <StoriesItem>
+      <StoriesItem>
         <ButtonGroup
           activeId={BUTTONS_ID[2]}
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
@@ -60,8 +61,8 @@ storiesOf('ButtonGroup', module)
           // @ts-ignore
           variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
         />
-      </StoriesItemWrapper>
-      <StoriesItemWrapper>
+      </StoriesItem>
+      <StoriesItem>
         <ButtonGroup
           activeId={BUTTONS_ID[2]}
           buttons={[
@@ -97,6 +98,6 @@ storiesOf('ButtonGroup', module)
           // @ts-ignore
           variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
         />
-      </StoriesItemWrapper>
-    </StoriesItemWrapper>
+      </StoriesItem>
+    </StoriesItem>
   ));

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Overlay } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const wrapperStyle: CSSProperties = {
   margin: '40px',
@@ -18,8 +19,8 @@ storiesOf('Overlay', module)
     component: Overlay,
     componentSubtitle: 'Компонент для реализации затемнения рабочей области',
   })
-  .add('Overlay', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Overlay', () => (
+    <StoriesItem>
       <h2>Перекрытое содержимое рабочей области</h2>
       <div style={wrapperStyle}>
         <h2>Container with position relative</h2>
@@ -32,5 +33,5 @@ storiesOf('Overlay', module)
           <p>активный контент</p>
         </Overlay>
       </div>
-    </StoriesItemWrapper>
+    </StoriesItem>
   ));

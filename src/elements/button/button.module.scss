@@ -71,26 +71,26 @@ $border-radius: 12px;
   &--size {
     &-big {
       font-size: 26px;
-      padding: 15px 30px;
+      padding: 14px 30px;
 
       &-base {
-        padding: 14px 29px;
+        padding: 13px 29px;
       }
     }
     &-medium {
       font-size: 16px;
-      padding: 8px 14px;
+      padding: 10px 14px;
 
       &-base {
-        padding: 7px 13px;
+        padding: 9px 13px;
       }
     }
     &-small {
       font-size: 14px;
-      padding: 4px 12px;
+      padding: 7px 12px;
 
       &-base {
-        padding: 3px 11px;
+        padding: 6px 11px;
       }
     }
   }
@@ -307,16 +307,17 @@ $border-radius: 12px;
     padding: 0;
 
     &-big {
-      height: 58px;
-      width: 58px;
+      height: 46px;
+      width: 46px;
     }
     &-medium {
-      height: 34px;
-      width: 34px;
+      height: 28px;
+      width: 28px;
     }
     &-small {
-      height: 24px;
-      width: 24px;
+      font-size: 10px;
+      height: 20px;
+      width: 20px;
     }
   }
 

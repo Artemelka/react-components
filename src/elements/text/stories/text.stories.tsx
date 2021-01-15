@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Text } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const ALIGN: Array<string> = ['center', 'left', 'right'];
 const TAG_NAMES = ['span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
@@ -12,8 +13,8 @@ storiesOf('Text', module)
     component: Text,
     componentSubtitle: 'Компонент для отображения стилизованного текста',
   })
-  .add('Text', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Text', () => (
+    <StoriesItem>
       <Text
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
@@ -31,5 +32,5 @@ storiesOf('Text', module)
       <p style={{ color: 'red', marginTop: '80px' }}>
         <Text>Компонент наследует цвет от родителя</Text>
       </p>
-    </StoriesItemWrapper>
+    </StoriesItem>
   ));
