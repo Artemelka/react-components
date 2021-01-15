@@ -8,6 +8,7 @@ import {
   CIRCLE_SIZE,
   PROGRESS_STATUSES,
 } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const ProgressSelectOptions = {
   range: true,
@@ -25,8 +26,8 @@ storiesOf('Progress', module)
     },
     componentSubtitle: 'Компонент для отображения индикации прогресса',
   })
-  .add('Circular', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Circular', () => (
+    <StoriesItem>
       <ProgressCircular
         percent={number('percent', 50, ProgressSelectOptions)}
         singleColor={boolean('single color', true)}
@@ -35,10 +36,10 @@ storiesOf('Progress', module)
         withContour={boolean('withContour', false)}
         withText={boolean('withText', false)}
       />
-    </StoriesItemWrapper>
+    </StoriesItem>
   ))
-  .add('Linear', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Linear', () => (
+    <StoriesItem>
       <ProgressLinear
         percent={number('percent', 50, ProgressSelectOptions)}
         singleColor={boolean('single color', true)}
@@ -47,10 +48,10 @@ storiesOf('Progress', module)
         withContour={boolean('withContour', false)}
         withText={boolean('withText', false)}
       />
-    </StoriesItemWrapper>
+    </StoriesItem>
   ))
-  .add('Text', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Text', () => (
+    <StoriesItem>
       <ProgressText
         label="Custom label"
         percent={number('percent', 50, ProgressSelectOptions)}
@@ -58,5 +59,5 @@ storiesOf('Progress', module)
         status={select('status', PROGRESS_STATUSES, PROGRESS_STATUSES.BASE)}
         withContour={boolean('withContour', false)}
       />
-    </StoriesItemWrapper>
+    </StoriesItem>
   ));

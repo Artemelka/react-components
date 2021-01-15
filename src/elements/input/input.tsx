@@ -154,6 +154,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
       autoComplete = 'off',
       iconConfig: { icon, onClick: onIconClick } = {},
       isError = false,
+      isReadOnly= false,
       disabled = false,
       size = 'medium',
       themeColor = 'base',
@@ -161,7 +162,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
       value,
       variant = 'base',
     } = this.props;
-    const hasIcon = icon && !disabled && Boolean(value);
+    const hasIcon = icon && !disabled && !isReadOnly && (!onIconClick || Boolean(value));
 
     return (
       <div

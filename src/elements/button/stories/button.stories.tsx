@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import Delete from '@material-ui/icons/Delete';
 import { Button } from '@artemelka/react-components';
+import { StoriesItem } from '../../_story-components';
 
 const ALIGN_TEXT = ['left', 'center', 'right'];
 const BUTTON_TYPES = ['button', 'submit', 'reset'];
@@ -17,8 +18,8 @@ storiesOf('Button', module)
     component: Button,
     componentSubtitle: 'Компонент для реализации кнопок',
   })
-  .add('Button', ({ StoriesItemWrapper }: any) => (
-    <StoriesItemWrapper>
+  .add('Button', () => (
+    <StoriesItem>
       <Button
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
@@ -51,5 +52,5 @@ storiesOf('Button', module)
         // @ts-ignore
         variant={select('variant', BUTTON_VARIANTS, BUTTON_VARIANTS[0])}
       />
-    </StoriesItemWrapper>
+    </StoriesItem>
   ));
