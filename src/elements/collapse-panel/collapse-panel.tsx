@@ -46,7 +46,7 @@ export type CollapsePanelProps = PropsWithChildren<{
   /** Колбек события клика */
   onClick?: (panelId?: string | number) => void;
   /** Заголовок панели */
-  panelTitle: string;
+  panelTitle?: string;
   /** Задает размер панели */
   size?: ButtonSize;
   /** Задает цветовую тему панели */
@@ -125,22 +125,24 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
           onPanelClick={this.handlePanelClick}
           size={this.props.size}
           themeColor={themeColor}
-          title={this.props.panelTitle}
+          title={this.props.panelTitle || ''}
           variant={this.props.variant}
         />
-        <CollapseContent
-          actionButtons={this.props.contentActions}
-          actionsAlign={this.props.contentActionsAlign}
-          contentRef={this.contentRef}
-          disabled={this.props.disabled}
-          id={this.props.id}
-          isClickable={!Boolean(this.props.headerActions)}
-          isOpen={this.props.isOpen}
-          size={this.props.size}
-          themeColor={themeColor}
-        >
-          {this.props.children}
-        </CollapseContent>
+        {!this.props.disabled && (
+          <CollapseContent
+            actionButtons={this.props.contentActions}
+            actionsAlign={this.props.contentActionsAlign}
+            contentRef={this.contentRef}
+            disabled={this.props.disabled}
+            id={this.props.id}
+            isClickable={!Boolean(this.props.headerActions)}
+            isOpen={this.props.isOpen}
+            size={this.props.size}
+            themeColor={themeColor}
+          >
+            {this.props.children}
+          </CollapseContent>
+        )}
       </div>
     );
   }

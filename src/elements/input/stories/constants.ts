@@ -40,7 +40,3 @@ export const INITIAL_VALUES: Record<string, string> = {
 };
 
 export const COMPONENT_TITLE = 'Компонент для реализации полей ввода';
-
-export const DESCRIPTION = `Здесь приведены самые популярные примеры использования и виды настроек компонента.
-Если Вам нужа более тонкая настройка -
-Вы можете перейти в пункт меню Input/Knobs и там эксперементировать.`;

@@ -1,7 +1,7 @@
 import { MouseEvent, KeyboardEvent, FocusEvent } from 'react';
 
 type AnchorEvent = {
-  href?: string;
+  href: string;
   id?: string;
 };
 

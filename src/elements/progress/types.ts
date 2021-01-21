@@ -9,7 +9,7 @@ export type ProgressBaseProps = {
   /** Значение индикатора в % */
   percent: number;
   /** Размер индикатора (принимает значения константы CIRCLE_SIZE) */
-  size?: string;
+  size?: 'S' | 'M' | 'L' | 'XL';
   /** параметр цветового отображения индикатора
    * (принимает значения константы PROGRESS_STATUSES, зависит от singleColor)
    * */

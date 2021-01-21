@@ -40,3 +40,7 @@ Nulla quis odio at lorem hendrerit ultricies at quis elit. Sed nec urna laoreet,
 In rutrum ut ante ac gravida. Proin sit amet ligula facilisis, dapibus augue eget, euismod purus.
 Maecenas condimentum dignissim consectetur. Maecenas tincidunt, enim ut euismod eleifend, lacus nibh suscipit lorem, id interdum mi massa in purus.
 Nunc ut magna nibh. Duis eu mauris consequat, consectetur nisi et, blandit nisl. Proin laoreet nulla ante, sit amet fermentum quam faucibus in.`;
+
+export const LOREM_RU = `Задача организации, в особенности же рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в
+формировании соответствующий условий активизации. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности играет важную роль в
+формировании модели развития.`;

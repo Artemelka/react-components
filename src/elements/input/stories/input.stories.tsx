@@ -25,43 +25,8 @@ storiesOf('Input', module)
     component: Input,
     componentSubtitle: COMPONENT_TITLE,
   })
-  .add('Knobs', () => (
-    <StoriesItem>
-      <Input
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        autoComplete={select('autoComplete', AUTOCOMPLETE, AUTOCOMPLETE[0])}
-        autoFocus={boolean('autoFocus', false)}
-        cursorPointer={boolean('cursorPointer', false)}
-        disabled={boolean('disabled', false)}
-        id={text('id', 'inputId')}
-        isError={boolean('isError', false)}
-        isReadOnly={boolean('isReadOnly', false)}
-        name={text('name', 'inputName')}
-        onBlur={action('onBlur')}
-        onChange={action('onChange')}
-        onClick={action('onClick')}
-        onFocus={action('onFocus')}
-        onKeyPress={action('onKeyPress')}
-        placeholder={text('placeholder', PLACEHOLDER_TEXT)}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        size={select('size', INPUT_SIZE, INPUT_SIZE[0])}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        themeColor={select('themeColor', THEME_COLOR, THEME_COLOR[0])}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        type={select('type', INPUT_TYPE, INPUT_TYPE[0])}
-        value={text('value', '')}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        variant={select('variant', INPUT_VARIANTS, INPUT_VARIANTS[0])}
-      />
-    </StoriesItem>
-  ))
   .add('Examples', () => {
-    const InputStateComponent = (props: any) => {
+    const InputController = (props: any) => {
       const [state, setState] = useState(INITIAL_VALUES);
       const [isVisible, toggleIsVisible] = useState(false);
 
@@ -87,7 +52,7 @@ storiesOf('Input', module)
     };
 
     return (
-      <InputStateComponent>
+      <InputController>
         {({
           isVisible,
           state,
@@ -97,11 +62,11 @@ storiesOf('Input', module)
         }: any) => (
           <StoriesItem>
             <IntroComponent />
-            <h2>Input type</h2>
-            <p>Компонент может быть одним из трех типов. (text)</p>
+            <h2>type (text)</h2>
+            <p>Компонент может быть одним из трех типов.</p>
             <GridRow>
               <GridCell>
-                <h5>Type: text</h5>
+                <h5>text</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -114,7 +79,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Type: number</h5>
+                <h5>number</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -128,7 +93,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Type: password</h5>
+                <h5>password</h5>
                 <Input
                   iconConfig={{
                     icon: !isVisible
@@ -145,6 +110,7 @@ storiesOf('Input', module)
               </GridCell>
             </GridRow>
             <h2>Input state</h2>
+            <p>Компонент может иметь различные состояния</p>
             <GridRow>
               <GridCell>
                 <h5>Disabled</h5>
@@ -211,11 +177,11 @@ storiesOf('Input', module)
               </GridCell>
               <InputStateDescription />
             </GridRow>
-            <h2>Input variant</h2>
-            <p>Компонент имеет три варианта отображения. (base)</p>
+            <h2>variant (base)</h2>
+            <p>Компонент имеет три варианта отображения.</p>
             <GridRow>
               <GridCell>
-                <h5>Variant: only text</h5>
+                <h5>only text</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -229,7 +195,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Variant: base</h5>
+                <h5>base</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -243,7 +209,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Variant: filled</h5>
+                <h5>filled</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -257,11 +223,12 @@ storiesOf('Input', module)
                 />
               </GridCell>
             </GridRow>
-            <h2>Input size</h2>
-            <p>Компонент может быть одного из трех размеров. (middle)</p>
+            <h2>size (middle)</h2>
+            <p>Компонент может быть одного из трех размеров.</p>
+            <h4>base</h4>
             <GridRow>
               <GridCell>
-                <h5>Size: big</h5>
+                <h5>big</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -275,7 +242,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: medium</h5>
+                <h5>medium</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -289,7 +256,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: small</h5>
+                <h5>small</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -302,8 +269,11 @@ storiesOf('Input', module)
                   value={state['input-size-small']}
                 />
               </GridCell>
+            </GridRow>
+            <h4>filled</h4>
+            <GridRow>
               <GridCell>
-                <h5>Size: big (filled)</h5>
+                <h5>big</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -318,7 +288,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: medium (filled)</h5>
+                <h5>medium</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -333,7 +303,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: small (filled)</h5>
+                <h5>small</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -347,8 +317,11 @@ storiesOf('Input', module)
                   variant="filled"
                 />
               </GridCell>
+            </GridRow>
+            <h4>only-text</h4>
+            <GridRow>
               <GridCell>
-                <h5>Size: big (only-text)</h5>
+                <h5>big</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -363,7 +336,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: medium (only-text)</h5>
+                <h5>medium</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -378,7 +351,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Size: small (only-text)</h5>
+                <h5>small</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -393,11 +366,12 @@ storiesOf('Input', module)
                 />
               </GridCell>
             </GridRow>
-            <h2>Input theme color</h2>
+            <h2>themeColor</h2>
             <p>Компонент может сменить тему на одну из трех.</p>
+            <h4>base</h4>
             <GridRow>
               <GridCell>
-                <h5>Theme color: accent</h5>
+                <h5>accent</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -411,21 +385,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Theme color: secondary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-base-secondary']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Theme color: primary</h5>
+                <h5>primary</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -439,7 +399,24 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Theme color: accent (filled)</h5>
+                <h5>secondary</h5>
+                <Input
+                  iconConfig={{
+                    icon: <Clear fontSize="inherit" />,
+                    onClick: onClear,
+                  }}
+                  name="input-base-secondary"
+                  onChange={onChange}
+                  placeholder={PLACEHOLDER_TEXT}
+                  themeColor="secondary"
+                  value={state['input-base-secondary']}
+                />
+              </GridCell>
+            </GridRow>
+            <h4>filled</h4>
+            <GridRow>
+              <GridCell>
+                <h5>accent</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -454,22 +431,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Theme color: secondary (filled)</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-filled-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-filled-secondary']}
-                  variant="filled"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Theme color: primary (filled)</h5>
+                <h5>primary</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -484,7 +446,25 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Theme color: accent (only-text)</h5>
+                <h5>secondary</h5>
+                <Input
+                  iconConfig={{
+                    icon: <Clear fontSize="inherit" />,
+                    onClick: onClear,
+                  }}
+                  name="input-filled-secondary"
+                  onChange={onChange}
+                  placeholder={PLACEHOLDER_TEXT}
+                  themeColor="secondary"
+                  value={state['input-filled-secondary']}
+                  variant="filled"
+                />
+              </GridCell>
+            </GridRow>
+            <h4>only-text</h4>
+            <GridRow>
+              <GridCell>
+                <h5>accent</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -499,22 +479,7 @@ storiesOf('Input', module)
                 />
               </GridCell>
               <GridCell>
-                <h5>Theme color: secondary (only-text)</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-only-text-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-only-text-secondary']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Theme color: primary (only-text)</h5>
+                <h5>primary</h5>
                 <Input
                   iconConfig={{
                     icon: <Clear fontSize="inherit" />,
@@ -528,9 +493,59 @@ storiesOf('Input', module)
                   variant="only-text"
                 />
               </GridCell>
+              <GridCell>
+                <h5>secondary</h5>
+                <Input
+                  iconConfig={{
+                    icon: <Clear fontSize="inherit" />,
+                    onClick: onClear,
+                  }}
+                  name="input-only-text-secondary"
+                  onChange={onChange}
+                  placeholder={PLACEHOLDER_TEXT}
+                  themeColor="secondary"
+                  value={state['input-only-text-secondary']}
+                  variant="only-text"
+                />
+              </GridCell>
             </GridRow>
           </StoriesItem>
         )}
-      </InputStateComponent>
+      </InputController>
     );
-  });
+  })
+  .add('Knobs', () => (
+    <StoriesItem>
+      <Input
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        autoComplete={select('autoComplete', AUTOCOMPLETE, AUTOCOMPLETE[0])}
+        autoFocus={boolean('autoFocus', false)}
+        cursorPointer={boolean('cursorPointer', false)}
+        disabled={boolean('disabled', false)}
+        id={text('id', 'inputId')}
+        isError={boolean('isError', false)}
+        isReadOnly={boolean('isReadOnly', false)}
+        name={text('name', 'inputName')}
+        onBlur={action('onBlur')}
+        onChange={action('onChange')}
+        onClick={action('onClick')}
+        onFocus={action('onFocus')}
+        onKeyPress={action('onKeyPress')}
+        placeholder={text('placeholder', PLACEHOLDER_TEXT)}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        size={select('size', INPUT_SIZE, INPUT_SIZE[0])}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        themeColor={select('themeColor', THEME_COLOR, THEME_COLOR[0])}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        type={select('type', INPUT_TYPE, INPUT_TYPE[0])}
+        value={text('value', '')}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        variant={select('variant', INPUT_VARIANTS, INPUT_VARIANTS[0])}
+      />
+    </StoriesItem>
+  ));
