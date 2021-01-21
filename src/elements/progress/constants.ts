@@ -1,4 +1,4 @@
-export const CIRCLE_SIZE = {
+export const CIRCLE_SIZE: Record<string, 'S' | 'M' | 'L' | 'XL'> = {
   S: 'S',
   M: 'M',
   L: 'L',

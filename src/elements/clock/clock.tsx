@@ -9,7 +9,7 @@ export type ClockProps = {
   /** Колбэк срабатывания будильника */
   onAlarm?: () => void;
   /** Задает размер часов */
-  size: ClockSize;
+  size?: ClockSize;
   /** временная зона часов */
   timeZone?: string;
 };
@@ -68,7 +68,7 @@ export class Clock extends Component<ClockProps, ClockState> {
     const {
       alarm, hour, min, sec,
     } = this.state;
-    const { size } = this.props;
+    const { size = 'small' } = this.props;
 
     return (
       <ClockView alarm={alarm} hour={hour} min={min} sec={sec} size={size} />

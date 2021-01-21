@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+import React, { memo, PropsWithChildren } from 'react';
 
-export const GridRow = (props: PropsWithChildren<{}>) => (
+export const GridRow = memo((props: PropsWithChildren<{}>) => (
   <div
     style={{
       display: 'flex',
@@ -12,11 +12,12 @@ export const GridRow = (props: PropsWithChildren<{}>) => (
   >
     {props.children}
   </div>
-);
+));
 
-export const GridCell = (props: PropsWithChildren<{ fullWidth?: boolean }>) => (
+export const GridCell = memo((props: PropsWithChildren<{ fullWidth?: boolean }>) => (
   <div
     style={{
+      alignItems: 'flex-start',
       display: 'inline-flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -26,4 +27,18 @@ export const GridCell = (props: PropsWithChildren<{ fullWidth?: boolean }>) => (
   >
     {props.children}
   </div>
-);
+));
+
+export const GridItem = memo(({
+  children,
+  fullWidth,
+}: PropsWithChildren<{ fullWidth: boolean }>) => (
+  <div
+    style={{
+      padding: '30px 30px',
+      width: fullWidth ? '100%' : 'auto',
+    }}
+  >
+    {children}
+  </div>
+));

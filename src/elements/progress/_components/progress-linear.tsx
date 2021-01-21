@@ -25,7 +25,7 @@ export const ProgressLinear = ({
   );
 
   return (
-    <div className={cn('Progress')}>
+    <div className={cn('Progress', 'Progress--linear')}>
       <div
         className={cn('Progress__line', {
           'Progress__line--size-x': size === CIRCLE_SIZE.S,

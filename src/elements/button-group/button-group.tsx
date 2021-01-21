@@ -80,6 +80,7 @@ export const ButtonGroup = memo(({
           <Button
             alignText={alignText}
             disabled={disabled}
+            icon={icon}
             id={id}
             isActive={activeId === id}
             isFullWidth={isVertical}
@@ -95,7 +96,7 @@ export const ButtonGroup = memo(({
             themeColor={themeColor}
             type="button"
             variant={variant}
-            {...(isOnlyIcons ? { icon } : { value })}
+            {...(isOnlyIcons ? {} : { value })}
             {...(index === 0 ? { roundSide: startRoundSide } : {})}
             {...(index === buttons.length - 1 ? { roundSide: endRoundSide } : {})}
           />

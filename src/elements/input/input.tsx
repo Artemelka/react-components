@@ -154,7 +154,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
       autoComplete = 'off',
       iconConfig: { icon, onClick: onIconClick } = {},
       isError = false,
-      isReadOnly= false,
+      isReadOnly = false,
       disabled = false,
       size = 'medium',
       themeColor = 'base',
