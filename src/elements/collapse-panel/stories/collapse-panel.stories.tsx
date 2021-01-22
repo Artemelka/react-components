@@ -9,7 +9,9 @@ import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
 import { CollapsePanel } from '@artemelka/react-components';
 import { LOREM, LOREM_RU } from '../../constants';
 import {
+  Grid,
   GridCell,
+  GridDivider,
   GridRow,
   StoriesItem,
 } from '../../_story-components';
@@ -37,864 +39,876 @@ storiesOf('CollapsePanel', module)
     };
 
     return (
-      <StoriesItem>
+      <>
         <IntroComponent />
-        <GridRow>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>Size (medium)</h2>
         <p>Компонент может быть одного из трех размеров.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>small</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="it`s small"
-                  size="small"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>medium</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="it`s medium"
-                  size="medium"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>big</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="it`s big"
-                  size="big"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <h5>small</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="it`s small"
+                    size="small"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <h5>medium</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="it`s medium"
+                    size="medium"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <h5>big</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="it`s big"
+                    size="big"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>customPanel</h2>
         <CustomPanelDescription />
-        <GridRow>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  customPanel={
-                    <div>
-                      <input id="collapseCheckbox" type="checkbox" />
-                      <label htmlFor="collapseCheckbox">Custom panel with Checkbox</label>
-                      <br />
-                      <button onClick={onClick} type="button">CLICK</button>
-                    </div>
-                  }
-                  isOpen={isOpen}
-                  size="big"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    customPanel={
+                      <div>
+                        <input id="collapseCheckbox" type="checkbox" />
+                        <label htmlFor="collapseCheckbox">Custom panel with Checkbox</label>
+                        <br />
+                        <button onClick={onClick} type="button">CLICK</button>
+                      </div>
+                    }
+                    isOpen={isOpen}
+                    size="big"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>headerActions</h2>
         <HeaderActionsDescription />
-        <GridRow>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>contentActions</h2>
         <p>В скрытой области панели можно разместить кнопки действий.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <PanelController open>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  contentActions={[
-                    {
-                      value: 'first',
-                    }, {
-                      disabled: true,
-                      icon: <Delete fontSize="inherit" />,
-                      value: 'second',
-                    }, {
-                      themeColor: 'error',
-                      variant: 'filled',
-                      value: 'third',
-                    }, {
-                      themeColor: 'primary',
-                      variant: 'base',
-                      value: 'fourth',
-                    },
-                  ]}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController open>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    contentActions={[
+                      {
+                        value: 'first',
+                      }, {
+                        disabled: true,
+                        icon: <Delete fontSize="inherit" />,
+                        value: 'second',
+                      }, {
+                        themeColor: 'error',
+                        variant: 'filled',
+                        value: 'third',
+                      }, {
+                        themeColor: 'primary',
+                        variant: 'base',
+                        value: 'fourth',
+                      },
+                    ]}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>disabled</h2>
         <p>Содержимое скрытой области не попадет в разметку.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  disabled
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't open me"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    disabled
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't open me"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>Variant (base)</h2>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  variant="base"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <h5>base</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    variant="base"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <h5>filled</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <h5>only text</h5>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>themeColor</h2>
         <p>Компонент может сменить тему на одну из пяти.</p>
-        <h4>accent</h4>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="accent"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="accent"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="accent"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="accent"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only-text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="accent"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="accent"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
-        <h4>primary</h4>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="primary"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="primary"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="primary"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="primary"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only-text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="primary"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="primary"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
-        <h4>secondary</h4>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="secondary"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="secondary"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="secondary"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="secondary"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only-text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="secondary"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="secondary"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
-        <h4>success</h4>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="success"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="success"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="success"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="success"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only-text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="success"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="success"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
-        <h4>error</h4>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="error"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="error"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="error"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="error"
-                  variant="filled"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only-text</h5>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
-                  themeColor="error"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-          <GridCell fullWidth>
-            <PanelController>
-              {({ isOpen, onClick }: any) => (
-                <CollapsePanel
-                  headerActions={{
-                    openIcon: <ArrowDropDown fontSize="inherit" />,
-                    closeIcon: <ArrowDropUp fontSize="inherit" />,
-                    actionsConfig: [
-                      {
-                        icon: <Add fontSize="inherit" />,
-                      }, {
-                        icon: <Delete fontSize="inherit" />,
-                      },
-                    ],
-                  }}
-                  isOpen={isOpen}
-                  onClick={onClick}
-                  panelTitle="you can't click me"
-                  themeColor="error"
-                  variant="only-text"
-                >
-                  {LOREM}
-                </CollapsePanel>
-              )}
-            </PanelController>
-          </GridCell>
-        </GridRow>
-      </StoriesItem>
+        <Grid>
+          <h4>accent</h4>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="accent"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="accent"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="accent"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="accent"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="accent"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="accent"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+          <h4>primary</h4>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="primary"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="primary"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="primary"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="primary"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="primary"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="primary"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+          <h4>secondary</h4>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="secondary"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="secondary"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="secondary"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="secondary"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="secondary"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="secondary"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+          <h4>success</h4>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="success"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="success"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="success"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="success"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="success"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="success"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+          <h4>error</h4>
+          <GridRow>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="error"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="error"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="error"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="error"
+                    variant="filled"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
+                    themeColor="error"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+            <GridCell size={12}>
+              <PanelController>
+                {({ isOpen, onClick }: any) => (
+                  <CollapsePanel
+                    headerActions={{
+                      openIcon: <ArrowDropDown fontSize="inherit" />,
+                      closeIcon: <ArrowDropUp fontSize="inherit" />,
+                      actionsConfig: [
+                        {
+                          icon: <Add fontSize="inherit" />,
+                        }, {
+                          icon: <Delete fontSize="inherit" />,
+                        },
+                      ],
+                    }}
+                    isOpen={isOpen}
+                    onClick={onClick}
+                    panelTitle="you can't click me"
+                    themeColor="error"
+                    variant="only-text"
+                  >
+                    {LOREM}
+                  </CollapsePanel>
+                )}
+              </PanelController>
+            </GridCell>
+          </GridRow>
+        </Grid>
+      </>
     );
   })
   .add('Accordion example', () => {

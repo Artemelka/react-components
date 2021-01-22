@@ -7,6 +7,7 @@ import {
   CLOCK_TIME_ZONES_COLLECTION,
 } from '@artemelka/react-components';
 import {
+  Grid,
   GridRow,
   GridCell,
   StoriesItem,
@@ -25,43 +26,49 @@ storiesOf('Clock', module)
       <IntroComponent />
       <h2>Size (small)</h2>
       <p>Компонент может быть одного из трех размеров.</p>
-      <GridRow>
-        <GridCell>
-          <h5>small</h5>
-          <Clock size="small" />
-        </GridCell>
-        <GridCell>
-          <h5>medium</h5>
-          <Clock size="medium" />
-        </GridCell>
-        <GridCell>
-          <h5>large</h5>
-          <Clock size="large" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridRow>
+          <GridCell>
+            <h5>small</h5>
+            <Clock size="small" />
+          </GridCell>
+          <GridCell>
+            <h5>medium</h5>
+            <Clock size="medium" />
+          </GridCell>
+          <GridCell>
+            <h5>large</h5>
+            <Clock size="large" />
+          </GridCell>
+        </GridRow>
+      </Grid>
       <h2>timeZone</h2>
       <p>Компоненту можно задать часовой пояс.</p>
-      <GridRow>
-        <GridCell>
-          <h5>New York</h5>
-          <Clock timeZone="America/New_York" />
-        </GridCell>
-        <GridCell>
-          <h5>Moscow</h5>
-          <Clock timeZone="Europe/Moscow" />
-        </GridCell>
-        <GridCell>
-          <h5>London</h5>
-          <Clock timeZone="Europe/London" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridRow>
+          <GridCell>
+            <h5>New York</h5>
+            <Clock timeZone="America/New_York" />
+          </GridCell>
+          <GridCell>
+            <h5>Moscow</h5>
+            <Clock timeZone="Europe/Moscow" />
+          </GridCell>
+          <GridCell>
+            <h5>London</h5>
+            <Clock timeZone="Europe/London" />
+          </GridCell>
+        </GridRow>
+      </Grid>
       <h2>alarmTime</h2>
       <p>Компоненту можно задать время срабатываия колбэка onAlarm (будильник)</p>
-      <GridRow>
-        <GridCell fullWidth>
-          <Clock alarmTime="00:40" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridRow>
+          <GridCell size={12}>
+            <Clock alarmTime="00:40" />
+          </GridCell>
+        </GridRow>
+      </Grid>
     </StoriesItem>
   ))
   .add('Knobs', () => (

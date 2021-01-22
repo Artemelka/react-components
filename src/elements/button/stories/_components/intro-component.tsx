@@ -7,6 +7,9 @@ export const IntroComponent = memo(() => (
       <ListItem>
         Компонент принемает параметр id и возвращает его в колбэках событий
       </ListItem>
+      <ListItem>
+        Вы можете передать только value, value и icon, только icon.
+      </ListItem>
     </List>
   </Intro>
 ));

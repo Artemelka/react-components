@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 import { WindowLoader } from '@artemelka/react-components';
 import {
+  Grid,
+  GridDivider,
   GridCell,
   GridRow,
   Intro,
@@ -14,29 +16,37 @@ const THEME_COLOR = ['main', 'accent', 'primary', 'secondary'];
 storiesOf('Window-loader', module)
   .addParameters({ component: WindowLoader })
   .add('Examples', () => (
-    <StoriesItem>
+    <>
       <Intro name="WindowLoader" />
-      <GridRow>
-        <GridCell>
-          <WindowLoader />
-        </GridCell>
-      </GridRow>
+
+      <Grid>
+        <GridRow>
+          <GridCell>
+            <WindowLoader />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>themeColor</h2>
-      <GridRow>
-        <GridCell>
-          <h5>accent</h5>
-          <WindowLoader themeColor="accent" />
-        </GridCell>
-        <GridCell>
-          <h5>primary</h5>
-          <WindowLoader themeColor="primary" />
-        </GridCell>
-        <GridCell>
-          <h5>secondary</h5>
-          <WindowLoader themeColor="secondary" />
-        </GridCell>
-      </GridRow>
-    </StoriesItem>
+      <p>Компонент может сменить тему на одну из трех.</p>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <h5>accent</h5>
+            <WindowLoader themeColor="accent" />
+          </GridCell>
+          <GridCell>
+            <h5>primary</h5>
+            <WindowLoader themeColor="primary" />
+          </GridCell>
+          <GridCell>
+            <h5>secondary</h5>
+            <WindowLoader themeColor="secondary" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+    </>
   ))
   .add('Knobs', () => (
     <StoriesItem>

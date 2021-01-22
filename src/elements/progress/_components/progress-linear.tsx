@@ -9,7 +9,7 @@ const cn = classNames.bind(style);
 
 export const ProgressLinear = ({
   percent,
-  singleColor,
+  singleColor = true,
   status = PROGRESS_STATUSES.BASE,
   size = CIRCLE_SIZE.S,
   withContour,

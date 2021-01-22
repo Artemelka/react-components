@@ -10,7 +10,7 @@ const cn = classNames.bind(style);
 export const ProgressCircular = memo(
   ({
     percent: value,
-    singleColor,
+    singleColor = true,
     size = CIRCLE_SIZE.L,
     status = PROGRESS_STATUSES.BASE,
     withContour,
