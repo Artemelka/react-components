@@ -5,8 +5,8 @@ import { boolean, text, select } from '@storybook/addon-knobs';
 import Delete from '@material-ui/icons/Delete';
 import { Button } from '@artemelka/react-components';
 import {
+  Grid,
   GridCell,
-  GridItem,
   GridRow,
   StoriesItem,
 } from '../../_story-components';
@@ -25,125 +25,108 @@ storiesOf('Button', module)
     componentSubtitle: 'Компонент для реализации кнопок',
   })
   .add('Examples', () => (
-    <StoriesItem>
+    <>
       <IntroComponent />
-      <StoriesItem>
-        <h2>Button mode</h2>
-        <p>Компонент может быть:</p>
+      <Grid>
         <GridRow>
-          <GridCell>
-            <h5>текст</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>только value</h5>
             <Button value="text" />
           </GridCell>
-          <GridCell>
-            <h5>текст с иконкой</h5>
-            <Button icon={<Delete fontSize="inherit" />} value="text and icon" />
+          <GridCell size={3} verticalAlign="between">
+            <h5>icon и value</h5>
+            <Button icon={<Delete fontSize="inherit" />} value="icon and text" />
           </GridCell>
-          <GridCell>
-            <h5>иконка</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>только icon</h5>
             <Button icon={<Delete fontSize="inherit" />} />
           </GridCell>
         </GridRow>
-        <h2>Button type</h2>
-        <p>Компонент может быть одним из трех типов. (button)</p>
+      </Grid>
+
+      <h2>Button state</h2>
+      <p>Компонент может иметь различные состояния</p>
+      <Grid>
+        <h5>disabled</h5>
         <GridRow>
-          <GridCell>
-            <h5>Type: button</h5>
-            <Button
-              value="button"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>Type: submit</h5>
-            <Button
-              type="submit"
-              value="submit"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>Type: reset</h5>
-            <Button
-              type="reset"
-              value="reset"
-            />
-          </GridCell>
-        </GridRow>
-        <h2>Button state</h2>
-        <p>Компонент может иметь различные состояния</p>
-        <GridRow>
-          <GridCell>
-            <h5>disabled</h5>
+          <GridCell size={3} verticalAlign="center">
             <Button
               disabled
               value="disabled"
             />
           </GridCell>
-          <GridCell>
-            <h5>disabled text and icon</h5>
+          <GridCell size={3} verticalAlign="center">
             <Button
               disabled
               icon={<Delete fontSize="inherit" />}
               value="disabled with icon"
             />
           </GridCell>
-          <GridCell>
-            <h5>disabled only icon</h5>
+          <GridCell size={3} verticalAlign="center">
             <Button
               disabled
               icon={<Delete fontSize="inherit" />}
             />
           </GridCell>
-          <GridCell>
-            <h5>active text</h5>
+        </GridRow>
+        <h5>active</h5>
+        <GridRow>
+          <GridCell size={3} verticalAlign="center">
             <Button
               isActive
               value="active"
             />
           </GridCell>
-          <GridCell>
-            <h5>active text and icon</h5>
+          <GridCell size={3} verticalAlign="center">
             <Button
               icon={<Delete fontSize="inherit" />}
               isActive
-              value="active"
+              value="active with icon"
             />
           </GridCell>
-          <GridCell>
-            <h5>active icon</h5>
+          <GridCell size={3} verticalAlign="center">
             <Button
               icon={<Delete fontSize="inherit" />}
               isActive
             />
           </GridCell>
         </GridRow>
-        <h2>Button full width</h2>
-        <p>Компонент может занимать всю ширину родителя и позиционировать текст.</p>
+      </Grid>
+
+      <h2>type</h2>
+      <p>Компонент может быть одним из трех типов. (button)</p>
+      <Grid>
+        <GridRow>
+          <GridCell size={3}>
+            <h5>button</h5>
+            <Button
+              value="button"
+            />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>submit</h5>
+            <Button
+              type="submit"
+              value="submit"
+            />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>reset</h5>
+            <Button
+              type="reset"
+              value="reset"
+            />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
+      <h2>fullWidth</h2>
+      <p>Компонент может занимать всю ширину родителя и позиционировать текст.</p>
+      <Grid>
+        <h4>alignText (center)</h4>
         <GridRow>
           <GridCell>
-            <h5>align text: left</h5>
-            <Button
-              alignText="left"
-              isFullWidth
-              value="text left"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>align text: center (default)</h5>
-            <Button
-              isFullWidth
-              value="text center"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>align text: right</h5>
-            <Button
-              alignText="right"
-              isFullWidth
-              value="text right"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>align text: left</h5>
+            <h5>left</h5>
             <Button
               alignText="left"
               icon={<Delete fontSize="inherit" />}
@@ -152,7 +135,7 @@ storiesOf('Button', module)
             />
           </GridCell>
           <GridCell>
-            <h5>align text: center (default)</h5>
+            <h5>center</h5>
             <Button
               icon={<Delete fontSize="inherit" />}
               isFullWidth
@@ -160,7 +143,7 @@ storiesOf('Button', module)
             />
           </GridCell>
           <GridCell>
-            <h5>align text: right</h5>
+            <h5>right</h5>
             <Button
               alignText="right"
               icon={<Delete fontSize="inherit" />}
@@ -169,216 +152,235 @@ storiesOf('Button', module)
             />
           </GridCell>
         </GridRow>
-        <h2>Button size</h2>
-        <p>Компонент может быть одного из трех размеров. (middle)</p>
+      </Grid>
+
+      <h2>size (medium)</h2>
+      <p>Компонент может быть одного из трех размеров.</p>
+      <Grid>
         <GridRow>
-          <GridCell>
-            <h5>Size: small</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>small</h5>
             <Button icon={<Delete fontSize="inherit" />} size="small" value="small" />
           </GridCell>
-          <GridCell>
-            <h5>Size: medium</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>medium</h5>
             <Button icon={<Delete fontSize="inherit" />} value="medium" />
           </GridCell>
-          <GridCell>
-            <h5>Size: big</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>big</h5>
             <Button icon={<Delete fontSize="inherit" />} size="big" value="big" />
           </GridCell>
-          <GridCell>
-            <h5>Size: small</h5>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3} verticalAlign="between">
+            <h5>small</h5>
             <Button icon={<Delete fontSize="inherit" />} size="small" variant="only-text" />
           </GridCell>
-          <GridCell>
-            <h5>Size: medium</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>medium</h5>
             <Button icon={<Delete fontSize="inherit" />} variant="only-text" />
           </GridCell>
-          <GridCell>
-            <h5>Size: big</h5>
+          <GridCell size={3} verticalAlign="between">
+            <h5>big</h5>
             <Button icon={<Delete fontSize="inherit" />} size="big" variant="only-text" />
           </GridCell>
         </GridRow>
-        <h2>Button variant</h2>
-        <p>Компонент имеет три варианта отображения. (base)</p>
+      </Grid>
+
+      <h2>variant (base)</h2>
+      <p>Компонент имеет три варианта отображения.</p>
+      <Grid>
         <GridRow>
-          <GridCell>
-            <h5>Variant: base</h5>
+          <GridCell size={3}>
+            <h5>base</h5>
             <Button value="base" />
           </GridCell>
-          <GridCell>
-            <h5>Variant: filled</h5>
+          <GridCell size={3}>
+            <h5>filled</h5>
             <Button value="filled" variant="filled" />
           </GridCell>
-          <GridCell>
-            <h5>Variant: only text</h5>
+          <GridCell size={3}>
+            <h5>only text</h5>
             <Button value="only text" variant="only-text" />
           </GridCell>
         </GridRow>
-        <h2>Button theme color</h2>
-        <p>Компонент может сменить тему на одну из пяти.</p>
-        <h5>base</h5>
+      </Grid>
+
+      <h2>themeColor</h2>
+      <p>Компонент может сменить тему на одну из пяти.</p>
+      <Grid>
+        <h5>accent</h5>
         <GridRow>
-          <GridItem>
+          <GridCell size={3}>
             <Button themeColor="accent" value="accent" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="primary" value="primary" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="secondary" value="secondary" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="success" value="success" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="error" value="error" />
-          </GridItem>
-        </GridRow>
-        <h5>filled</h5>
-        <GridRow>
-          <GridItem>
-            <Button themeColor="accent" value="accent" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="primary" value="primary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="secondary" value="secondary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="success" value="success" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="error" value="error" variant="filled" />
-          </GridItem>
-        </GridRow>
-        <h5>only-text</h5>
-        <GridRow>
-          <GridItem>
-            <Button themeColor="accent" value="accent" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="primary" value="primary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="secondary" value="secondary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="success" value="success" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button themeColor="error" value="error" variant="only-text" />
-          </GridItem>
-        </GridRow>
-        <h5>base</h5>
-        <GridRow>
-          <GridItem>
+          </GridCell>
+          <GridCell size={3}>
             <Button icon={<Delete fontSize="inherit" />} themeColor="accent" value="accent" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" />
-          </GridItem>
-        </GridRow>
-        <h5>filled</h5>
-        <GridRow>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="accent" value="accent" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" variant="filled" />
-          </GridItem>
-        </GridRow>
-        <h5>only-text</h5>
-        <GridRow>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="accent" value="accent" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" variant="only-text" />
-          </GridItem>
-        </GridRow>
-        <h5>base</h5>
-        <GridRow>
-          <GridItem>
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
             <Button icon={<Delete fontSize="inherit" />} themeColor="accent" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" />
-          </GridItem>
+          </GridCell>
         </GridRow>
-        <h5>filled</h5>
         <GridRow>
-          <GridItem>
+          <GridCell size={3}>
+            <Button themeColor="accent" value="accent" variant="filled" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="accent" value="accent" variant="filled" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
             <Button icon={<Delete fontSize="inherit" />} themeColor="accent" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" variant="filled" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" variant="filled" />
-          </GridItem>
+          </GridCell>
         </GridRow>
-        <h5>only-text</h5>
         <GridRow>
-          <GridItem>
+          <GridCell size={3}>
+            <Button themeColor="accent" value="accent" variant="only-text" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="accent" value="accent" variant="only-text" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
             <Button icon={<Delete fontSize="inherit" />} themeColor="accent" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="success" variant="only-text" />
-          </GridItem>
-          <GridItem>
-            <Button icon={<Delete fontSize="inherit" />} themeColor="error" variant="only-text" />
-          </GridItem>
+          </GridCell>
         </GridRow>
-      </StoriesItem>
-    </StoriesItem>
+        <h5>primary</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="primary" value="primary" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="primary" value="primary" variant="filled" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" variant="filled" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" variant="filled" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="primary" value="primary" variant="only-text" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" value="primary" variant="only-text" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="primary" variant="only-text" />
+          </GridCell>
+        </GridRow>
+        <h5>secondary</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="secondary" value="secondary" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="secondary" value="secondary" variant="filled" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" variant="filled" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" variant="filled" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="secondary" value="secondary" variant="only-text" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" value="secondary" variant="only-text" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="secondary" variant="only-text" />
+          </GridCell>
+        </GridRow>
+        <h5>success</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="success" value="success" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="success" value="success" variant="filled" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" variant="filled" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" variant="filled" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="success" value="success" variant="only-text" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" value="success" variant="only-text" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="success" variant="only-text" />
+          </GridCell>
+        </GridRow>
+        <h5>error</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="error" value="error" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="error" value="error" variant="filled" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" variant="filled" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" variant="filled" />
+          </GridCell>
+        </GridRow>
+        <GridRow>
+          <GridCell size={3}>
+            <Button themeColor="error" value="error" variant="only-text" />
+          </GridCell>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" value="error" variant="only-text" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} themeColor="error" variant="only-text" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+    </>
   ))
   .add('Knobs', () => (
     <StoriesItem>

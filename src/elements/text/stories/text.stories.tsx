@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Text } from '@artemelka/react-components';
 import {
-  GridItem,
+  Grid,
+  GridDivider,
   GridCell,
   GridRow,
   StoriesItem,
@@ -20,112 +21,128 @@ storiesOf('Text', module)
     componentSubtitle: 'Компонент для отображения стилизованного текста',
   })
   .add('Examples', () => (
-    <StoriesItem>
+    <>
       <IntroComponent />
+
       <h2>fontWeight (regular)</h2>
       <p>
-        Компонент может менять начертание шрифта (ваш шрифт должен поддерживать эти начертания)
+        Компонент может менять начертание шрифта (ваш шрифт должен поддерживать эти начертания).
       </p>
-      <GridRow>
-        <GridCell>
-          <Text fontWeight="light">
-            it`s light
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text fontWeight="regular">
-            it`s regular
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text fontWeight="medium">
-            it`s medium
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text fontWeight="bold">
-            it`s bold
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text fontWeight="semi-bold">
-            it`s semi-bold
-          </Text>
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <Text fontWeight="light">
+              it`s light
+            </Text>
+          </GridCell>
+          <GridCell>
+            <Text fontWeight="regular">
+              it`s regular
+            </Text>
+          </GridCell>
+          <GridCell>
+            <Text fontWeight="medium">
+              it`s medium
+            </Text>
+          </GridCell>
+          <GridCell>
+            <Text fontWeight="bold">
+              it`s bold
+            </Text>
+          </GridCell>
+          <GridCell>
+            <Text fontWeight="semi-bold">
+              it`s semi-bold
+            </Text>
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>upper</h2>
-      <p>Компонент может трансформировать текст в UPPERCASE</p>
-      <GridRow>
-        <GridCell fullWidth>
-          <Text upper>
-            Almost before we knew it, we had left the ground.
-          </Text>
-        </GridCell>
-      </GridRow>
+      <p>Компонент может трансформировать текст в UPPERCASE.</p>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={12}>
+            <Text upper>
+              Almost before we knew it, we had left the ground.
+            </Text>
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>tagName (span)</h2>
       <p>Компонент может менять тэг.</p>
-      <GridRow>
-        <GridCell>
-          <Text tagName="h1">
-            it`s Heading1
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="h2">
-            it`s Heading2
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="h3">
-            it`s Heading3
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="h4">
-            it`s Heading4
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="h5">
-            it`s Heading5
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="h6">
-            it`s Heading6
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="p">
-            it`s paragraph
-          </Text>
-        </GridCell>
-        <GridCell>
-          <Text tagName="span">
-            it`s span
-          </Text>
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell verticalAlign="center">
+            <Text tagName="h1">
+              it`s Heading1
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="h2">
+              it`s Heading2
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="h3">
+              it`s Heading3
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="h4">
+              it`s Heading4
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="h5">
+              it`s Heading5
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="h6">
+              it`s Heading6
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="p">
+              it`s paragraph
+            </Text>
+          </GridCell>
+          <GridCell verticalAlign="center">
+            <Text tagName="span">
+              it`s span
+            </Text>
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>align (left)</h2>
-      <p>Компонент может выравнивать текст по горизонтали (только если тэг блочный)</p>
-      <GridRow>
-        <GridItem fullWidth>
-          <Text align="left" tagName="p">
-            Almost before we knew it, we had left the ground.
-          </Text>
-        </GridItem>
-        <GridItem fullWidth>
-          <Text align="center" tagName="p">
-            Almost before we knew it, we had left the ground.
-          </Text>
-        </GridItem>
-        <GridItem fullWidth>
-          <Text align="right" tagName="p">
-            Almost before we knew it, we had left the ground.
-          </Text>
-        </GridItem>
-      </GridRow>
-    </StoriesItem>
+      <p>Компонент может выравнивать текст по горизонтали (только если тэг блочный).</p>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell horizontalAlign="stretch" size={12}>
+            <Text align="left" tagName="p">
+              Almost before we knew it, we had left the ground.
+            </Text>
+          </GridCell>
+          <GridCell horizontalAlign="stretch" size={12}>
+            <Text align="center" tagName="p">
+              Almost before we knew it, we had left the ground.
+            </Text>
+          </GridCell>
+          <GridCell horizontalAlign="stretch" size={12}>
+            <Text align="right" tagName="p">
+              Almost before we knew it, we had left the ground.
+            </Text>
+          </GridCell>
+        </GridRow>
+      </Grid>
+    </>
   ))
   .add('Knobs', () => (
     <StoriesItem>

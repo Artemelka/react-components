@@ -3,11 +3,10 @@ import {
   Intro,
   List,
   ListItem,
-  StoriesItem,
 } from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
-  <StoriesItem>
+  <>
     <Intro name="Anchor">
       <List>
         <ListItem>
@@ -21,5 +20,5 @@ export const IntroComponent = memo(() => (
         </ListItem>
       </List>
     </Intro>
-  </StoriesItem>
+  </>
 ));

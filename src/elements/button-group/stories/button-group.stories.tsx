@@ -8,9 +8,11 @@ import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
 import Delete from '@material-ui/icons/Delete';
 import { ButtonGroup, ButtonMouseEvent } from '@artemelka/react-components';
 import {
-  StoriesItem,
-  GridRow,
+  Grid,
   GridCell,
+  GridDivider,
+  GridRow,
+  StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
@@ -60,533 +62,748 @@ storiesOf('ButtonGroup', module)
     };
 
     return (
-      <StoriesItem>
+      <>
         <IntroComponent />
-        <GridRow>
-          <GridCell fullWidth>
-            <Tabs />
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <Tabs />
+            </GridCell>
+          </GridRow>
+        </Grid>
         <h2>isOnlyIcons</h2>
-        <p>Можно передать только иконки.</p>
+        <p>Для корректной работы нужно передать icon для каждой кнопки.</p>
         <p>Параметр value будет проигнорирован.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-            />
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>Size (medium)</h2>
         <p>Компонент может быть одного из трех размеров.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>small</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                  value: 'first button',
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                  value: 'second button',
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                  value: 'third button',
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                  value: 'fourth button',
-                },
-              ]}
-              size="small"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              size="small"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>medium</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                  value: 'first button',
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                  value: 'second button',
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                  value: 'third button',
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                  value: 'fourth button',
-                },
-              ]}
-              size="medium"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              size="medium"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>big</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                  value: 'first',
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                  value: 'second',
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                  value: 'third',
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                  value: 'fourth',
-                },
-              ]}
-              size="big"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              size="big"
-            />
-          </GridCell>
-        </GridRow>
-        <h2>Variant (base)</h2>
-        <p>Компонент имеет три варианта отображения.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>base</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              variant="base"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              variant="base"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>filled</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              variant="filled"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              variant="filled"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>only text</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              variant="only-text"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              variant="only-text"
-            />
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <h5>small</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                    value: 'first button',
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                    value: 'second button',
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                    value: 'third button',
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                    value: 'fourth button',
+                  },
+                ]}
+                size="small"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                size="small"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>medium</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                    value: 'first button',
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                    value: 'second button',
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                    value: 'third button',
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                    value: 'fourth button',
+                  },
+                ]}
+                size="medium"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                size="medium"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>big</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                    value: 'first',
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                    value: 'second',
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                    value: 'third',
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                    value: 'fourth',
+                  },
+                ]}
+                size="big"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                size="big"
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>isVertical</h2>
         <p>Компонент может быть расположен вертикально.</p>
-        <GridRow>
-          <GridCell>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              isVertical
-            />
-          </GridCell>
-          <GridCell>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              isVertical
-            />
-          </GridCell>
-        </GridRow>
+        <Grid>
+          <GridRow>
+            <GridCell>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isVertical
+              />
+            </GridCell>
+            <GridCell>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                isVertical
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+
+        <h2>Variant (base)</h2>
+        <p>Компонент имеет три варианта отображения.</p>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <h5>base</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                variant="base"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                variant="base"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>filled</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                variant="filled"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>only text</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                variant="only-text"
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>isFullWidth</h2>
-        <p>Компонент может занимать всю ширину родителя.</p>
+        <p>Компонент может занимать всю ширину родителя и позиционировать текст.</p>
         <p>Не работает без isVertical.</p>
-        <GridRow>
-          <GridCell>
-            <h5>Align text: left</h5>
-            <ButtonGroup
-              alignText="left"
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              isFullWidth
-              isVertical
-            />
-          </GridCell>
-          <GridCell>
-            <h5>Align text: center</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              isFullWidth
-              isVertical
-              variant="filled"
-            />
-          </GridCell>
-          <GridCell>
-            <h5>Align text: right</h5>
-            <ButtonGroup
-              alignText="right"
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              isFullWidth
-              isVertical
-              variant="only-text"
-            />
-          </GridCell>
-        </GridRow>
+        <h4>alignText (center)</h4>
+        <Grid>
+          <GridRow>
+            <GridCell>
+              <h5>left</h5>
+              <ButtonGroup
+                alignText="left"
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isFullWidth
+                isVertical
+              />
+            </GridCell>
+            <GridCell>
+              <h5>center</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isFullWidth
+                isVertical
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell>
+              <h5>right</h5>
+              <ButtonGroup
+                alignText="right"
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isFullWidth
+                isVertical
+                variant="only-text"
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>themeColor</h2>
         <p>Компонент может сменить тему на одну из пяти.</p>
-        <GridRow>
-          <GridCell fullWidth>
-            <h5>accent</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              themeColor="accent"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              themeColor="accent"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>primary</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              themeColor="primary"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              themeColor="primary"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>secondary</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              themeColor="secondary"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              themeColor="secondary"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>success</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              themeColor="success"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              themeColor="success"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <h5>error</h5>
-            <ButtonGroup
-              buttons={[
-                {
-                  value: 'first button',
-                }, {
-                  value: 'second button',
-                }, {
-                  value: 'third button',
-                }, {
-                  value: 'fourth button',
-                },
-              ]}
-              themeColor="error"
-            />
-          </GridCell>
-          <GridCell fullWidth>
-            <ButtonGroup
-              buttons={[
-                {
-                  icon: <ArrowDropDown fontSize="inherit" />,
-                }, {
-                  icon: <ArrowDropUp fontSize="inherit" />,
-                }, {
-                  icon: <Delete fontSize="inherit" />,
-                }, {
-                  icon: <Add fontSize="inherit" />,
-                },
-              ]}
-              isOnlyIcons
-              themeColor="error"
-            />
-          </GridCell>
-        </GridRow>
-      </StoriesItem>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <h5>accent</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="accent"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="accent"
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="accent"
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                themeColor="accent"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>primary</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="primary"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="primary"
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="primary"
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                themeColor="primary"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>secondary</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="secondary"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="secondary"
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="secondary"
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                themeColor="secondary"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>success</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="success"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="success"
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="success"
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                themeColor="success"
+              />
+            </GridCell>
+          </GridRow>
+          <GridDivider />
+          <GridRow>
+            <GridCell size={12}>
+              <h5>error</h5>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="error"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="error"
+                variant="filled"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                themeColor="error"
+                variant="only-text"
+              />
+            </GridCell>
+            <GridCell size={12}>
+              <ButtonGroup
+                buttons={[
+                  {
+                    icon: <ArrowDropDown fontSize="inherit" />,
+                  }, {
+                    icon: <ArrowDropUp fontSize="inherit" />,
+                  }, {
+                    icon: <Delete fontSize="inherit" />,
+                  }, {
+                    icon: <Add fontSize="inherit" />,
+                  },
+                ]}
+                isOnlyIcons
+                themeColor="error"
+              />
+            </GridCell>
+          </GridRow>
+        </Grid>
+      </>
     );
   })
   .add('Knobs', () => (

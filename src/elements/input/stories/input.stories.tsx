@@ -6,9 +6,13 @@ import Clear from '@material-ui/icons/Clear';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Input } from '@artemelka/react-components';
-import { GridRow, GridCell, StoriesItem } from '../../_story-components';
+import {
+  Grid,
+  GridRow,
+  GridCell,
+  StoriesItem, GridDivider,
+} from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
-import { InputStateDescription } from './_components/input-state-description';
 import {
   AUTOCOMPLETE,
   COMPONENT_TITLE,
@@ -60,456 +64,466 @@ storiesOf('Input', module)
           onClear,
           toggleIcon,
         }: any) => (
-          <StoriesItem>
+          <>
             <IntroComponent />
+
+            <h2>Input state</h2>
+            <p>Компонент может иметь различные состояния.</p>
+            <p>Иконка не отображается при состояниях disabled и readOnly.</p>
+            <Grid>
+              <GridDivider />
+              <GridRow>
+                <GridCell>
+                  <h5>disabled</h5>
+                  <Input
+                    disabled
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base-disabled"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-base-disabled']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>isReadOnly</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    isReadOnly
+                    name="input-base-read-only"
+                    onChange={onChange}
+                    value={state['input-base-read-only']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>isError</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    isError
+                    name="input-base-error"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-base-error']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>placeholder</h5>
+                  <Input
+                    name="input-base-placeholder"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-base-placeholder']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>icon without onClick</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                    }}
+                    name="input-base-icon"
+                    onChange={onChange}
+                    value={state['input-base-icon']}
+                  />
+                </GridCell>
+              </GridRow>
+            </Grid>
+
             <h2>type (text)</h2>
             <p>Компонент может быть одним из трех типов.</p>
-            <GridRow>
-              <GridCell>
-                <h5>text</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-text"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-text']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>number</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-number"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  type="number"
-                  value={state['input-number']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>password</h5>
-                <Input
-                  iconConfig={{
-                    icon: !isVisible
-                      ? <Visibility fontSize="inherit" />
-                      : <VisibilityOff fontSize="inherit" />,
-                    onClick: toggleIcon,
-                  }}
-                  name="input-password"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  type={!isVisible ? 'password' : 'text'}
-                  value={state['input-password']}
-                />
-              </GridCell>
-            </GridRow>
-            <h2>Input state</h2>
-            <p>Компонент может иметь различные состояния</p>
-            <GridRow>
-              <GridCell>
-                <h5>Disabled</h5>
-                <Input
-                  disabled
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base-disabled"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-base-disabled']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Read only</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                  }}
-                  isReadOnly
-                  name="input-base-read-only"
-                  onChange={onChange}
-                  value={state['input-base-read-only']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Error</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  isError
-                  name="input-base-error"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-base-error']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>Non interactive icon</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                  }}
-                  name="input-base-icon"
-                  onChange={onChange}
-                  value={state['input-base-icon']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>With placeholder</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                  }}
-                  name="input-base-placeholder"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-base-placeholder']}
-                />
-              </GridCell>
-              <InputStateDescription />
-            </GridRow>
+            <Grid>
+              <GridDivider />
+              <GridRow>
+                <GridCell>
+                  <h5>text</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-text"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-text']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>number</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-number"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    type="number"
+                    value={state['input-number']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>password</h5>
+                  <Input
+                    iconConfig={{
+                      icon: !isVisible
+                        ? <Visibility fontSize="inherit" />
+                        : <VisibilityOff fontSize="inherit" />,
+                      onClick: toggleIcon,
+                    }}
+                    name="input-password"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    type={!isVisible ? 'password' : 'text'}
+                    value={state['input-password']}
+                  />
+                </GridCell>
+              </GridRow>
+            </Grid>
+
             <h2>variant (base)</h2>
             <p>Компонент имеет три варианта отображения.</p>
-            <GridRow>
-              <GridCell>
-                <h5>only text</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-only-text"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-only-text']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>base</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-base']}
-                  variant="base"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>filled</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-filled-base"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  value={state['input-filled-base']}
-                  variant="filled"
-                />
-              </GridCell>
-            </GridRow>
-            <h2>size (middle)</h2>
+            <Grid>
+              <GridDivider />
+              <GridRow>
+                <GridCell>
+                  <h5>base</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-base']}
+                    variant="base"
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>filled</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-filled-base"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-filled-base']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell>
+                  <h5>only-text</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-only-text"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    value={state['input-only-text']}
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+            </Grid>
+
+            <h2>size (medium)</h2>
             <p>Компонент может быть одного из трех размеров.</p>
-            <h4>base</h4>
-            <GridRow>
-              <GridCell>
-                <h5>big</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-big"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="big"
-                  value={state['input-size-big']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>medium</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-medium"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="medium"
-                  value={state['input-size-medium']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>small</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-small"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="small"
-                  value={state['input-size-small']}
-                />
-              </GridCell>
-            </GridRow>
-            <h4>filled</h4>
-            <GridRow>
-              <GridCell>
-                <h5>big</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-big-filled"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="big"
-                  value={state['input-size-big-filled']}
-                  variant="filled"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>medium</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-medium-filled"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="medium"
-                  value={state['input-size-medium-filled']}
-                  variant="filled"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>small</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-small-filled"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="small"
-                  value={state['input-size-small-filled']}
-                  variant="filled"
-                />
-              </GridCell>
-            </GridRow>
-            <h4>only-text</h4>
-            <GridRow>
-              <GridCell>
-                <h5>big</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-big-only-text"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="big"
-                  value={state['input-size-big-only-text']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>medium</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-medium-only-text"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="medium"
-                  value={state['input-size-medium-only-text']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>small</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-size-small-only-text"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  size="small"
-                  value={state['input-size-small-only-text']}
-                  variant="only-text"
-                />
-              </GridCell>
-            </GridRow>
+            <Grid>
+              <GridDivider />
+              <GridRow>
+                <GridCell verticalAlign="between">
+                  <h5>big</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-big"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="big"
+                    value={state['input-size-big']}
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>medium</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-medium"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="medium"
+                    value={state['input-size-medium']}
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>small</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-small"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="small"
+                    value={state['input-size-small']}
+                  />
+                </GridCell>
+              </GridRow>
+              <GridDivider />
+              <GridRow>
+                <GridCell verticalAlign="between">
+                  <h5>big</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-big-filled"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="big"
+                    value={state['input-size-big-filled']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>medium</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-medium-filled"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="medium"
+                    value={state['input-size-medium-filled']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>small</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-small-filled"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="small"
+                    value={state['input-size-small-filled']}
+                    variant="filled"
+                  />
+                </GridCell>
+              </GridRow>
+              <GridDivider />
+              <GridRow>
+                <GridCell verticalAlign="between">
+                  <h5>big</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-big-only-text"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="big"
+                    value={state['input-size-big-only-text']}
+                    variant="only-text"
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>medium</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-medium-only-text"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="medium"
+                    value={state['input-size-medium-only-text']}
+                    variant="only-text"
+                  />
+                </GridCell>
+                <GridCell verticalAlign="between">
+                  <h5>small</h5>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-size-small-only-text"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    size="small"
+                    value={state['input-size-small-only-text']}
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+            </Grid>
+
             <h2>themeColor</h2>
             <p>Компонент может сменить тему на одну из трех.</p>
-            <h4>base</h4>
-            <GridRow>
-              <GridCell>
-                <h5>accent</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base-accent"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="accent"
-                  value={state['input-base-accent']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>primary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base-primary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="primary"
-                  value={state['input-base-primary']}
-                />
-              </GridCell>
-              <GridCell>
-                <h5>secondary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-base-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-base-secondary']}
-                />
-              </GridCell>
-            </GridRow>
-            <h4>filled</h4>
-            <GridRow>
-              <GridCell>
-                <h5>accent</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-filled-accent"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="accent"
-                  value={state['input-filled-accent']}
-                  variant="filled"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>primary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-filled-primary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="primary"
-                  value={state['input-filled-primary']}
-                  variant="filled"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>secondary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-filled-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-filled-secondary']}
-                  variant="filled"
-                />
-              </GridCell>
-            </GridRow>
-            <h4>only-text</h4>
-            <GridRow>
-              <GridCell>
-                <h5>accent</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-only-text-accent"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="accent"
-                  value={state['input-only-text-accent']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>primary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-only-text-primary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="primary"
-                  value={state['input-only-text-primary']}
-                  variant="only-text"
-                />
-              </GridCell>
-              <GridCell>
-                <h5>secondary</h5>
-                <Input
-                  iconConfig={{
-                    icon: <Clear fontSize="inherit" />,
-                    onClick: onClear,
-                  }}
-                  name="input-only-text-secondary"
-                  onChange={onChange}
-                  placeholder={PLACEHOLDER_TEXT}
-                  themeColor="secondary"
-                  value={state['input-only-text-secondary']}
-                  variant="only-text"
-                />
-              </GridCell>
-            </GridRow>
-          </StoriesItem>
+            <GridDivider />
+            <Grid>
+              <h5>accent</h5>
+              <GridRow>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base-accent"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="accent"
+                    value={state['input-base-accent']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-filled-accent"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="accent"
+                    value={state['input-filled-accent']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-only-text-accent"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="accent"
+                    value={state['input-only-text-accent']}
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+              <GridDivider />
+              <h5>primary</h5>
+              <GridRow>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base-primary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="primary"
+                    value={state['input-base-primary']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-filled-primary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="primary"
+                    value={state['input-filled-primary']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-only-text-primary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="primary"
+                    value={state['input-only-text-primary']}
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+              <GridDivider />
+              <h5>secondary</h5>
+              <GridRow>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base-secondary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="secondary"
+                    value={state['input-base-secondary']}
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-filled-secondary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="secondary"
+                    value={state['input-filled-secondary']}
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell>
+                  <Input
+                    iconConfig={{
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-only-text-secondary"
+                    onChange={onChange}
+                    placeholder={PLACEHOLDER_TEXT}
+                    themeColor="secondary"
+                    value={state['input-only-text-secondary']}
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+            </Grid>
+          </>
         )}
       </InputController>
     );

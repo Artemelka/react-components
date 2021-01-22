@@ -7,7 +7,8 @@ import {
   PROGRESS_STATUSES,
 } from '@artemelka/react-components';
 import {
-  GridItem,
+  Grid,
+  GridDivider,
   GridCell,
   GridRow,
   StoriesItem,
@@ -21,111 +22,99 @@ storiesOf('ProgressCircular', module)
     componentSubtitle: COMPONENT_TITLE,
   })
   .add('Examples', () => (
-    <StoriesItem>
+    <>
       <IntroComponent name="ProgressCircular" />
+
       <h2>percent</h2>
       <p>Компонент меняет цвет в зависимости от велечины percent.</p>
-      <GridRow>
-        <GridItem>
-          <h5>20</h5>
-          <ProgressCircular percent={20} />
-        </GridItem>
-        <GridItem>
-          <h5>25</h5>
-          <ProgressCircular percent={25} />
-        </GridItem>
-        <GridItem>
-          <h5>55</h5>
-          <ProgressCircular percent={55} />
-        </GridItem>
-        <GridItem>
-          <h5>80</h5>
-          <ProgressCircular percent={80} />
-        </GridItem>
-        <GridItem>
-          <h5>90</h5>
-          <ProgressCircular percent={90} />
-        </GridItem>
-      </GridRow>
-      <h2>singleColor</h2>
-      <p>Отключает смену цветов в зависимости от величины percent.</p>
-      <GridRow>
-        <GridItem>
-          <h5>20</h5>
-          <ProgressCircular percent={20} singleColor />
-        </GridItem>
-        <GridItem>
-          <h5>25</h5>
-          <ProgressCircular percent={25} singleColor />
-        </GridItem>
-        <GridItem>
-          <h5>55</h5>
-          <ProgressCircular percent={55} singleColor />
-        </GridItem>
-        <GridItem>
-          <h5>80</h5>
-          <ProgressCircular percent={80} singleColor />
-        </GridItem>
-        <GridItem>
-          <h5>90</h5>
-          <ProgressCircular percent={90} singleColor />
-        </GridItem>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <h5>25</h5>
+            <ProgressCircular percent={25} />
+          </GridCell>
+          <GridCell>
+            <h5>55</h5>
+            <ProgressCircular percent={55} />
+          </GridCell>
+          <GridCell>
+            <h5>90</h5>
+            <ProgressCircular percent={90} />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>status</h2>
       <p>Компонент может отражать статус.</p>
-      <GridRow>
-        <GridItem>
-          <h5>BASE</h5>
-          <ProgressCircular percent={75} singleColor status="BASE" />
-        </GridItem>
-        <GridItem>
-          <h5>PRIMARY</h5>
-          <ProgressCircular percent={75} singleColor status="PRIMARY" />
-        </GridItem>
-        <GridItem>
-          <h5>SUCCESS</h5>
-          <ProgressCircular percent={75} singleColor status="SUCCESS" />
-        </GridItem>
-        <GridItem>
-          <h5>WARNING</h5>
-          <ProgressCircular percent={75} singleColor status="WARNING" />
-        </GridItem>
-        <GridItem>
-          <h5>ERROR</h5>
-          <ProgressCircular percent={75} singleColor status="ERROR" />
-        </GridItem>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={3}>
+            <h5>PRIMARY</h5>
+            <ProgressCircular percent={75} singleColor status="PRIMARY" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>SUCCESS</h5>
+            <ProgressCircular percent={75} singleColor status="SUCCESS" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>WARNING</h5>
+            <ProgressCircular percent={75} singleColor status="WARNING" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>ERROR</h5>
+            <ProgressCircular percent={75} singleColor status="ERROR" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>size (L)</h2>
       <p>Компонент может быть одного из четырех размеров.</p>
-      <GridRow>
-        <GridCell>
-          <h5>S</h5>
-          <ProgressCircular percent={55} size="S" />
-        </GridCell>
-        <GridCell>
-          <h5>M</h5>
-          <ProgressCircular percent={55} size="M" />
-        </GridCell>
-        <GridCell>
-          <h5>XL</h5>
-          <ProgressCircular percent={55} size="XL" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={3} verticalAlign="between">
+            <h5>S</h5>
+            <ProgressCircular percent={90} size="S" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="between">
+            <h5>M</h5>
+            <ProgressCircular percent={90} size="M" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="between">
+            <h5>L</h5>
+            <ProgressCircular percent={90} size="L" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="between">
+            <h5>XL</h5>
+            <ProgressCircular percent={90} size="XL" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>withContour</h2>
       <p>Компонент может быть с контуром.</p>
-      <GridRow>
-        <GridCell>
-          <ProgressCircular percent={55} withContour />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <ProgressCircular percent={55} status="PRIMARY" withContour />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>withText</h2>
       <p>Компонент может быть с цифровой индикацией.</p>
-      <GridRow>
-        <GridCell>
-          <ProgressCircular percent={55} withText />
-        </GridCell>
-      </GridRow>
-    </StoriesItem>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <ProgressCircular percent={55} status="PRIMARY" withText />
+          </GridCell>
+        </GridRow>
+      </Grid>
+    </>
   ))
   .add('Knobs', () => (
     <StoriesItem>

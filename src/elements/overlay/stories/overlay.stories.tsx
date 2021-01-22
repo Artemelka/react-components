@@ -4,6 +4,8 @@ import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Overlay } from '@artemelka/react-components';
 import {
+  Grid,
+  GridDivider,
   GridCell,
   GridRow,
   Intro,
@@ -33,85 +35,100 @@ storiesOf('Overlay', module)
       return props.children({ isShow, onClick: handleClick });
     };
     return (
-      <StoriesItem>
+      <>
         <Intro name="Overlay" />
         <h2>onOverlayClick</h2>
         <p>Компонент принимает колбэк события клика.</p>
-        <GridRow>
-          <OverlayController>
-            {({ isShow, onClick }: any) => (
-              <GridCell>
-                <button onClick={onClick} type="button">Show overlay</button>
-                {isShow && (
-                  <Overlay onOverlayClick={onClick}>
-                    Click to hide
-                  </Overlay>
-                )}
-              </GridCell>
-            )}
-          </OverlayController>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <OverlayController>
+              {({ isShow, onClick }: any) => (
+                <GridCell>
+                  <button onClick={onClick} type="button">Show overlay</button>
+                  {isShow && (
+                    <Overlay onOverlayClick={onClick}>
+                      Click to hide
+                    </Overlay>
+                  )}
+                </GridCell>
+              )}
+            </OverlayController>
+          </GridRow>
+        </Grid>
+
         <h2>isLightColor</h2>
         <p>Компонент может иметь светлый цвет фона.</p>
-        <GridRow>
-          <OverlayController>
-            {({ isShow, onClick }: any) => (
-              <GridCell>
-                <button onClick={onClick} type="button">
-                  Show light overlay
-                </button>
-                {isShow && (
-                  <Overlay isLightColor>
-                    <button onClick={onClick} type="button">
-                      Click me to hide
-                    </button>
-                  </Overlay>
-                )}
-              </GridCell>
-            )}
-          </OverlayController>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <OverlayController>
+              {({ isShow, onClick }: any) => (
+                <GridCell>
+                  <button onClick={onClick} type="button">
+                    Show light overlay
+                  </button>
+                  {isShow && (
+                    <Overlay isLightColor>
+                      <button onClick={onClick} type="button">
+                        Click me to hide
+                      </button>
+                    </Overlay>
+                  )}
+                </GridCell>
+              )}
+            </OverlayController>
+          </GridRow>
+        </Grid>
+
         <h2>isTransparent</h2>
         <p>Компонент может быть с прозрачным фоном.</p>
-        <GridRow>
-          <OverlayController>
-            {({ isShow, onClick }: any) => (
-              <GridCell>
-                <button onClick={onClick} type="button">
-                  Show transparent overlay
-                </button>
-                {isShow && (
-                  <Overlay isTransparent>
-                    <button onClick={onClick} type="button">
-                      Click me to hide
-                    </button>
-                  </Overlay>
-                )}
-              </GridCell>
-            )}
-          </OverlayController>
-        </GridRow>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <OverlayController>
+              {({ isShow, onClick }: any) => (
+                <GridCell>
+                  <button onClick={onClick} type="button">
+                    Show transparent overlay
+                  </button>
+                  {isShow && (
+                    <Overlay isTransparent>
+                      <button onClick={onClick} type="button">
+                        Click me to hide
+                      </button>
+                    </Overlay>
+                  )}
+                </GridCell>
+              )}
+            </OverlayController>
+          </GridRow>
+        </Grid>
+
         <h2>inContainer</h2>
         <p>Компонент может перекрывать часть разметки.</p>
-        <p>Границы задает родитель с position: !static</p>
-        <GridRow>
-          <OverlayController>
-            {({ isShow, onClick }: any) => (
-              <GridCell>
-                <button onClick={onClick} type="button">
-                  {`${isShow ? 'Hide' : 'Show'} overlay in container`}
-                </button>
-                <div style={wrapperStyle}>
-                  <p>Container with position relative</p>
-                  {isShow && (
-                    <Overlay inContainer />
-                  )}
-                </div>
-              </GridCell>
-            )}
-          </OverlayController>
-        </GridRow>
-      </StoriesItem>
+        <p>Границы задает родитель с position: !== static</p>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <OverlayController>
+              {({ isShow, onClick }: any) => (
+                <GridCell>
+                  <button onClick={onClick} type="button">
+                    {`${isShow ? 'Hide' : 'Show'} overlay in container`}
+                  </button>
+                  <div style={wrapperStyle}>
+                    <p>Container with position relative</p>
+                    {isShow && (
+                      <Overlay inContainer />
+                    )}
+                  </div>
+                </GridCell>
+              )}
+            </OverlayController>
+          </GridRow>
+        </Grid>
+      </>
     );
   })
   .add('Knobs', () => (

@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import { Anchor, AnchorMouseEvent } from '@artemelka/react-components';
 import {
+  Grid,
   GridCell,
   GridRow,
   Group,
@@ -65,36 +66,30 @@ storiesOf('Anchor', module)
     };
 
     return (
-      <StoriesItem>
+      <>
         <IntroComponent />
-        <h2>Navigation example</h2>
-        <GridRow>
-          <GridCell fullWidth>
-            <Navigation />
-          </GridCell>
-        </GridRow>
-        <StoriesItem>
-          <h2>Anchor state</h2>
+        <h2>Anchor state</h2>
+        <Grid>
           <GridRow>
             <GridCell>
-              <h5>Anchor base</h5>
+              <h5>base</h5>
               <Anchor href={REPO_LINK}>base link</Anchor>
             </GridCell>
             <GridCell>
-              <h5>Anchor active</h5>
+              <h5>active</h5>
               <Anchor active href={REPO_LINK}>active link</Anchor>
             </GridCell>
             <GridCell>
-              <h5>Anchor disabled</h5>
+              <h5>disabled</h5>
               <Anchor disabled href={REPO_LINK}>disabled link</Anchor>
             </GridCell>
           </GridRow>
-        </StoriesItem>
-        <StoriesItem>
-          <h2>Anchor target</h2>
+        </Grid>
+        <h2>target (_blank)</h2>
+        <Grid>
           <GridRow>
-            <GridCell>
-              <h5>Target: _blank (default)</h5>
+            <GridCell verticalAlign="between">
+              <h5>_blank (default)</h5>
               <Anchor
                 href={NPM_LINK}
                 target="_blank"
@@ -103,8 +98,8 @@ storiesOf('Anchor', module)
                 link open in new window
               </Anchor>
             </GridCell>
-            <GridCell>
-              <h5>Target: _parent</h5>
+            <GridCell verticalAlign="between">
+              <h5>_parent</h5>
               <Anchor
                 href={NPM_LINK}
                 target="_parent"
@@ -113,8 +108,8 @@ storiesOf('Anchor', module)
                 link open in this window
               </Anchor>
             </GridCell>
-            <GridCell>
-              <h5>Target: _self <br />(does not work in Storybook)</h5>
+            <GridCell verticalAlign="between">
+              <h5>_self (does not work in Storybook)</h5>
               <Anchor
                 href={NPM_LINK}
                 target="_self"
@@ -124,8 +119,16 @@ storiesOf('Anchor', module)
               </Anchor>
             </GridCell>
           </GridRow>
-        </StoriesItem>
-      </StoriesItem>
+        </Grid>
+        <h2>Navigation example</h2>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <Navigation />
+            </GridCell>
+          </GridRow>
+        </Grid>
+      </>
     );
   })
   .add('Knob', () => (

@@ -7,6 +7,8 @@ import {
   PROGRESS_STATUSES,
 } from '@artemelka/react-components';
 import {
+  Grid,
+  GridDivider,
   GridCell,
   GridRow,
   StoriesItem,
@@ -20,111 +22,99 @@ storiesOf('ProgressLinear', module)
     componentSubtitle: COMPONENT_TITLE,
   })
   .add('Examples', () => (
-    <StoriesItem>
+    <>
       <IntroComponent name="ProgressLinear" />
+
       <h2>percent</h2>
       <p>Компонент меняет цвет в зависимости от велечины percent.</p>
-      <GridRow>
-        <GridCell>
-          <h5>20</h5>
-          <ProgressLinear percent={20} />
-        </GridCell>
-        <GridCell>
-          <h5>25</h5>
-          <ProgressLinear percent={25} />
-        </GridCell>
-        <GridCell>
-          <h5>55</h5>
-          <ProgressLinear percent={55} />
-        </GridCell>
-        <GridCell>
-          <h5>80</h5>
-          <ProgressLinear percent={79} />
-        </GridCell>
-        <GridCell>
-          <h5>90</h5>
-          <ProgressLinear percent={90} />
-        </GridCell>
-      </GridRow>
-      <h2>singleColor</h2>
-      <p>Отключает смену цветов в зависимости от величины percent.</p>
-      <GridRow>
-        <GridCell>
-          <h5>20</h5>
-          <ProgressLinear percent={20} singleColor />
-        </GridCell>
-        <GridCell>
-          <h5>25</h5>
-          <ProgressLinear percent={25} singleColor />
-        </GridCell>
-        <GridCell>
-          <h5>55</h5>
-          <ProgressLinear percent={55} singleColor />
-        </GridCell>
-        <GridCell>
-          <h5>80</h5>
-          <ProgressLinear percent={80} singleColor />
-        </GridCell>
-        <GridCell>
-          <h5>90</h5>
-          <ProgressLinear percent={90} singleColor />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell>
+            <h5>25</h5>
+            <ProgressLinear percent={25} />
+          </GridCell>
+          <GridCell>
+            <h5>55</h5>
+            <ProgressLinear percent={55} />
+          </GridCell>
+          <GridCell>
+            <h5>90</h5>
+            <ProgressLinear percent={90} />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>status</h2>
       <p>Компонент может отражать статус.</p>
-      <GridRow>
-        <GridCell>
-          <h5>BASE</h5>
-          <ProgressLinear percent={75} singleColor status="BASE" />
-        </GridCell>
-        <GridCell>
-          <h5>PRIMARY</h5>
-          <ProgressLinear percent={75} singleColor status="PRIMARY" />
-        </GridCell>
-        <GridCell>
-          <h5>SUCCESS</h5>
-          <ProgressLinear percent={75} singleColor status="SUCCESS" />
-        </GridCell>
-        <GridCell>
-          <h5>WARNING</h5>
-          <ProgressLinear percent={75} singleColor status="WARNING" />
-        </GridCell>
-        <GridCell>
-          <h5>ERROR</h5>
-          <ProgressLinear percent={75} singleColor status="ERROR" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={3}>
+            <h5>PRIMARY</h5>
+            <ProgressLinear percent={75} singleColor status="PRIMARY" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>SUCCESS</h5>
+            <ProgressLinear percent={75} singleColor status="SUCCESS" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>WARNING</h5>
+            <ProgressLinear percent={75} singleColor status="WARNING" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>ERROR</h5>
+            <ProgressLinear percent={75} singleColor status="ERROR" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>size (S)</h2>
       <p>Компонент может быть одного из четырех размеров.</p>
-      <GridRow>
-        <GridCell>
-          <h5>M</h5>
-          <ProgressLinear percent={55} size="M" />
-        </GridCell>
-        <GridCell>
-          <h5>L</h5>
-          <ProgressLinear percent={55} size="L" />
-        </GridCell>
-        <GridCell>
-          <h5>XL</h5>
-          <ProgressLinear percent={55} size="XL" />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={3}>
+            <h5>S</h5>
+            <ProgressLinear percent={55} size="S" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>M</h5>
+            <ProgressLinear percent={55} size="M" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>L</h5>
+            <ProgressLinear percent={55} size="L" />
+          </GridCell>
+          <GridCell size={3}>
+            <h5>XL</h5>
+            <ProgressLinear percent={55} size="XL" />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>withContour</h2>
       <p>Компонент может быть с контуром.</p>
-      <GridRow>
-        <GridCell fullWidth>
-          <ProgressLinear percent={55} withContour />
-        </GridCell>
-      </GridRow>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={12}>
+            <ProgressLinear percent={55} withContour />
+          </GridCell>
+        </GridRow>
+      </Grid>
+
       <h2>withText</h2>
       <p>Компонент может быть с цифровой индикацией.</p>
-      <GridRow>
-        <GridCell fullWidth>
-          <ProgressLinear percent={35} singleColor size="L" status="PRIMARY" withText />
-        </GridCell>
-      </GridRow>
-    </StoriesItem>
+      <Grid>
+        <GridDivider />
+        <GridRow>
+          <GridCell size={12}>
+            <ProgressLinear percent={35} singleColor size="L" status="PRIMARY" withText />
+          </GridCell>
+        </GridRow>
+      </Grid>
+    </>
   ))
   .add('Knobs', () => (
     <StoriesItem>
