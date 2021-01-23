@@ -4,7 +4,8 @@ const wrapperStyle = {
   padding: '20px 40px',
   color: '#FFF',
   background: '#333',
-  fontSize: '20px',
+  fontSize: '16px',
+  lineHeight: '20px',
 };
 
 const StoriesWrapper = ({ children }: { children: ReactNode}) => (

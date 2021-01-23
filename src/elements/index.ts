@@ -40,5 +40,12 @@ export {
 export { ProgressStatus } from './progress/types';
 export { Text } from './text';
 export { TextAlign, TextFontWeight, TextTagName } from './text/types';
+export { Textarea } from './textarea';
+export {
+  TextareaChangeEvent,
+  TextareaClickEvent,
+  TextareaFocusEvent,
+  TextareaKeyPressEvent
+} from './textarea/types';
 export { WindowLoader } from './window-loader';
 export { WindowLoaderThemeColor } from './window-loader/types';

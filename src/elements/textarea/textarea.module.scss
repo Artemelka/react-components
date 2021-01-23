@@ -1,0 +1,164 @@
+.Textarea {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    background-color: var(--activeColor);
+    bottom: 4px;
+    content: "";
+    height: 1px;
+    position: absolute;
+    transition: background-color .2s, width .2s;
+    width: 0;
+  }
+
+  &::before {
+    right: 50%;
+  }
+
+  &::after {
+    left: 50%;
+  }
+
+  &--with-information {
+    &::before,
+    &::after {
+      bottom: 19px;
+    }
+  }
+
+  &--focused {
+    &::before,
+    &::after {
+      width: 50%;
+    }
+
+    &-error {
+      &::before,
+      &::after {
+        width: 0;
+      }
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: var(--baseColor);
+    font-size: 18px;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+
+    &:disabled,
+    &--disabled {
+      border-color: var(--disabledColor);
+      color: var(--disabledColor);
+    }
+
+    &--size {
+      &-big {
+        font-size: 24px;
+        line-height: 26px;
+        padding: 14px 30px;
+
+        &-icon {
+          padding: 14px 64px 14px 30px;
+        }
+      }
+
+      &-medium {
+        font-size: 18px;
+        line-height: 20px;
+        padding: 8px 14px;
+
+        &-icon {
+          padding: 8px 48px 8px 14px;
+        }
+      }
+
+      &-small {
+        font-size: 14px;
+        line-height: 16px;
+        padding: 6px 12px;
+
+        &-icon {
+          padding: 6px 40px 6px 12px;
+        }
+      }
+    }
+
+    &--variant {
+      &-base {
+        border-bottom: 1px solid var(--secondaryColor);
+      }
+
+      &-filled {
+        border: 1px solid var(--secondaryColor);
+
+        &:focus {
+          border-color: var(--activeColor);
+        }
+      }
+    }
+
+    &--theme {
+      &-base {
+        border-color: var(--baseColor);
+      }
+
+      &-accent {
+        border-color: var(--accentColor);
+      }
+
+      &-secondary {
+        border-color: var(--secondaryColor);
+      }
+
+      &-primary {
+        border-color: var(--primaryColor);
+      }
+    }
+
+    &--error {
+      border-color: var(--errorColor);
+
+      &:focus {
+        border-color: var(--errorColor);
+        box-shadow: 0 0 8px var(--errorColor);
+      }
+    }
+  }
+
+  &__button {
+    font-size: 0;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+  }
+
+  &__information {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    height: 15px;
+  }
+
+  &__error {
+    color: var(--errorColor);
+  }
+
+  &__counter {
+    margin-left: auto;
+    padding: 0 10px;
+    text-align: right;
+
+    &-value {
+      &--error {
+        color: var(--errorColor);
+      }
+    }
+  }
+}
