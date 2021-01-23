@@ -29,6 +29,14 @@ export {
   ContentButtonGroupItem,
 } from './collapse-panel/types';
 export { Input } from './input';
+export {
+  InputChangeEvent,
+  InputFocusEvent,
+  InputIconConfig,
+  InputIconMouseEvent,
+  InputKeyboardEvent,
+  InputMouseEvent,
+} from './input/types';
 export { Overlay } from './overlay';
 export {
   ProgressCircular,
@@ -40,5 +48,13 @@ export {
 export { ProgressStatus } from './progress/types';
 export { Text } from './text';
 export { TextAlign, TextFontWeight, TextTagName } from './text/types';
+export { Textarea } from './textarea';
+export {
+  TextareaChangeEvent,
+  TextareaClickEvent,
+  TextareaFocusEvent,
+  TextareaIconConfig,
+  TextareaKeyPressEvent,
+} from './textarea/types';
 export { WindowLoader } from './window-loader';
 export { WindowLoaderThemeColor } from './window-loader/types';

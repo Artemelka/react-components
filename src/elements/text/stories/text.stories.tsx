@@ -47,13 +47,13 @@ storiesOf('Text', module)
             </Text>
           </GridCell>
           <GridCell>
-            <Text fontWeight="bold">
-              it`s bold
+            <Text fontWeight="semi-bold">
+              it`s semi-bold
             </Text>
           </GridCell>
           <GridCell>
-            <Text fontWeight="semi-bold">
-              it`s semi-bold
+            <Text fontWeight="bold">
+              it`s bold
             </Text>
           </GridCell>
         </GridRow>

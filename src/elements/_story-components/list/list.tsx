@@ -5,5 +5,5 @@ export const List = memo((props: PropsWithChildren<{}>) => (
 ));
 
 export const ListItem = memo((props: PropsWithChildren<{}>) => (
-  <li style={{ padding: '15px 0' }}>{props.children}</li>
+  <li style={{ padding: '5px 0' }}>{props.children}</li>
 ));

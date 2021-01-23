@@ -8,10 +8,10 @@ import {
 
 export const IntroComponent = () => (
   <StoriesItem>
-    <Intro name="Input">
+    <Intro name="Textarea">
       <List>
         <ListItem>Для того, что бы компонент работал,
-          ему необходимо передать значение value
+          ему необходимо передать значения name, value
           и колбэк OnChange который будет изменять value.
         </ListItem>
         <ListItem>
@@ -22,13 +22,6 @@ export const IntroComponent = () => (
               onClick - колбек события клика по иконке.
             </ListItem>
           </List>
-          <p>
-            Кликабельная иконка отображается только когда передано value != пустой строке.
-          </p>
-          <p>
-            Вы можете не передавать колбэк,
-            тогда иконка будет отображаться всегда в состоянии disabled.
-          </p>
         </ListItem>
       </List>
       <p>

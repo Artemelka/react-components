@@ -8,8 +8,9 @@ import {
 } from '@artemelka/react-components';
 import {
   Grid,
-  GridRow,
   GridCell,
+  GridDivider,
+  GridRow,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -27,16 +28,17 @@ storiesOf('Clock', module)
       <h2>Size (small)</h2>
       <p>Компонент может быть одного из трех размеров.</p>
       <Grid>
+        <GridDivider />
         <GridRow>
-          <GridCell>
+          <GridCell horizontalAlign="center" size={6}>
             <h5>small</h5>
             <Clock size="small" />
           </GridCell>
-          <GridCell>
+          <GridCell horizontalAlign="center" size={6}>
             <h5>medium</h5>
             <Clock size="medium" />
           </GridCell>
-          <GridCell>
+          <GridCell horizontalAlign="center" size={12}>
             <h5>large</h5>
             <Clock size="large" />
           </GridCell>
@@ -45,16 +47,17 @@ storiesOf('Clock', module)
       <h2>timeZone</h2>
       <p>Компоненту можно задать часовой пояс.</p>
       <Grid>
+        <GridDivider />
         <GridRow>
-          <GridCell>
+          <GridCell horizontalAlign="center">
             <h5>New York</h5>
             <Clock timeZone="America/New_York" />
           </GridCell>
-          <GridCell>
+          <GridCell horizontalAlign="center">
             <h5>Moscow</h5>
             <Clock timeZone="Europe/Moscow" />
           </GridCell>
-          <GridCell>
+          <GridCell horizontalAlign="center">
             <h5>London</h5>
             <Clock timeZone="Europe/London" />
           </GridCell>
@@ -63,6 +66,7 @@ storiesOf('Clock', module)
       <h2>alarmTime</h2>
       <p>Компоненту можно задать время срабатываия колбэка onAlarm (будильник)</p>
       <Grid>
+        <GridDivider />
         <GridRow>
           <GridCell size={12}>
             <Clock alarmTime="00:40" />
