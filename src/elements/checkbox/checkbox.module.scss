@@ -47,8 +47,6 @@
       background-color: transparent;
     }
 
-    &-filled {}
-
     &-only-text {
       background-color: transparent;
 
@@ -153,7 +151,6 @@
     }
 
     &--variant {
-      &-base {}
       &-filled {
         background-color: var(--baseColor);
 
@@ -161,7 +158,6 @@
           background-color: var(--mainColor);
         }
       }
-      &-only-text {}
     }
 
     &--disabled {
