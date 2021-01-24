@@ -2,7 +2,8 @@ import {
   ChangeEvent,
   FocusEvent,
   KeyboardEvent,
-  MouseEvent, ReactNode,
+  MouseEvent,
+  ReactNode,
 } from 'react';
 
 type InputEventParams = {

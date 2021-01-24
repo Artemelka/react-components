@@ -28,6 +28,13 @@ export {
   CollapseHeaderActionConfig,
   ContentButtonGroupItem,
 } from './collapse-panel/types';
+export { Checkbox } from './checkbox';
+export {
+  CheckboxMouseEvent,
+  CheckboxKeyboardEvent,
+  CheckboxFocusEvent,
+  CheckboxChangeEvent,
+} from './checkbox/types';
 export { Input } from './input';
 export {
   InputChangeEvent,

@@ -1,0 +1,11 @@
+.Group {
+  margin: 0 -20px;
+  padding-bottom: 60px;
+
+  &__item {
+    display: inline-block;
+    line-height: 0;
+    padding: 0 12px;
+    vertical-align: middle;
+  }
+}
