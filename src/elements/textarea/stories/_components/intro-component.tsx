@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Highlighter,
   Intro,
   List,
   ListItem,
@@ -7,23 +8,34 @@ import {
 
 export const IntroComponent = () => (
   <Intro name="Textarea">
+    <p>
+      Для того, что бы компонент работал, ему необходимо передать значения
+      <Highlighter isFilled>name</Highlighter>,
+      <Highlighter isFilled>value</Highlighter>
+      и колбэк
+      <Highlighter isFilled>OnChange</Highlighter>
+      который будет изменять
+      <Highlighter isFilled>value</Highlighter>.
+    </p>
+    <p>
+      Для отображения иконки необходимо передать
+      <Highlighter isFilled>iconConfig</Highlighter>:
+    </p>
     <List>
-      <ListItem>Для того, что бы компонент работал,
-        ему необходимо передать значения name, value
-        и колбэк OnChange который будет изменять value.
+      <ListItem isRow>
+        <Highlighter isFilled>icon</Highlighter>
+        - отрендеренный компонент иконки.
       </ListItem>
-      <ListItem>
-        Для отображения иконки необходимо передать iconConfig:
-        <List>
-          <ListItem>icon - отрендеренный компонент иконки.</ListItem>
-          <ListItem>
-            onClick - колбек события клика по иконке.
-          </ListItem>
-        </List>
+      <ListItem isRow>
+        <Highlighter isFilled>onClick</Highlighter>
+        - колбек события клика по иконке.
       </ListItem>
     </List>
     <p>
-      Все колбэки событий компонента прнимают аргументом объект со значениями name, value, event.
+      Все колбэки событий компонента прнимают аргументом объект со значениями
+      <Highlighter isFilled>event</Highlighter>,
+      <Highlighter isFilled>name</Highlighter>,
+      <Highlighter isFilled>value</Highlighter>.
     </p>
     <p>
       Компонент занимает всю ширину родителя.

@@ -7,6 +7,7 @@ import {
   GridDivider,
   GridCell,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -24,9 +25,16 @@ storiesOf('Text', module)
     <>
       <IntroComponent />
 
-      <h2>fontWeight (regular)</h2>
+      <h2>
+        <Highlighter>fontWeight</Highlighter> (regular)
+      </h2>
       <p>
-        Компонент может менять начертание шрифта (ваш шрифт должен поддерживать эти начертания).
+        Компонент может менять начертание шрифта
+        (
+        <Highlighter color="error">
+          ваш шрифт должен поддерживать эти начертания
+        </Highlighter>
+        ).
       </p>
       <Grid>
         <GridDivider />
@@ -59,7 +67,9 @@ storiesOf('Text', module)
         </GridRow>
       </Grid>
 
-      <h2>upper</h2>
+      <h2>
+        <Highlighter>upper</Highlighter> (false)
+      </h2>
       <p>Компонент может трансформировать текст в UPPERCASE.</p>
       <Grid>
         <GridDivider />
@@ -72,7 +82,9 @@ storiesOf('Text', module)
         </GridRow>
       </Grid>
 
-      <h2>tagName (span)</h2>
+      <h2>
+        <Highlighter>tagName</Highlighter> (span)
+      </h2>
       <p>Компонент может менять тэг.</p>
       <Grid>
         <GridDivider />
@@ -120,8 +132,19 @@ storiesOf('Text', module)
         </GridRow>
       </Grid>
 
-      <h2>align (left)</h2>
-      <p>Компонент может выравнивать текст по горизонтали (только если тэг блочный).</p>
+      <h2>
+        <Highlighter>align</Highlighter> (left)
+      </h2>
+      <p>
+        Компонент может выравнивать текст по горизонтали
+        (
+        <Highlighter color="error">
+          только если
+          <Highlighter isFilled>tagName</Highlighter>
+          блочный
+        </Highlighter>
+        ).
+      </p>
       <Grid>
         <GridDivider />
         <GridRow>

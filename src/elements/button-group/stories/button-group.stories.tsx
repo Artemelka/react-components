@@ -12,6 +12,7 @@ import {
   GridCell,
   GridDivider,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -71,9 +72,21 @@ storiesOf('ButtonGroup', module)
             </GridCell>
           </GridRow>
         </Grid>
-        <h2>isOnlyIcons</h2>
-        <p>Для корректной работы нужно передать icon для каждой кнопки.</p>
-        <p>Параметр value будет проигнорирован.</p>
+        <h2>
+          <Highlighter>isOnlyIcons</Highlighter> (false)
+        </h2>
+        <p>
+          Для корректной работы нужно передать
+          <Highlighter isFilled>icon</Highlighter>
+          для каждой кнопки.
+        </p>
+        <p>
+          <Highlighter color="error">
+            Параметр
+            <Highlighter isFilled>value</Highlighter>
+            будет проигнорирован.
+          </Highlighter>
+        </p>
         <Grid>
           <GridDivider />
           <GridRow>
@@ -96,7 +109,9 @@ storiesOf('ButtonGroup', module)
           </GridRow>
         </Grid>
 
-        <h2>Size (medium)</h2>
+        <h2>
+          <Highlighter>size</Highlighter> (medium)
+        </h2>
         <p>Компонент может быть одного из трех размеров.</p>
         <Grid>
           <GridRow>
@@ -223,11 +238,35 @@ storiesOf('ButtonGroup', module)
           </GridRow>
         </Grid>
 
-        <h2>isVertical</h2>
-        <p>Компонент может быть расположен вертикально.</p>
+        <h2>
+          <Highlighter>isVertical</Highlighter> (false)
+        </h2>
+        <p>Компонент может быть расположен вертикально и позиционировать текст.</p>
+        <h4>
+          <Highlighter>alignText</Highlighter> (center)
+        </h4>
         <Grid>
           <GridRow>
-            <GridCell>
+            <GridCell size={3}>
+              <h5>left</h5>
+              <ButtonGroup
+                alignText="left"
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isVertical
+              />
+            </GridCell>
+            <GridCell size={3}>
+              <h5>center</h5>
               <ButtonGroup
                 buttons={[
                   {
@@ -243,7 +282,25 @@ storiesOf('ButtonGroup', module)
                 isVertical
               />
             </GridCell>
-            <GridCell>
+            <GridCell size={3}>
+              <h5>right</h5>
+              <ButtonGroup
+                alignText="right"
+                buttons={[
+                  {
+                    value: 'first button',
+                  }, {
+                    value: 'second button',
+                  }, {
+                    value: 'third button',
+                  }, {
+                    value: 'fourth button',
+                  },
+                ]}
+                isVertical
+              />
+            </GridCell>
+            <GridCell size={3} verticalAlign="end">
               <ButtonGroup
                 buttons={[
                   {
@@ -263,7 +320,9 @@ storiesOf('ButtonGroup', module)
           </GridRow>
         </Grid>
 
-        <h2>Variant (base)</h2>
+        <h2>
+          <Highlighter>variant</Highlighter> (base)
+        </h2>
         <p>Компонент имеет три варианта отображения.</p>
         <Grid>
           <GridRow>
@@ -378,10 +437,17 @@ storiesOf('ButtonGroup', module)
           </GridRow>
         </Grid>
 
-        <h2>isFullWidth</h2>
+        <h2>
+          <Highlighter>isFullWidth</Highlighter> (false)
+        </h2>
         <p>Компонент может занимать всю ширину родителя и позиционировать текст.</p>
-        <p>Не работает без isVertical.</p>
-        <h4>alignText (center)</h4>
+        <p>
+          <Highlighter color="error">Не работает без</Highlighter>
+          <Highlighter isFilled>isVertical</Highlighter>.
+        </p>
+        <h4>
+          <Highlighter>alignText</Highlighter> (center)
+        </h4>
         <Grid>
           <GridRow>
             <GridCell>
@@ -445,7 +511,9 @@ storiesOf('ButtonGroup', module)
           </GridRow>
         </Grid>
 
-        <h2>themeColor</h2>
+        <h2>
+          <Highlighter>themeColor</Highlighter>
+        </h2>
         <p>Компонент может сменить тему на одну из пяти.</p>
         <Grid>
           <GridRow>

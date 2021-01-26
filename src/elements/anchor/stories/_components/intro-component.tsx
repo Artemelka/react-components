@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import {
+  Highlighter,
   Intro,
   List,
   ListItem,
@@ -9,14 +10,14 @@ export const IntroComponent = memo(() => (
   <>
     <Intro name="Anchor">
       <List>
-        <ListItem>
-          Вы можете передать параметр id и получить его в любом колбэке события.
+        <ListItem isRow>
+          Вы можете передать параметр
+          <Highlighter isFilled>id</Highlighter>
+          и получить его в любом колбэке события.
         </ListItem>
-        <ListItem>
-          Параметр href возвращается в колбэках событий.
-        </ListItem>
-        <ListItem>
-          Если вам необходимо нативное поведение ссылки - задайте withPreventedEvent = false.
+        <ListItem isRow>
+          Параметр <Highlighter isFilled>href</Highlighter>
+          возвращается в колбэках событий.
         </ListItem>
       </List>
     </Intro>

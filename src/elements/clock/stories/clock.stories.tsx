@@ -11,6 +11,7 @@ import {
   GridCell,
   GridDivider,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -25,7 +26,9 @@ storiesOf('Clock', module)
   .add('Examples', () => (
     <StoriesItem>
       <IntroComponent />
-      <h2>Size (small)</h2>
+      <h2>
+        <Highlighter>size</Highlighter> (small)
+      </h2>
       <p>Компонент может быть одного из трех размеров.</p>
       <Grid>
         <GridDivider />
@@ -44,7 +47,9 @@ storiesOf('Clock', module)
           </GridCell>
         </GridRow>
       </Grid>
-      <h2>timeZone</h2>
+      <h2>
+        <Highlighter>timeZone</Highlighter>
+      </h2>
       <p>Компоненту можно задать часовой пояс.</p>
       <Grid>
         <GridDivider />
@@ -63,7 +68,9 @@ storiesOf('Clock', module)
           </GridCell>
         </GridRow>
       </Grid>
-      <h2>alarmTime</h2>
+      <h2>
+        <Highlighter>alarmTime</Highlighter>
+      </h2>
       <p>Компоненту можно задать время срабатываия колбэка onAlarm (будильник)</p>
       <Grid>
         <GridDivider />

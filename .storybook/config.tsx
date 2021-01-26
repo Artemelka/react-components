@@ -2,16 +2,28 @@ import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Container } from './container';
 import { withKnobs } from '@storybook/addon-knobs';
+import { create } from '@storybook/theming/create';
 // ToDo: need update storybook to version ^6.0.0
 // @ts-ignore
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
+const myTheme = create({
+  base: 'dark',
+  fontBase: '"Jura", sans-serif',
+});
+
 addDecorator(withKnobs);
 addParameters({
-    docs: {
-        container: DocsContainer,
-        page: DocsPage,
-    }
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+  options: {
+    theme: {
+      // ...themes.dark,
+      ... myTheme,
+    },
+  }
 });
 
 

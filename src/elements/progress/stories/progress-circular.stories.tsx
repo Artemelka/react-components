@@ -11,6 +11,7 @@ import {
   GridDivider,
   GridCell,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { COMPONENT_TITLE, NUMBER_OPTIONS } from './constants';
@@ -25,8 +26,13 @@ storiesOf('ProgressCircular', module)
     <>
       <IntroComponent name="ProgressCircular" />
 
-      <h2>percent</h2>
-      <p>Компонент меняет цвет в зависимости от велечины percent.</p>
+      <h2>
+        <Highlighter>percent</Highlighter>
+      </h2>
+      <p>
+        Компонент меняет цвет в зависимости от велечины
+        <Highlighter isFilled>percent</Highlighter>.
+      </p>
       <Grid>
         <GridDivider />
         <GridRow>
@@ -45,7 +51,9 @@ storiesOf('ProgressCircular', module)
         </GridRow>
       </Grid>
 
-      <h2>status</h2>
+      <h2>
+        <Highlighter>status</Highlighter>
+      </h2>
       <p>Компонент может отражать статус.</p>
       <Grid>
         <GridDivider />
@@ -69,7 +77,9 @@ storiesOf('ProgressCircular', module)
         </GridRow>
       </Grid>
 
-      <h2>size (L)</h2>
+      <h2>
+        <Highlighter>size</Highlighter> (L)
+      </h2>
       <p>Компонент может быть одного из четырех размеров.</p>
       <Grid>
         <GridDivider />
@@ -93,7 +103,9 @@ storiesOf('ProgressCircular', module)
         </GridRow>
       </Grid>
 
-      <h2>withContour</h2>
+      <h2>
+        <Highlighter>withContour</Highlighter> (false)
+      </h2>
       <p>Компонент может быть с контуром.</p>
       <Grid>
         <GridDivider />
@@ -104,7 +116,9 @@ storiesOf('ProgressCircular', module)
         </GridRow>
       </Grid>
 
-      <h2>withText</h2>
+      <h2>
+        <Highlighter>withText</Highlighter> (false)
+      </h2>
       <p>Компонент может быть с цифровой индикацией.</p>
       <Grid>
         <GridDivider />

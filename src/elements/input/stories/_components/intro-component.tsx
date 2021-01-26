@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Highlighter,
   Intro,
   List,
   ListItem,
@@ -7,30 +8,47 @@ import {
 
 export const IntroComponent = () => (
   <Intro name="Input">
+    <p>
+      Для того, что бы компонент работал, ему необходимо передать значение
+      <Highlighter isFilled>value</Highlighter>
+      и колбэк
+      <Highlighter isFilled>OnChange</Highlighter>
+      который будет изменять value.
+    </p>
+    <p>
+      Для отображения иконки необходимо передать
+      <Highlighter isFilled>iconConfig</Highlighter>:
+    </p>
     <List>
-      <ListItem>Для того, что бы компонент работал,
-        ему необходимо передать значение value
-        и колбэк OnChange который будет изменять value.
+      <ListItem>
+        <span>
+          <Highlighter isFilled>icon</Highlighter>
+        - отрендеренный компонент иконки.
+        </span>
+        <p>
+          Кликабельная иконка отображается только когда передано
+          <Highlighter isFilled>value</Highlighter>
+          !=
+          <Highlighter color="error" isFilled>пустой строке</Highlighter>.
+        </p>
       </ListItem>
       <ListItem>
-        Для отображения иконки необходимо передать iconConfig:
-        <List>
-          <ListItem>icon - отрендеренный компонент иконки.</ListItem>
-          <ListItem>
-            onClick - колбек события клика по иконке.
-          </ListItem>
-        </List>
-        <p>
-          Кликабельная иконка отображается только когда передано value != пустой строке.
-        </p>
+        <span>
+          <Highlighter isFilled>onClick</Highlighter>
+        - колбек события клика по иконке.
+        </span>
         <p>
           Вы можете не передавать колбэк,
-          тогда иконка будет отображаться всегда в состоянии disabled.
+          тогда иконка будет отображаться всегда в состоянии
+          <Highlighter color="accent" isFilled>disabled</Highlighter>.
         </p>
       </ListItem>
     </List>
     <p>
-      Все колбэки событий компонента прнимают аргументом объект со значениями name, value, event.
+      Все колбэки событий компонента прнимают аргументом объект со значениями
+      <Highlighter isFilled>event</Highlighter>,
+      <Highlighter isFilled>name</Highlighter>,
+      <Highlighter isFilled>value</Highlighter>.
     </p>
     <p>
       Компонент занимает всю ширину родителя.

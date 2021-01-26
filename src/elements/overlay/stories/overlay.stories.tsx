@@ -8,6 +8,7 @@ import {
   GridDivider,
   GridCell,
   GridRow,
+  Highlighter,
   Intro,
   StoriesItem,
 } from '../../_story-components';
@@ -34,10 +35,13 @@ storiesOf('Overlay', module)
 
       return props.children({ isShow, onClick: handleClick });
     };
+
     return (
       <>
         <Intro name="Overlay" />
-        <h2>onOverlayClick</h2>
+        <h2>
+          <Highlighter>onOverlayClick</Highlighter>
+        </h2>
         <p>Компонент принимает колбэк события клика.</p>
         <Grid>
           <GridDivider />
@@ -57,7 +61,9 @@ storiesOf('Overlay', module)
           </GridRow>
         </Grid>
 
-        <h2>isLightColor</h2>
+        <h2>
+          <Highlighter>isLightColor</Highlighter> (false)
+        </h2>
         <p>Компонент может иметь светлый цвет фона.</p>
         <Grid>
           <GridDivider />
@@ -81,7 +87,9 @@ storiesOf('Overlay', module)
           </GridRow>
         </Grid>
 
-        <h2>isTransparent</h2>
+        <h2>
+          <Highlighter>isTransparent</Highlighter> (false)
+        </h2>
         <p>Компонент может быть с прозрачным фоном.</p>
         <Grid>
           <GridDivider />
@@ -105,7 +113,9 @@ storiesOf('Overlay', module)
           </GridRow>
         </Grid>
 
-        <h2>inContainer</h2>
+        <h2>
+          <Highlighter>inContainer</Highlighter> (false)
+        </h2>
         <p>Компонент может перекрывать часть разметки.</p>
         <p>Границы задает родитель с position: !== static</p>
         <Grid>

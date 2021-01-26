@@ -1,15 +1,15 @@
 import React, { memo } from 'react';
-import { Intro, List, ListItem } from '../../../_story-components';
+import {
+  Highlighter,
+  Intro,
+} from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
   <Intro name="Button">
-    <List>
-      <ListItem>
-        Компонент принемает параметр id и возвращает его в колбэках событий
-      </ListItem>
-      <ListItem>
-        Вы можете передать только value, value и icon, только icon.
-      </ListItem>
-    </List>
+    <p>
+      Компонент принемает параметр
+      <Highlighter isFilled>id</Highlighter>
+      и возвращает его в колбэках событий.
+    </p>
   </Intro>
 ));

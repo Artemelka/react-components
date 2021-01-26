@@ -8,6 +8,7 @@ import {
   Grid,
   GridCell,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -27,18 +28,23 @@ storiesOf('Button', module)
   .add('Examples', () => (
     <>
       <IntroComponent />
+      Вы можете передать:
       <Grid>
         <GridRow>
           <GridCell size={3} verticalAlign="between">
-            <h5>только value</h5>
+            <h5>только <Highlighter isFilled>value</Highlighter></h5>
             <Button value="text" />
           </GridCell>
           <GridCell size={3} verticalAlign="between">
-            <h5>icon и value</h5>
+            <h5>
+              <Highlighter isFilled>icon</Highlighter>
+              и
+              <Highlighter isFilled>value</Highlighter>
+            </h5>
             <Button icon={<Delete fontSize="inherit" />} value="icon and text" />
           </GridCell>
           <GridCell size={3} verticalAlign="between">
-            <h5>только icon</h5>
+            <h5>только <Highlighter isFilled>icon</Highlighter></h5>
             <Button icon={<Delete fontSize="inherit" />} />
           </GridCell>
         </GridRow>
@@ -47,7 +53,9 @@ storiesOf('Button', module)
       <h2>Button state</h2>
       <p>Компонент может иметь различные состояния</p>
       <Grid>
-        <h5>disabled</h5>
+        <h5>
+          <Highlighter color="accent" isFilled>disabled</Highlighter>
+        </h5>
         <GridRow>
           <GridCell size={3} verticalAlign="center">
             <Button
@@ -55,7 +63,7 @@ storiesOf('Button', module)
               value="disabled"
             />
           </GridCell>
-          <GridCell size={3} verticalAlign="center">
+          <GridCell size={4} verticalAlign="center">
             <Button
               disabled
               icon={<Delete fontSize="inherit" />}
@@ -69,7 +77,9 @@ storiesOf('Button', module)
             />
           </GridCell>
         </GridRow>
-        <h5>active</h5>
+        <h5>
+          <Highlighter color="accent" isFilled>active</Highlighter>
+        </h5>
         <GridRow>
           <GridCell size={3} verticalAlign="center">
             <Button
@@ -77,7 +87,7 @@ storiesOf('Button', module)
               value="active"
             />
           </GridCell>
-          <GridCell size={3} verticalAlign="center">
+          <GridCell size={4} verticalAlign="center">
             <Button
               icon={<Delete fontSize="inherit" />}
               isActive
@@ -93,8 +103,10 @@ storiesOf('Button', module)
         </GridRow>
       </Grid>
 
-      <h2>type</h2>
-      <p>Компонент может быть одним из трех типов. (button)</p>
+      <h2>
+        <Highlighter>type</Highlighter> (button)
+      </h2>
+      <p>Компонент может быть одним из трех типов.</p>
       <Grid>
         <GridRow>
           <GridCell size={3}>
@@ -120,10 +132,14 @@ storiesOf('Button', module)
         </GridRow>
       </Grid>
 
-      <h2>fullWidth</h2>
+      <h2>
+        <Highlighter>fullWidth</Highlighter> (false)
+      </h2>
       <p>Компонент может занимать всю ширину родителя и позиционировать текст.</p>
       <Grid>
-        <h4>alignText (center)</h4>
+        <h4>
+          <Highlighter isFilled>alignText</Highlighter> (center)
+        </h4>
         <GridRow>
           <GridCell>
             <h5>left</h5>
@@ -154,7 +170,9 @@ storiesOf('Button', module)
         </GridRow>
       </Grid>
 
-      <h2>size (medium)</h2>
+      <h2>
+        <Highlighter>size</Highlighter> (medium)
+      </h2>
       <p>Компонент может быть одного из трех размеров.</p>
       <Grid>
         <GridRow>
@@ -187,7 +205,9 @@ storiesOf('Button', module)
         </GridRow>
       </Grid>
 
-      <h2>variant (base)</h2>
+      <h2>
+        <Highlighter>variant</Highlighter> (base)
+      </h2>
       <p>Компонент имеет три варианта отображения.</p>
       <Grid>
         <GridRow>
@@ -206,7 +226,9 @@ storiesOf('Button', module)
         </GridRow>
       </Grid>
 
-      <h2>themeColor</h2>
+      <h2>
+        <Highlighter>themeColor</Highlighter>
+      </h2>
       <p>Компонент может сменить тему на одну из пяти.</p>
       <Grid>
         <h5>accent</h5>

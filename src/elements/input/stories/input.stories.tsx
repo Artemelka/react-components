@@ -8,9 +8,11 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Input } from '@artemelka/react-components';
 import {
   Grid,
-  GridRow,
   GridCell,
-  StoriesItem, GridDivider,
+  GridDivider,
+  GridRow,
+  Highlighter,
+  StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 import {
@@ -69,12 +71,19 @@ storiesOf('Input', module)
 
             <h2>Input state</h2>
             <p>Компонент может иметь различные состояния.</p>
-            <p>Иконка не отображается при состояниях disabled и readOnly.</p>
+            <p>
+              Иконка не отображается при состояниях
+              <Highlighter color="accent" isFilled>disabled</Highlighter>
+              и
+              <Highlighter color="accent" isFilled>readOnly</Highlighter>.
+            </p>
             <Grid>
               <GridDivider />
               <GridRow>
                 <GridCell>
-                  <h5>disabled</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>disabled</Highlighter>
+                  </h5>
                   <Input
                     disabled
                     iconConfig={{
@@ -88,7 +97,9 @@ storiesOf('Input', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>isReadOnly</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>isReadOnly</Highlighter>
+                  </h5>
                   <Input
                     iconConfig={{
                       icon: <Clear fontSize="inherit" />,
@@ -101,7 +112,9 @@ storiesOf('Input', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>isError</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>isError</Highlighter>
+                  </h5>
                   <Input
                     iconConfig={{
                       icon: <Clear fontSize="inherit" />,
@@ -115,7 +128,9 @@ storiesOf('Input', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>placeholder</h5>
+                  <h5>
+                    <Highlighter isFilled>placeholder</Highlighter>
+                  </h5>
                   <Input
                     name="input-base-placeholder"
                     onChange={onChange}
@@ -124,7 +139,11 @@ storiesOf('Input', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>icon without onClick</h5>
+                  <h5>
+                    <Highlighter isFilled>iconConfig</Highlighter>
+                    without
+                    <Highlighter isFilled>onClick</Highlighter>
+                  </h5>
                   <Input
                     iconConfig={{
                       icon: <Clear fontSize="inherit" />,
@@ -137,7 +156,9 @@ storiesOf('Input', module)
               </GridRow>
             </Grid>
 
-            <h2>type (text)</h2>
+            <h2>
+              <Highlighter>type</Highlighter> (text)
+            </h2>
             <p>Компонент может быть одним из трех типов.</p>
             <Grid>
               <GridDivider />
@@ -188,7 +209,9 @@ storiesOf('Input', module)
               </GridRow>
             </Grid>
 
-            <h2>variant (base)</h2>
+            <h2>
+              <Highlighter>variant</Highlighter> (base)
+            </h2>
             <p>Компонент имеет три варианта отображения.</p>
             <Grid>
               <GridDivider />
@@ -238,7 +261,9 @@ storiesOf('Input', module)
               </GridRow>
             </Grid>
 
-            <h2>size (medium)</h2>
+            <h2>
+              <Highlighter>size</Highlighter> (medium)
+            </h2>
             <p>Компонент может быть одного из трех размеров.</p>
             <Grid>
               <GridDivider />
@@ -384,7 +409,9 @@ storiesOf('Input', module)
               </GridRow>
             </Grid>
 
-            <h2>themeColor</h2>
+            <h2>
+              <Highlighter>themeColor</Highlighter>
+            </h2>
             <p>Компонент может сменить тему на одну из трех.</p>
             <GridDivider />
             <Grid>

@@ -9,6 +9,7 @@ import {
   GridRow,
   Group,
   GroupItem,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -36,6 +37,15 @@ storiesOf('Anchor', module)
         <Group>
           <GroupItem>
             <Anchor
+              active={activeName === 'home'}
+              href="home"
+              onClick={handleClick}
+            >
+              Home
+            </Anchor>
+          </GroupItem>
+          <GroupItem>
+            <Anchor
               active={activeName === PROJECT_LINK}
               href={PROJECT_LINK}
               onClick={handleClick}
@@ -61,6 +71,15 @@ storiesOf('Anchor', module)
               NPM
             </Anchor>
           </GroupItem>
+          <GroupItem>
+            <Anchor
+              active={activeName === 'contacts'}
+              href="contacts"
+              onClick={handleClick}
+            >
+              Contacts
+            </Anchor>
+          </GroupItem>
         </Group>
       );
     };
@@ -68,28 +87,43 @@ storiesOf('Anchor', module)
     return (
       <>
         <IntroComponent />
+        <Grid>
+          <GridRow>
+            <GridCell horizontalAlign="center" size={12}>
+              <Navigation />
+            </GridCell>
+          </GridRow>
+          <p>
+            Если вам необходимо нативное поведение ссылки - задайте
+            <Highlighter isFilled>withPreventedEvent</Highlighter>=
+            <Highlighter color="error" isFilled>false</Highlighter>.
+          </p>
+        </Grid>
+
         <h2>Anchor state</h2>
         <Grid>
           <GridRow>
             <GridCell>
-              <h5>base</h5>
-              <Anchor href={REPO_LINK}>base link</Anchor>
-            </GridCell>
-            <GridCell>
-              <h5>active</h5>
+              <h5>
+                <Highlighter color="accent" isFilled>active</Highlighter>
+              </h5>
               <Anchor active href={REPO_LINK}>active link</Anchor>
             </GridCell>
             <GridCell>
-              <h5>disabled</h5>
+              <h5>
+                <Highlighter color="accent" isFilled>disabled</Highlighter>
+              </h5>
               <Anchor disabled href={REPO_LINK}>disabled link</Anchor>
             </GridCell>
           </GridRow>
         </Grid>
-        <h2>target (_blank)</h2>
+        <h2>
+          <Highlighter>target</Highlighter> (_blank)
+        </h2>
         <Grid>
           <GridRow>
             <GridCell verticalAlign="between">
-              <h5>_blank (default)</h5>
+              <h5>_blank</h5>
               <Anchor
                 href={NPM_LINK}
                 target="_blank"
@@ -120,11 +154,21 @@ storiesOf('Anchor', module)
             </GridCell>
           </GridRow>
         </Grid>
-        <h2>Navigation example</h2>
+
+        <h2>
+          <Highlighter>title</Highlighter>
+        </h2>
+        <p>Компонент может показывать подсказку при задержке на нем наведения.</p>
         <Grid>
           <GridRow>
-            <GridCell size={12}>
-              <Navigation />
+            <GridCell>
+              <Anchor
+                href={NPM_LINK}
+                target="_blank"
+                title="It`s title"
+              >
+                link with title
+              </Anchor>
             </GridCell>
           </GridRow>
         </Grid>

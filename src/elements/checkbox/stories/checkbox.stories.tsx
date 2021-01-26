@@ -12,6 +12,7 @@ import {
   GridDivider,
   GridRow,
   GroupItem,
+  Highlighter,
   List,
   ListItem,
   StoriesItem,
@@ -147,24 +148,34 @@ storiesOf('Checkbox', module)
             <Grid>
               <GridDivider />
               <GridRow>
-                <GridCell size={3}>
-                  <h5>checked = false</h5>
+                <GridCell horizontalAlign="center" size={3}>
+                  <h5>
+                    <Highlighter isFilled>checked</Highlighter>
+                    =
+                    <Highlighter color="error" isFilled>false</Highlighter>
+                  </h5>
                   <Checkbox
                     checked={false}
                     id="checkbox-off"
                     name="checkbox-off"
                   />
                 </GridCell>
-                <GridCell size={3}>
-                  <h5>checked = true</h5>
+                <GridCell horizontalAlign="center" size={3}>
+                  <h5>
+                    <Highlighter isFilled>checked</Highlighter>
+                    =
+                    <Highlighter color="accent" isFilled>true</Highlighter>
+                  </h5>
                   <Checkbox
                     checked
                     id="checkbox-on"
                     name="checkbox-on"
                   />
                 </GridCell>
-                <GridCell size={3}>
-                  <h5>indeterminate</h5>
+                <GridCell horizontalAlign="center" size={3}>
+                  <h5>
+                    <Highlighter color="accent" isFilled>indeterminate</Highlighter>
+                  </h5>
                   <Checkbox
                     checked
                     id="checkbox-indeterminate"
@@ -172,8 +183,10 @@ storiesOf('Checkbox', module)
                     name="checkbox-indeterminate"
                   />
                 </GridCell>
-                <GridCell size={3}>
-                  <h5>disabled</h5>
+                <GridCell horizontalAlign="center" size={3}>
+                  <h5>
+                    <Highlighter color="accent" isFilled>disabled</Highlighter>
+                  </h5>
                   <Checkbox
                     checked={state['checkbox-disabled']}
                     disabled
@@ -185,7 +198,9 @@ storiesOf('Checkbox', module)
               </GridRow>
             </Grid>
 
-            <h2>size (medium)</h2>
+            <h2>
+              <Highlighter>size</Highlighter> (medium)
+            </h2>
             <p>Компонент может быть одного из трех размеров.</p>
             <Grid>
               <GridDivider />
@@ -222,7 +237,9 @@ storiesOf('Checkbox', module)
               </GridRow>
             </Grid>
 
-            <h2>variant (base)</h2>
+            <h2>
+              <Highlighter>variant</Highlighter> (base)
+            </h2>
             <p>Компонент имеет три варианта отображения.</p>
             <Grid>
               <GridDivider />
@@ -259,7 +276,9 @@ storiesOf('Checkbox', module)
               </GridRow>
             </Grid>
 
-            <h2>themeColor</h2>
+            <h2>
+              <Highlighter>themeColor</Highlighter>
+            </h2>
             <p>Компонент может сменить тему на одну из трех.</p>
             <Grid>
               <GridDivider />

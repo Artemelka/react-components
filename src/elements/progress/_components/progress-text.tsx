@@ -10,7 +10,7 @@ export const ProgressText = ({
   label,
   percent,
   status = PROGRESS_STATUSES.BASE,
-  size = CIRCLE_SIZE.S,
+  size = CIRCLE_SIZE.L,
   withContour,
 }: ProgressTextProps) => (
   <div className={cn('Progress')}>
