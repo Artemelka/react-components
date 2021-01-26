@@ -8,7 +8,9 @@ import { themes } from '@storybook/theming';
 addons.setConfig({
     theme: {
         ...themes.dark,
-        brandTitle: `Artemelka React components ${process.env.VERSION}`,
+          brandTitle: 'Artemelka React components',
+        // brandTitle: `Artemelka React components ${process.env.VERSION}`,
+          fontBase: '"Jura", sans-serif',
     },
     panelPosition: 'right',
     sidebarAnimations: true,

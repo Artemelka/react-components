@@ -17,6 +17,7 @@ import {
   GridCell,
   GridDivider,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -101,7 +102,9 @@ storiesOf('Textarea', module)
               <GridDivider />
               <GridRow>
                 <GridCell>
-                  <h5>disabled</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>disabled</Highlighter>
+                  </h5>
                   <Textarea
                     disabled
                     name="textarea-disabled"
@@ -110,7 +113,9 @@ storiesOf('Textarea', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>readOnly</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>readOnly</Highlighter>
+                  </h5>
                   <Textarea
                     name="textarea-read-only"
                     onChange={onChange}
@@ -119,7 +124,9 @@ storiesOf('Textarea', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>placeholder</h5>
+                  <h5>
+                    <Highlighter isFilled>placeholder</Highlighter>
+                  </h5>
                   <Textarea
                     name="textarea-placeholder"
                     onChange={onChange}
@@ -128,7 +135,9 @@ storiesOf('Textarea', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>maxlength</h5>
+                  <h5>
+                    <Highlighter isFilled>maxlength</Highlighter>
+                  </h5>
                   <Textarea
                     maxlength={10}
                     name="textarea-max-length"
@@ -137,7 +146,9 @@ storiesOf('Textarea', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>error</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>error</Highlighter>
+                  </h5>
                   <Textarea
                     error
                     name="textarea-error"
@@ -146,7 +157,11 @@ storiesOf('Textarea', module)
                   />
                 </GridCell>
                 <GridCell>
-                  <h5>error with errorMessage</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>error</Highlighter>
+                    with
+                    <Highlighter isFilled>errorMessage</Highlighter>
+                  </h5>
                   <Textarea
                     error
                     errorMessage="error message"
@@ -158,7 +173,9 @@ storiesOf('Textarea', module)
               </GridRow>
             </Grid>
 
-            <h2>variant (base)</h2>
+            <h2>
+              <Highlighter>variant</Highlighter> (base)
+            </h2>
             <p>Компонент имеет три варианта отображения.</p>
             <Grid>
               <GridDivider />
@@ -192,7 +209,9 @@ storiesOf('Textarea', module)
               </GridRow>
             </Grid>
 
-            <h2>rows</h2>
+            <h2>
+              <Highlighter>rows</Highlighter>
+            </h2>
             <p>Компоненту можно задать количество видимых строк.</p>
             <Grid>
               <GridRow>
@@ -229,7 +248,9 @@ storiesOf('Textarea', module)
               </GridRow>
             </Grid>
 
-            <h2>size (medium)</h2>
+            <h2>
+              <Highlighter>size</Highlighter> (medium)
+            </h2>
             <p>Компонент может быть одного из трех размеров.</p>
             <Grid>
               <GridDivider />
@@ -327,7 +348,9 @@ storiesOf('Textarea', module)
               </GridRow>
             </Grid>
 
-            <h2>themeColor</h2>
+            <h2>
+              <Highlighter>themeColor</Highlighter>
+            </h2>
             <p>Компонент может сменить тему на одну из трех.</p>
             <Grid>
               <GridDivider />

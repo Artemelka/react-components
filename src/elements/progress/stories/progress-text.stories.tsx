@@ -11,6 +11,7 @@ import {
   GridDivider,
   GridCell,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { COMPONENT_TITLE, NUMBER_OPTIONS } from './constants';
@@ -25,7 +26,9 @@ storiesOf('ProgressText', module)
     <>
       <IntroComponent name="ProgressText" />
 
-      <h2>percent</h2>
+      <h2>
+        <Highlighter>percent</Highlighter>
+      </h2>
       <Grid>
         <GridDivider />
         <GridRow>
@@ -35,35 +38,39 @@ storiesOf('ProgressText', module)
         </GridRow>
       </Grid>
 
-      <h2>status</h2>
+      <h2>
+        <Highlighter>status</Highlighter>
+      </h2>
       <p>Компонент может отражать статус.</p>
       <Grid>
         <GridDivider />
         <GridRow>
-          <GridCell>
+          <GridCell size={2}>
             <h5>BASE</h5>
             <ProgressText percent={75} status="BASE" />
           </GridCell>
-          <GridCell>
+          <GridCell size={2}>
             <h5>PRIMARY</h5>
             <ProgressText percent={75} status="PRIMARY" />
           </GridCell>
-          <GridCell>
+          <GridCell size={2}>
             <h5>SUCCESS</h5>
             <ProgressText percent={75} status="SUCCESS" />
           </GridCell>
-          <GridCell>
+          <GridCell size={2}>
             <h5>WARNING</h5>
             <ProgressText percent={75} status="WARNING" />
           </GridCell>
-          <GridCell>
+          <GridCell size={2}>
             <h5>ERROR</h5>
             <ProgressText percent={75} status="ERROR" />
           </GridCell>
         </GridRow>
       </Grid>
 
-      <h2>size (S)</h2>
+      <h2>
+        <Highlighter>size</Highlighter> (L)
+      </h2>
       <p>Компонент может быть одного из четырех размеров.</p>
       <Grid>
         <GridDivider />
@@ -78,7 +85,7 @@ storiesOf('ProgressText', module)
           </GridCell>
           <GridCell size={3}>
             <h5>L</h5>
-            <ProgressText percent={55} size="L" />
+            <ProgressText percent={55} />
           </GridCell>
           <GridCell size={3}>
             <h5>XL</h5>
@@ -87,7 +94,9 @@ storiesOf('ProgressText', module)
         </GridRow>
       </Grid>
 
-      <h2>withContour</h2>
+      <h2>
+        <Highlighter>withContour</Highlighter> (false)
+      </h2>
       <p>Компонент может быть с контуром.</p>
       <Grid>
         <GridDivider />
@@ -98,7 +107,9 @@ storiesOf('ProgressText', module)
         </GridRow>
       </Grid>
 
-      <h2>label</h2>
+      <h2>
+        <Highlighter>label</Highlighter>
+      </h2>
       <p>Компонент может быть с лейблом.</p>
       <Grid>
         <GridDivider />

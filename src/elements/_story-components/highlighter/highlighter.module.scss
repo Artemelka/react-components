@@ -1,0 +1,44 @@
+.Highlighter {
+  border-radius: 8px;
+  color: var(--baseColor);
+  font-size: inherit;
+
+  &--filled {
+    margin: 0 4px;
+    padding: 0 10px;
+  }
+
+  &--color {
+    &-accent {
+      color: var(--accentColor);
+
+      &-filled {
+        background-color: var(--accentColor);
+      }
+    }
+
+    &-primary {
+      color: var(--primaryColor);
+
+      &-filled {
+        background-color: var(--primaryColor);
+      }
+    }
+
+    &-secondary {
+      color: var(--secondaryColor);
+
+      &-filled {
+        background-color: var(--secondaryColor);
+      }
+    }
+
+    &-error {
+      color: var(--errorColor);
+
+      &-filled {
+        background-color: var(--errorColor);
+      }
+    }
+  }
+}

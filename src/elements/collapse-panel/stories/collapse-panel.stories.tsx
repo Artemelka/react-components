@@ -13,6 +13,7 @@ import {
   GridCell,
   GridDivider,
   GridRow,
+  Highlighter,
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
@@ -59,7 +60,9 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>Size (medium)</h2>
+        <h2>
+          <Highlighter>size</Highlighter> (medium)
+        </h2>
         <p>Компонент может быть одного из трех размеров.</p>
         <Grid>
           <GridRow>
@@ -111,7 +114,9 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>customPanel</h2>
+        <h2>
+          <Highlighter>customPanel</Highlighter>
+        </h2>
         <CustomPanelDescription />
         <Grid>
           <GridDivider />
@@ -139,7 +144,9 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>headerActions</h2>
+        <h2>
+          <Highlighter>headerActions</Highlighter>
+        </h2>
         <HeaderActionsDescription />
         <Grid>
           <GridDivider />
@@ -173,8 +180,13 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>contentActions</h2>
-        <p>В скрытой области панели можно разместить кнопки действий.</p>
+        <h2>
+          <Highlighter>contentActions</Highlighter>
+        </h2>
+        <p>
+          В раскрывающейся области панели можно разместить кнопки действий.
+          (массив параметров кнопок)
+        </p>
         <Grid>
           <GridDivider />
           <GridRow>
@@ -211,8 +223,10 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>disabled</h2>
-        <p>Содержимое скрытой области не попадет в разметку.</p>
+        <h2>
+          <Highlighter>disabled</Highlighter>
+        </h2>
+        <p>Содержимое раскрывающейся области не попадет в разметку.</p>
         <Grid>
           <GridDivider />
           <GridRow>
@@ -233,7 +247,9 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>Variant (base)</h2>
+        <h2>
+          <Highlighter>variant</Highlighter> (base)
+        </h2>
         <Grid>
           <GridRow>
             <GridCell size={12}>
@@ -284,7 +300,9 @@ storiesOf('CollapsePanel', module)
           </GridRow>
         </Grid>
 
-        <h2>themeColor</h2>
+        <h2>
+          <Highlighter>themeColor</Highlighter>
+        </h2>
         <p>Компонент может сменить тему на одну из пяти.</p>
         <Grid>
           <h4>accent</h4>

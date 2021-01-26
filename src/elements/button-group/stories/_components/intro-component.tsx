@@ -1,17 +1,31 @@
 import React, { memo } from 'react';
-import { Intro, List, ListItem } from '../../../_story-components';
+import {
+  Highlighter,
+  Intro,
+  List,
+  ListItem,
+} from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
   <Intro name="Button-group">
     <List>
-      <ListItem>
-        Для работы компонента необходимо передать массив параметров для кнопок.
+      <ListItem isRow>
+        Для работы компонента необходимо передать
+        <Highlighter isFilled>buttons</Highlighter>
+        - массив параметров для кнопок.
       </ListItem>
-      <ListItem>
-        Компонент принимает параметр activeId.
+      <ListItem isRow>
+        Компонент принимает параметр
+        <Highlighter isFilled>activeId</Highlighter>.
       </ListItem>
-      <ListItem>
-        Для корректной работы activeId необходимо передавать параметр id для каждой кнопки.
+      <ListItem isRow>
+        <Highlighter color="error">
+          Для корректной работы
+          <Highlighter isFilled>activeId</Highlighter>
+          необходимо передавать параметр
+          <Highlighter isFilled>id</Highlighter>
+          для каждой кнопки.
+        </Highlighter>
       </ListItem>
     </List>
   </Intro>

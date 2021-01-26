@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
-import { Intro } from '../../../_story-components';
+import { Highlighter, Intro } from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
   <Intro name="Text">
-    <p style={{ color: 'red' }}>
-      Компонент наследует цвет от родителя
+    <p>
+      <Highlighter color="error">
+        Компонент наследует цвет от родителя.
+      </Highlighter>
     </p>
   </Intro>
 ));

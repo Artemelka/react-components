@@ -53,6 +53,13 @@ export {
   CIRCLE_SIZE,
 } from './progress';
 export { ProgressStatus } from './progress/types';
+export { Radio } from './radio';
+export {
+  RadioChangeEvent,
+  RadioFocusEvent,
+  RadioKeyboardEvent,
+  RadioMouseEvent,
+} from './radio/types';
 export { Text } from './text';
 export { TextAlign, TextFontWeight, TextTagName } from './text/types';
 export { Textarea } from './textarea';

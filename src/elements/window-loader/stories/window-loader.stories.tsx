@@ -7,6 +7,7 @@ import {
   GridDivider,
   GridCell,
   GridRow,
+  Highlighter,
   Intro,
   StoriesItem,
 } from '../../_story-components';
@@ -27,7 +28,9 @@ storiesOf('Window-loader', module)
         </GridRow>
       </Grid>
 
-      <h2>themeColor</h2>
+      <h2>
+        <Highlighter>themeColor</Highlighter>
+      </h2>
       <p>Компонент может сменить тему на одну из трех.</p>
       <Grid>
         <GridDivider />
