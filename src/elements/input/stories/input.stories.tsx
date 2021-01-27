@@ -98,16 +98,16 @@ storiesOf('Input', module)
                 </GridCell>
                 <GridCell>
                   <h5>
-                    <Highlighter color="accent" isFilled>isReadOnly</Highlighter>
+                    <Highlighter color="accent" isFilled>readOnly</Highlighter>
                   </h5>
                   <Input
                     iconConfig={{
                       icon: <Clear fontSize="inherit" />,
                       onClick: onClear,
                     }}
-                    isReadOnly
                     name="input-base-read-only"
                     onChange={onChange}
+                    readOnly
                     value={state['input-base-read-only']}
                   />
                 </GridCell>
@@ -566,7 +566,6 @@ storiesOf('Input', module)
         disabled={boolean('disabled', false)}
         id={text('id', 'inputId')}
         isError={boolean('isError', false)}
-        isReadOnly={boolean('isReadOnly', false)}
         name={text('name', 'inputName')}
         onBlur={action('onBlur')}
         onChange={action('onChange')}
@@ -574,6 +573,7 @@ storiesOf('Input', module)
         onFocus={action('onFocus')}
         onKeyPress={action('onKeyPress')}
         placeholder={text('placeholder', PLACEHOLDER_TEXT)}
+        readOnly={boolean('readOnly', false)}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         size={select('size', INPUT_SIZE, INPUT_SIZE[0])}

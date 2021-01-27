@@ -147,10 +147,10 @@ storiesOf('Textarea', module)
                 </GridCell>
                 <GridCell>
                   <h5>
-                    <Highlighter color="accent" isFilled>error</Highlighter>
+                    <Highlighter color="accent" isFilled>isError</Highlighter>
                   </h5>
                   <Textarea
-                    error
+                    isError
                     name="textarea-error"
                     onChange={onChange}
                     value={state['textarea-error']}
@@ -158,13 +158,13 @@ storiesOf('Textarea', module)
                 </GridCell>
                 <GridCell>
                   <h5>
-                    <Highlighter color="accent" isFilled>error</Highlighter>
+                    <Highlighter color="accent" isFilled>isError</Highlighter>
                     with
                     <Highlighter isFilled>errorMessage</Highlighter>
                   </h5>
                   <Textarea
-                    error
                     errorMessage="error message"
+                    isError
                     name="textarea-error-message"
                     onChange={onChange}
                     value={state['textarea-error-message']}
@@ -489,13 +489,13 @@ storiesOf('Textarea', module)
     <StoriesItem>
       <Textarea
         disabled={boolean('disabled', false)}
-        error={boolean('error', false)}
         errorMessage={text('errorMessage', 'error')}
         iconConfig={{
           icon: <Clear fontSize="inherit" />,
           onClick: () => false,
         }}
         id={text('id', 'textareaId')}
+        isError={boolean('isError', false)}
         maxlength={number('maxlength', 10)}
         name={text('name', 'textarea')}
         onBlur={action('onBlur')}
