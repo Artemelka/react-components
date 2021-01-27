@@ -1,0 +1,85 @@
+.Label {
+  display: inline-block;
+  vertical-align: bottom;
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &--size {
+    &-big {
+      font-size: 24px;
+      padding: 18px;
+    }
+    &-medium {
+      font-size: 18px;
+      padding: 12px;
+    }
+    &-small {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  &--position {
+    &-left {
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0;
+    }
+
+    &-right {
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+
+    &-top {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+
+
+  }
+
+  &--theme {
+    &-base {
+      color: var(--baseColor);
+    }
+
+    &-accent {
+      color: var(--accentColor);
+    }
+
+    &-main {
+      color: var(--mainColor);
+    }
+
+    &-primary {
+      color: var(--primaryColor);
+    }
+
+    &-secondary {
+      color: var(--secondaryColor);
+    }
+  }
+
+  &--error {
+    color: var(--errorColor);
+  }
+
+  &--disabled {
+    color: var(--disabledColor);
+    cursor: default;
+    pointer-events: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

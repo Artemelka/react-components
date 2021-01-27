@@ -17,6 +17,7 @@ export const Intro = memo(({ children, name }: PropsWithChildren<{ name: string 
       <Highlighter>{` ${name}/Knobs `}</Highlighter>
       и там эксперементировать.
     </p>
+    {Boolean(children) && <br />}
     {children}
   </StoriesItem>
 ));

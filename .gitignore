@@ -5,6 +5,7 @@ node_modules/
 npm-debug.log
 lib/
 build/
+public/
 debug.log
 build-static-storybook
 .DS_Store
