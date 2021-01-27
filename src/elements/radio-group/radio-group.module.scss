@@ -1,0 +1,53 @@
+.Radio-group {
+  display: inline-block;
+  line-height: 0;
+
+  &__label {
+    padding-bottom: 36px;
+
+    &--error {
+      padding-bottom: 0;
+    }
+  }
+
+  &__error {
+    color: var(--errorColor);
+    font-size: 12px;
+    line-height: 12px;
+    margin: 8px 0 16px 0;
+  }
+
+  &__list {
+    align-items: flex-end;
+    display: inline-flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &--vertical {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    align-items: center;
+    display: inline-flex;
+    justify-content: flex-start;
+    padding-right: 24px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &--vertical {
+      padding: 12px 0;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
