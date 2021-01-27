@@ -23,36 +23,58 @@ const cn = classNames.bind(styles);
 const CLASS_NAME = 'Textarea';
 
 type TextareaProps = {
+  /** Флаг неактивного состояния */
   disabled?: boolean;
-  error?: boolean;
+  /** Текст ошибки */
   errorMessage?: string;
+  /** Конфиг параметров кнопки */
   iconConfig?: TextareaIconConfig;
+  /** уникальный идентификатор (возвращается в onChange) */
   id?: string | number;
+  /** Флаг отображения ошибки */
+  isError?: boolean;
+  /** Количество допустимых символов */
   maxlength?: number;
+  /** Задает имя инпута */
   name: string;
+  /** Колбек события потери фокуса */
   onBlur?: (textareaEvent: TextareaFocusEvent) => void;
+  /** Колбэк события изменения значения */
   onChange?: (textareaEvent: TextareaChangeEvent) => void;
+  /** Колбек события клика */
   onClick?: (textareaEvent: TextareaClickEvent) => void;
+  /** Колбек события фокуса */
   onFocus?: (textareaEvent: TextareaFocusEvent) => void;
+  /** Колбек события клавиатуры (нажатие клавиши) */
   onKeyDown?: (textareaEvent: TextareaKeyPressEvent) => void;
+  /** Колбек события клавиатуры (общий) */
   onKeyPress?: (textareaEvent: TextareaKeyPressEvent) => void;
+  /** Колбек события клавиатуры (отпуск клавиши) */
   onKeyUp?: (textareaEvent: TextareaKeyPressEvent) => void;
+  /** Заполнитель пустого значения инпута */
   placeholder?: string;
+  /** Флаг состояния только чтение */
   readOnly?: boolean;
+  /** Количество видимых строк */
   rows?: number;
+  /** Задает размер инпута */
   size?: 'small' | 'medium' | 'big';
+  /** Объект для формирования рефа */
   textareaRef?: RefObject<HTMLTextAreaElement>;
+  /** Задает цветовую тему инпута */
   themeColor?: 'base' | 'accent' | 'secondary' | 'primary';
+  /** Содержимое инпута */
   value: string;
+  /** Задает вид инпута */
   variant?: 'base' | 'filled' | 'only-text';
 };
 
 export const Textarea = memo(({
   disabled,
-  error,
   errorMessage,
   iconConfig,
   id,
+  isError,
   maxlength,
   name,
   onBlur = () => false,
@@ -131,7 +153,7 @@ export const Textarea = memo(({
     <div
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--focused`]: isFocus,
-        [`${CLASS_NAME}--focused-error`]: isFocus && error,
+        [`${CLASS_NAME}--focused-error`]: isFocus && isError,
         [`${CLASS_NAME}--with-information`]: maxlength || errorMessage,
       })}
     >
@@ -139,11 +161,11 @@ export const Textarea = memo(({
         ref={textareaRef}
         className={cn(`${CLASS_NAME}__input`, {
           [`${CLASS_NAME}__input--disabled`]: disabled,
-          [`${CLASS_NAME}__input--error`]: error,
+          [`${CLASS_NAME}__input--error`]: isError,
           [`${CLASS_NAME}__input--size-${size}`]: size,
           [`${CLASS_NAME}__input--size-${size}-icon`]: iconConfig,
           [`${CLASS_NAME}__input--variant-${variant}`]: variant,
-          [`${CLASS_NAME}__input--variant-${variant}-error`]: variant && error,
+          [`${CLASS_NAME}__input--variant-${variant}-error`]: variant && isError,
           [`${CLASS_NAME}__input--theme-${themeColor}`]: themeColor,
         })}
         disabled={disabled}
@@ -178,7 +200,7 @@ export const Textarea = memo(({
       )}
       {(errorMessage || maxlength) && (
         <div className={cn(`${CLASS_NAME}__information`)}>
-          {error && errorMessage && (
+          {isError && errorMessage && (
             <span className={cn(`${CLASS_NAME}__error`)}>
               {errorMessage}
             </span>

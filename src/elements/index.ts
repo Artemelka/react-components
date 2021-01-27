@@ -61,6 +61,7 @@ export {
   RadioKeyboardEvent,
   RadioMouseEvent,
 } from './radio/types';
+export { RadioGroup } from './radio-group';
 export { Text } from './text';
 export { TextAlign, TextFontWeight, TextTagName } from './text/types';
 export { Textarea } from './textarea';

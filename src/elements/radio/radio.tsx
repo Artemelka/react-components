@@ -21,27 +21,42 @@ const cn = classNames.bind(styles);
 const CLASS_NAME = 'Radio';
 
 type RadioProps = {
+  /** Флаг выбранного состояния */
   checked: boolean;
-  checkboxRef?: RefObject<HTMLInputElement>;
+  /** Флаг неактивного состояния */
   disabled?: boolean;
+  /** уникальный идентификатор (возвращается в onChange) */
   id: string | number;
+  /** Задает имя инпута */
   name: string;
+  /** Колбек события потери фокуса */
   onBlur?: (checkboxEvent: RadioFocusEvent) => void;
+  /** Колбэк события изменения значения */
   onChange?: (checkboxEvent: RadioChangeEvent) => void;
+  /** Колбек события клика */
   onClick?: (checkboxEvent: RadioMouseEvent) => void;
+  /** Колбек события фокуса */
   onFocus?: (checkboxEvent: RadioFocusEvent) => void;
+  /** Колбек события клавиатуры (нажатие клавиши) */
   onKeyDown?: (checkboxEvent: RadioKeyboardEvent) => void;
+  /** Колбек события клавиатуры (общий) */
   onKeyPress?: (checkboxEvent: RadioKeyboardEvent) => void;
+  /** Колбек события клавиатуры (отпуск клавиши) */
   onKeyUp?: (checkboxEvent: RadioKeyboardEvent) => void;
+  /** Объект для формирования рефа */
+  radioRef?: RefObject<HTMLInputElement>;
+  /** Задает размер кнопки */
   size?: 'small' | 'medium' | 'big';
-  themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'success';
+  /** Задает цветовую тему кнопки */
+  themeColor?: 'base' | 'accent' | 'secondary' | 'primary';
+  /** значение кнопки */
   value: string;
+  /** Задает вид кнопки */
   variant?: 'base' | 'filled' | 'only-text';
 };
 
 export const Radio = memo(({
   checked,
-  checkboxRef,
   disabled,
   id,
   name,
@@ -52,6 +67,7 @@ export const Radio = memo(({
   onKeyDown = () => false,
   onKeyPress = () => false,
   onKeyUp = () => false,
+  radioRef,
   size = 'medium',
   themeColor = 'base',
   value,
@@ -103,7 +119,7 @@ export const Radio = memo(({
       htmlFor={`${id}`}
     >
       <input
-        ref={checkboxRef}
+        ref={radioRef}
         checked={checked}
         className={cn(`${CLASS_NAME}__input`)}
         disabled={disabled}

@@ -21,21 +21,37 @@ const cn = classNames.bind(styles);
 const CLASS_NAME = 'Checkbox';
 
 type CheckboxProps = {
+  /** Флаг выбранного состояния */
   checked: boolean;
+  /** Объект для формирования рефа */
   checkboxRef?: RefObject<HTMLInputElement>;
+  /** Флаг неактивного состояния */
   disabled?: boolean;
+  /** уникальный идентификатор (возвращается в onChange) */
   id: string | number;
+  /** Флаг промежуточного состояния (используется при объединении нескольких компонентов) */
   indeterminate?: boolean;
+  /** Задает имя инпута */
   name: string;
+  /** Колбек события потери фокуса */
   onBlur?: (checkboxEvent: CheckboxFocusEvent) => void;
+  /** Колбэк события изменения значения */
   onChange?: (checkboxEvent: CheckboxChangeEvent) => void;
+  /** Колбек события клика */
   onClick?: (checkboxEvent: CheckboxMouseEvent) => void;
+  /** Колбек события фокуса */
   onFocus?: (checkboxEvent: CheckboxFocusEvent) => void;
+  /** Колбек события клавиатуры (нажатие клавиши) */
   onKeyDown?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  /** Колбек события клавиатуры (общий) */
   onKeyPress?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  /** Колбек события клавиатуры (отпуск клавиши) */
   onKeyUp?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  /** Задает размер кнопки */
   size?: 'small' | 'medium' | 'big';
+  /** Задает цветовую тему кнопки */
   themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'success';
+  /** Задает вид кнопки */
   variant?: 'base' | 'filled' | 'only-text';
 };
 

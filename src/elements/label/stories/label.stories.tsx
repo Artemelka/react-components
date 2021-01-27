@@ -14,12 +14,12 @@ import { IntroComponent } from './_components/intro-component';
 
 const LABEL_SIZE = [undefined, 'big', 'medium', 'small'];
 const LABEL_POSITION = [undefined, 'left', 'right', 'top'];
-const LABEL_VARIANT = [undefined, 'base', 'accent', 'main', 'primary', 'secondary'];
+const LABEL_THEME = [undefined, 'base', 'accent', 'main', 'primary', 'secondary'];
 
 storiesOf('Label', module)
   .addParameters({
     component: Label,
-    componentSubtitle: 'Компонент для реализации ',
+    componentSubtitle: 'Компонент для реализации лейблов',
   })
   .add('Examples', () => (
     <>
@@ -152,7 +152,7 @@ storiesOf('Label', module)
         size={select('size', LABEL_SIZE, LABEL_SIZE[0])}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        themeColor={select('colorTheme', LABEL_VARIANT, LABEL_VARIANT[0])}
+        themeColor={select('colorTheme', LABEL_THEME, LABEL_THEME[0])}
       >
         {text('children', 'it`s label')}
       </Label>

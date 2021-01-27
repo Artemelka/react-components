@@ -40,8 +40,6 @@ type InputProps = {
   inputRef?: RefObject<HTMLInputElement>;
   /** Флаг состояния ошибки */
   isError?: boolean;
-  /** Флаг состояния */
-  isReadOnly?: boolean;
   /** Задает имя инпута */
   name: string;
   /** Колбек события потери фокуса */
@@ -56,6 +54,8 @@ type InputProps = {
   onKeyPress?: (inputKeyboardEvent: InputKeyboardEvent) => void;
   /** Заполнитель пустого значения инпута */
   placeholder?: string;
+  /** Флаг состояния только чтение */
+  readOnly?: boolean;
   /** Задает размер инпута */
   size?: 'small' | 'medium' | 'big';
   /** Задает цветовую тему инпута */
@@ -152,17 +152,17 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
   render() {
     const {
       autoComplete = 'off',
+      disabled = false,
       iconConfig: { icon, onClick: onIconClick } = {},
       isError = false,
-      isReadOnly = false,
-      disabled = false,
+      readOnly = false,
       size = 'medium',
       themeColor = 'base',
       type = 'text',
       value,
       variant = 'base',
     } = this.props;
-    const hasIcon = icon && !disabled && !isReadOnly && (!onIconClick || Boolean(value));
+    const hasIcon = icon && !disabled && !readOnly && (!onIconClick || Boolean(value));
 
     return (
       <div
@@ -196,7 +196,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
           onFocus={this.handleFocus}
           onKeyPress={this.handleKeyPress}
           placeholder={this.props.placeholder}
-          readOnly={this.props.isReadOnly}
+          readOnly={this.props.readOnly}
           type={type}
           value={value}
         />

@@ -16,9 +16,9 @@ import {
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
-const CHECKBOX_SIZE = [undefined, 'big', 'medium', 'small'];
-const CHECKBOX_VARIANT = [undefined, 'base', 'filled', 'only-text'];
-const CHECKBOX_THEME = [undefined, 'base', 'accent', 'primary', 'secondary'];
+const RADIO_SIZE = [undefined, 'big', 'medium', 'small'];
+const RADIO_VARIANT = [undefined, 'base', 'filled', 'only-text'];
+const RADIO_THEME = [undefined, 'base', 'accent', 'primary', 'secondary'];
 const INITIAL_STATE = {
   state: '',
   size: '',
@@ -315,14 +315,14 @@ storiesOf('Radio', module)
         onKeyUp={action('onKeyUp')}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        size={select('size', CHECKBOX_SIZE, CHECKBOX_SIZE[0])}
+        size={select('size', RADIO_SIZE, RADIO_SIZE[0])}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        themeColor={select('themeColor', CHECKBOX_THEME, CHECKBOX_THEME[0])}
+        themeColor={select('themeColor', RADIO_THEME, RADIO_THEME[0])}
         value={text('value', 'radio')}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        variant={select('variant', CHECKBOX_VARIANT, CHECKBOX_VARIANT[0])}
+        variant={select('variant', RADIO_VARIANT, RADIO_VARIANT[0])}
       />
     </StoriesItem>
   ));
