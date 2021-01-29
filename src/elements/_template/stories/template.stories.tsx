@@ -22,6 +22,15 @@
 //   .add('Examples', () => (
 //     <>
 //       <IntroComponent />
+//
+// <h2>
+//   <Highlighter>{}</Highlighter>
+// </h2>
+// <Grid>
+//   <GridRow>
+//     <GridCell>{}</GridCell>
+//   </GridRow>
+// </Grid>
 //     </>
 //   ))
 // .add('Knobs', () => (
