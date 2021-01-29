@@ -18,7 +18,7 @@ import { IntroComponent } from './_components/intro-component';
 
 const RADIO_SIZE = [undefined, 'big', 'medium', 'small'];
 const RADIO_VARIANT = [undefined, 'base', 'filled', 'only-text'];
-const RADIO_THEME = [undefined, 'base', 'accent', 'primary', 'secondary'];
+const RADIO_THEME = [undefined, 'base', 'accent', 'primary', 'secondary', 'error'];
 const INITIAL_STATE = {
   state: '',
   size: '',
@@ -289,6 +289,41 @@ storiesOf('Radio', module)
                     onChange={onChange}
                     themeColor="secondary"
                     value="secondary-only-text"
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+              <h5>error</h5>
+              <GridRow>
+                <GridCell size={3}>
+                  <Radio
+                    checked={state.theme === 'error-base'}
+                    id="radio-error-base"
+                    name="theme"
+                    onChange={onChange}
+                    themeColor="error"
+                    value="error-base"
+                  />
+                </GridCell>
+                <GridCell size={3}>
+                  <Radio
+                    checked={state.theme === 'error-filled'}
+                    id="radio-error-filled"
+                    name="theme"
+                    onChange={onChange}
+                    themeColor="error"
+                    value="error-filled"
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell size={3}>
+                  <Radio
+                    checked={state.theme === 'error-only-text'}
+                    id="radio-error-only-text"
+                    name="theme"
+                    onChange={onChange}
+                    themeColor="error"
+                    value="error-only-text"
                     variant="only-text"
                   />
                 </GridCell>

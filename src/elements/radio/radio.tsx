@@ -48,7 +48,7 @@ type RadioProps = {
   /** Задает размер кнопки */
   size?: 'small' | 'medium' | 'big';
   /** Задает цветовую тему кнопки */
-  themeColor?: 'base' | 'accent' | 'secondary' | 'primary';
+  themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'error';
   /** значение кнопки */
   value: string;
   /** Задает вид кнопки */
@@ -110,11 +110,11 @@ export const Radio = memo(({
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--checked`]: checked,
         [`${CLASS_NAME}--disabled`]: disabled,
-        [`${CLASS_NAME}--focused`]: isFocused,
         [`${CLASS_NAME}--size-${size}`]: size,
         [`${CLASS_NAME}--variant-${variant}`]: variant,
         [`${CLASS_NAME}--variant-${variant}-checked`]: variant && checked,
         [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+        [`${CLASS_NAME}--theme-${themeColor}-focused`]: themeColor && isFocused,
       })}
       htmlFor={`${id}`}
     >

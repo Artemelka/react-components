@@ -10,57 +10,53 @@ import React, {
 } from 'react';
 import classNames from 'classnames/bind';
 import {
-  CheckboxChangeEvent,
-  CheckboxFocusEvent,
-  CheckboxKeyboardEvent,
-  CheckboxMouseEvent,
+  ToggleChangeEvent,
+  ToggleFocusEvent,
+  ToggleKeyboardEvent,
+  ToggleMouseEvent,
 } from './types';
-import styles from './checkbox.module.scss';
+import style from './toggle.module.scss';
 
-const cn = classNames.bind(styles);
-const CLASS_NAME = 'Checkbox';
+const cn = classNames.bind(style);
+const CLASS_NAME = 'Toggle';
 
-type CheckboxProps = {
+type ToggleProps = {
   /** Флаг выбранного состояния */
   checked: boolean;
-  /** Объект для формирования рефа */
-  checkboxRef?: RefObject<HTMLInputElement>;
   /** Флаг неактивного состояния */
   disabled?: boolean;
   /** уникальный идентификатор (возвращается в onChange) */
   id: string | number;
-  /** Флаг промежуточного состояния (используется при объединении нескольких компонентов) */
-  indeterminate?: boolean;
   /** Задает имя инпута */
   name: string;
   /** Колбек события потери фокуса */
-  onBlur?: (checkboxEvent: CheckboxFocusEvent) => void;
+  onBlur?: (checkboxEvent: ToggleFocusEvent) => void;
   /** Колбэк события изменения значения */
-  onChange?: (checkboxEvent: CheckboxChangeEvent) => void;
+  onChange?: (checkboxEvent: ToggleChangeEvent) => void;
   /** Колбек события клика */
-  onClick?: (checkboxEvent: CheckboxMouseEvent) => void;
+  onClick?: (checkboxEvent: ToggleMouseEvent) => void;
   /** Колбек события фокуса */
-  onFocus?: (checkboxEvent: CheckboxFocusEvent) => void;
+  onFocus?: (checkboxEvent: ToggleFocusEvent) => void;
   /** Колбек события клавиатуры (нажатие клавиши) */
-  onKeyDown?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  onKeyDown?: (checkboxEvent: ToggleKeyboardEvent) => void;
   /** Колбек события клавиатуры (общий) */
-  onKeyPress?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  onKeyPress?: (checkboxEvent: ToggleKeyboardEvent) => void;
   /** Колбек события клавиатуры (отпуск клавиши) */
-  onKeyUp?: (checkboxEvent: CheckboxKeyboardEvent) => void;
+  onKeyUp?: (checkboxEvent: ToggleKeyboardEvent) => void;
   /** Задает размер кнопки */
   size?: 'small' | 'medium' | 'big';
   /** Задает цветовую тему кнопки */
-  themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'success' | 'error';
+  themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'error';
+  /** Объект для формирования рефа */
+  toggleRef?: RefObject<HTMLInputElement>;
   /** Задает вид кнопки */
-  variant?: 'base' | 'filled' | 'only-text';
+  variant?: 'base' | 'filled';
 };
 
-export const Checkbox = memo(({
+export const Toggle = memo(({
   checked,
-  checkboxRef,
   disabled,
   id,
-  indeterminate,
   name,
   onBlur = () => false,
   onChange = () => false,
@@ -71,8 +67,9 @@ export const Checkbox = memo(({
   onKeyUp = () => false,
   size = 'medium',
   themeColor = 'base',
+  toggleRef,
   variant = 'base',
-}: CheckboxProps) => {
+}: ToggleProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>) => {
@@ -114,47 +111,37 @@ export const Checkbox = memo(({
 
     onKeyUp({ event, checked: checkboxState, name });
   }, [name, onKeyUp]);
-
   return (
-    <label
-      className={cn(CLASS_NAME, {
-        [`${CLASS_NAME}--checked`]: checked,
-        [`${CLASS_NAME}--disabled`]: disabled,
-        [`${CLASS_NAME}--size-${size}`]: size,
-        [`${CLASS_NAME}--variant-${variant}`]: variant,
-        [`${CLASS_NAME}--variant-${variant}-checked`]: variant && checked,
-        [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
-        [`${CLASS_NAME}--theme-${themeColor}-focused`]: themeColor && isFocused,
-      })}
-      htmlFor={`${id}`}
-    >
-      <input
-        ref={checkboxRef}
-        checked={checked}
-        className={cn(`${CLASS_NAME}__input`)}
-        disabled={disabled}
-        id={`${id}`}
-        name={name}
-        onBlur={handleBlur}
-        onChange={handleChange}
-        onClick={handleClick}
-        onFocus={handleFocus}
-        onKeyDown={handleKeyDown}
-        onKeyPress={handleKeyPress}
-        onKeyUp={handleKeyUp}
-        type="checkbox"
-      />
-      <span
-        className={cn(`${CLASS_NAME}__marker`, {
-          [`${CLASS_NAME}__marker--checked`]: checked,
-          [`${CLASS_NAME}__marker--disabled`]: disabled,
-          [`${CLASS_NAME}__marker--indeterminate`]: indeterminate,
-          [`${CLASS_NAME}__marker--size-${size}`]: size,
-          [`${CLASS_NAME}__marker--variant-${variant}`]: variant,
-          [`${CLASS_NAME}__marker--variant-filled-base`]: variant === 'filled' && themeColor === 'base',
-          [`${CLASS_NAME}__marker--theme-${themeColor}`]: themeColor,
+    <span className={cn(CLASS_NAME)}>
+      <label
+        className={cn(`${CLASS_NAME}__label`, {
+          [`${CLASS_NAME}__label--checked`]: !checked,
+          [`${CLASS_NAME}__label--disabled`]: disabled,
+          [`${CLASS_NAME}__label--size-${size}`]: size,
+          [`${CLASS_NAME}__label--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}__label--theme-${themeColor}--focused`]: themeColor && isFocused,
+          [`${CLASS_NAME}__label--variant-${variant}`]: variant,
+          [`${CLASS_NAME}__label--variant-${variant}-${themeColor}`]: variant && themeColor,
         })}
-      />
-    </label>
+        htmlFor={`${id}`}
+      >
+        <input
+          ref={toggleRef}
+          checked={checked}
+          className={cn(`${CLASS_NAME}__input`)}
+          disabled={disabled}
+          id={`${id}`}
+          name={name}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          onClick={handleClick}
+          onFocus={handleFocus}
+          onKeyDown={handleKeyDown}
+          onKeyPress={handleKeyPress}
+          onKeyUp={handleKeyUp}
+          type="checkbox"
+        />
+      </label>
+    </span>
   );
 });

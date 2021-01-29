@@ -21,7 +21,7 @@ import { IntroComponent } from './_components/intro-component';
 
 const CHECKBOX_SIZE = [undefined, 'big', 'medium', 'small'];
 const CHECKBOX_VARIANT = [undefined, 'base', 'filled', 'only-text'];
-const CHECKBOX_THEME = [undefined, 'base', 'accent', 'primary', 'secondary'];
+const CHECKBOX_THEME = [undefined, 'base', 'accent', 'primary', 'secondary', 'error'];
 const INITIAL_STATE = {
   'checkbox-disabled': true,
   'checkbox-big': true,
@@ -39,6 +39,9 @@ const INITIAL_STATE = {
   'checkbox-secondary-base': false,
   'checkbox-secondary-filled': false,
   'checkbox-secondary-only-text': true,
+  'checkbox-error-base': false,
+  'checkbox-error-filled': false,
+  'checkbox-error-only-text': true,
 };
 
 storiesOf('Checkbox', module)
@@ -376,6 +379,38 @@ storiesOf('Checkbox', module)
                     name="checkbox-secondary-only-text"
                     onChange={onChange}
                     themeColor="secondary"
+                    variant="only-text"
+                  />
+                </GridCell>
+              </GridRow>
+              <h5>error</h5>
+              <GridRow>
+                <GridCell size={3}>
+                  <Checkbox
+                    checked={state['checkbox-error-base']}
+                    id="checkbox-error-base"
+                    name="checkbox-error-base"
+                    onChange={onChange}
+                    themeColor="error"
+                  />
+                </GridCell>
+                <GridCell size={3}>
+                  <Checkbox
+                    checked={state['checkbox-error-filled']}
+                    id="checkbox-error-filled"
+                    name="checkbox-error-filled"
+                    onChange={onChange}
+                    themeColor="error"
+                    variant="filled"
+                  />
+                </GridCell>
+                <GridCell size={3}>
+                  <Checkbox
+                    checked={state['checkbox-error-only-text']}
+                    id="checkbox-error-only-text"
+                    name="checkbox-error-only-text"
+                    onChange={onChange}
+                    themeColor="error"
                     variant="only-text"
                   />
                 </GridCell>
