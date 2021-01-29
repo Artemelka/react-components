@@ -72,5 +72,12 @@ export {
   TextareaIconConfig,
   TextareaKeyPressEvent,
 } from './textarea/types';
+export { Toggle } from './toggle';
+export {
+  ToggleChangeEvent,
+  ToggleFocusEvent,
+  ToggleKeyboardEvent,
+  ToggleMouseEvent,
+} from './toggle/types';
 export { WindowLoader } from './window-loader';
 export { WindowLoaderThemeColor } from './window-loader/types';

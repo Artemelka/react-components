@@ -19,26 +19,46 @@
     &-base {
       background-color: var(--baseColor);
       border-color: var(--baseColor);
+
+      &-focused {
+        box-shadow: 0 0 6px var(--baseColor);
+      }
     }
 
     &-accent {
       background-color: var(--accentColor);
       border-color: var(--accentColor);
-    }
 
-    &-secondary {
-      background-color: var(--secondaryColor);
-      border-color: var(--secondaryColor);
+      &-focused {
+        box-shadow: 0 0 6px var(--accentColor);
+      }
     }
 
     &-primary {
       background-color: var(--primaryColor);
       border-color: var(--primaryColor);
+
+      &-focused {
+        box-shadow: 0 0 6px var(--primaryColor);
+      }
     }
 
-    &-success {
-      background-color: var(--successColor);
-      border-color: var(--successColor);
+    &-secondary {
+      background-color: var(--secondaryColor);
+      border-color: var(--secondaryColor);
+
+      &-focused {
+        box-shadow: 0 0 6px var(--secondaryColor);
+      }
+    }
+
+    &-error {
+      background-color: var(--errorColor);
+      border-color: var(--errorColor);
+
+      &-focused {
+        box-shadow: 0 0 6px var(--errorColor);
+      }
     }
   }
 
@@ -54,10 +74,6 @@
         border-color: transparent;
       }
     }
-  }
-
-  &--focused {
-    border-color: var(--activeColor);
   }
 
   &--disabled,
@@ -132,16 +148,16 @@
         background-color: var(--accentColor);
       }
 
-      &-secondary {
-        background-color: var(--secondaryColor);
-      }
-
       &-primary {
         background-color: var(--primaryColor);
       }
 
-      &-success {
-        background-color: var(--successColor);
+      &-secondary {
+        background-color: var(--secondaryColor);
+      }
+
+      &-error {
+        background-color: var(--errorColor);
       }
     }
 
