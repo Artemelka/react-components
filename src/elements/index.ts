@@ -16,6 +16,7 @@ export {
 } from './button/types';
 export { ButtonGroup } from './button-group';
 export { ButtonGroupItem } from './button-group/types';
+export { Card } from './card';
 export {
   Clock,
   CLOCK_TIME_ZONES,
