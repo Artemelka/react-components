@@ -67,14 +67,14 @@ storiesOf('CollapsePanel', module)
         <Grid>
           <GridRow>
             <GridCell size={12}>
-              <h5>small</h5>
+              <h5>big</h5>
               <PanelController>
                 {({ isOpen, onClick }: any) => (
                   <CollapsePanel
                     isOpen={isOpen}
                     onClick={onClick}
-                    panelTitle="it`s small"
-                    size="small"
+                    panelTitle="it`s big"
+                    size="big"
                   >
                     {LOREM}
                   </CollapsePanel>
@@ -97,14 +97,14 @@ storiesOf('CollapsePanel', module)
               </PanelController>
             </GridCell>
             <GridCell size={12}>
-              <h5>big</h5>
+              <h5>small</h5>
               <PanelController>
                 {({ isOpen, onClick }: any) => (
                   <CollapsePanel
                     isOpen={isOpen}
                     onClick={onClick}
-                    panelTitle="it`s big"
-                    size="big"
+                    panelTitle="it`s small"
+                    size="small"
                   >
                     {LOREM}
                   </CollapsePanel>
