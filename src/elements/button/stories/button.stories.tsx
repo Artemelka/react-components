@@ -175,32 +175,31 @@ storiesOf('Button', module)
       </h2>
       <p>Компонент может быть одного из трех размеров.</p>
       <Grid>
+        <h5>big</h5>
         <GridRow>
-          <GridCell size={3} verticalAlign="between">
-            <h5>small</h5>
-            <Button icon={<Delete fontSize="inherit" />} size="small" value="small" />
-          </GridCell>
-          <GridCell size={3} verticalAlign="between">
-            <h5>medium</h5>
-            <Button icon={<Delete fontSize="inherit" />} value="medium" />
-          </GridCell>
-          <GridCell size={3} verticalAlign="between">
-            <h5>big</h5>
+          <GridCell size={3}>
             <Button icon={<Delete fontSize="inherit" />} size="big" value="big" />
           </GridCell>
-        </GridRow>
-        <GridRow>
-          <GridCell size={3} verticalAlign="between">
-            <h5>small</h5>
-            <Button icon={<Delete fontSize="inherit" />} size="small" variant="only-text" />
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} size="big" variant="only-text" />
           </GridCell>
-          <GridCell size={3} verticalAlign="between">
-            <h5>medium</h5>
+        </GridRow>
+        <h5>medium</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} value="medium" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
             <Button icon={<Delete fontSize="inherit" />} variant="only-text" />
           </GridCell>
-          <GridCell size={3} verticalAlign="between">
-            <h5>big</h5>
-            <Button icon={<Delete fontSize="inherit" />} size="big" variant="only-text" />
+        </GridRow>
+        <h5>small</h5>
+        <GridRow>
+          <GridCell size={3}>
+            <Button icon={<Delete fontSize="inherit" />} size="small" value="small" />
+          </GridCell>
+          <GridCell size={3} verticalAlign="center">
+            <Button icon={<Delete fontSize="inherit" />} size="small" variant="only-text" />
           </GridCell>
         </GridRow>
       </Grid>
