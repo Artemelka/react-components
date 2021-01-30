@@ -1,23 +1,63 @@
 .Anchor {
   background-color: transparent;
   border: none;
-  color: var(--primaryColor);
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   outline: none;
   padding: 0;
-  text-decoration: none;
   transition: color .3s;
 
   &:hover,
   &:focus {
-    color: var(--secondaryColor);
+    opacity: .8;
   }
 
-  &--native {
-    &:visited {
+  &--decoration {
+    &-none {
+      text-decoration: none;
+    }
+
+    &-line-through {
+      text-decoration: line-through;
+    }
+
+    &-overline {
+      text-decoration: overline;
+    }
+
+    &-underline {
+      text-decoration: underline;
+    }
+
+    &-inherit {
+      text-decoration: inherit;
+    }
+  }
+
+  &--theme {
+    &-base {
+      color: var(--baseColor);
+    }
+
+    &-accent {
       color: var(--accentColor);
+    }
+
+    &-primary {
+      color: var(--primaryColor);
+    }
+
+    &-secondary {
+      color: var(--secondaryColor);
+    }
+
+    &-success {
+      color: var(--successColor);
+    }
+
+    &-error {
+      color: var(--errorColor);
     }
   }
 
@@ -28,6 +68,8 @@
     &:hover,
     &:focus {
       color: var(--activeColor);
+      opacity: 1;
+      text-decoration: none;
     }
 
     &:disabled {
@@ -44,6 +86,8 @@
     &:hover,
     &:visited {
       color: var(--disabledColor);
+      opacity: 1;
+      text-decoration: none;
     }
   }
 }
