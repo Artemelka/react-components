@@ -51,7 +51,7 @@ storiesOf('Button', module)
       </Grid>
 
       <h2>Button state</h2>
-      <p>Компонент может иметь различные состояния</p>
+      <p>Компонент может иметь различные состояния.</p>
       <Grid>
         <h5>
           <Highlighter color="accent" isFilled>disabled</Highlighter>

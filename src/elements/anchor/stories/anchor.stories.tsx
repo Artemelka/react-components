@@ -6,6 +6,7 @@ import { Anchor, AnchorMouseEvent } from '@artemelka/react-components';
 import {
   Grid,
   GridCell,
+  GridDivider,
   GridRow,
   Group,
   GroupItem,
@@ -19,6 +20,8 @@ const REPO_LINK = 'https://github.com/Artemelka/';
 const NPM_LINK = 'https://www.npmjs.com/package/@artemelka/react-components';
 
 const TARGET_OPTIONS = [undefined, '_blank', '_self', '_parent', '_top'];
+const ANCHOR_THEME = [undefined, 'base', 'accent', 'primary', 'secondary', 'success', 'error'];
+const ANCHOR_DECORATION = [undefined, 'none', 'line-through', 'overline', 'underline', 'inherit'];
 
 storiesOf('Anchor', module)
   .addParameters({
@@ -101,7 +104,9 @@ storiesOf('Anchor', module)
         </Grid>
 
         <h2>Anchor state</h2>
+        <p>Компонент может иметь различные состояния.</p>
         <Grid>
+          <GridDivider />
           <GridRow>
             <GridCell>
               <h5>
@@ -117,10 +122,31 @@ storiesOf('Anchor', module)
             </GridCell>
           </GridRow>
         </Grid>
+
+        <h2>
+          <Highlighter>textDecoration</Highlighter> (none)
+        </h2>
+        <p>Компонент может иметь оформление текста.</p>
+        <Grid>
+          <GridDivider />
+          <GridRow>
+            <GridCell>
+              <Anchor href="#" textDecoration="line-through">line-through</Anchor>
+            </GridCell>
+            <GridCell>
+              <Anchor href="#" textDecoration="overline">overline</Anchor>
+            </GridCell>
+            <GridCell>
+              <Anchor href="#" textDecoration="underline">underline</Anchor>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
         <h2>
           <Highlighter>target</Highlighter> (_blank)
         </h2>
         <Grid>
+          <GridDivider />
           <GridRow>
             <GridCell verticalAlign="between">
               <h5>_blank</h5>
@@ -160,6 +186,7 @@ storiesOf('Anchor', module)
         </h2>
         <p>Компонент может показывать подсказку при задержке на нем наведения.</p>
         <Grid>
+          <GridDivider />
           <GridRow>
             <GridCell>
               <Anchor
@@ -168,6 +195,46 @@ storiesOf('Anchor', module)
                 title="It`s title"
               >
                 link with title
+              </Anchor>
+            </GridCell>
+          </GridRow>
+        </Grid>
+
+        <h2>
+          <Highlighter>themeColor</Highlighter>
+        </h2>
+        <p>Компонент может сменить тему на одну из пяти.</p>
+        <Grid>
+          <GridRow>
+            <GridDivider />
+            <GridCell>
+              <h5>base</h5>
+              <Anchor href="#" themeColor="base">
+                base theme link
+              </Anchor>
+            </GridCell>
+            <GridCell>
+              <h5>primary</h5>
+              <Anchor href="#" themeColor="primary">
+                primary theme link
+              </Anchor>
+            </GridCell>
+            <GridCell>
+              <h5>secondary</h5>
+              <Anchor href="#" themeColor="secondary">
+                secondary theme link
+              </Anchor>
+            </GridCell>
+            <GridCell>
+              <h5>success</h5>
+              <Anchor href="#" themeColor="success">
+                success theme link
+              </Anchor>
+            </GridCell>
+            <GridCell>
+              <h5>error</h5>
+              <Anchor href="#" themeColor="error">
+                error theme link
               </Anchor>
             </GridCell>
           </GridRow>
@@ -193,6 +260,12 @@ storiesOf('Anchor', module)
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           target={select('target', TARGET_OPTIONS, TARGET_OPTIONS[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          textDecoration={select('textDecoration', ANCHOR_DECORATION, ANCHOR_DECORATION[0])}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          themeColor={select('themeColor', ANCHOR_THEME, ANCHOR_THEME[0])}
           title={text('title', 'this is link')}
           withPreventedEvent={boolean('withPreventedEvent', true)}
         >

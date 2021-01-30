@@ -13,6 +13,7 @@ import { AnchorFocusEvent, AnchorMouseEvent, AnchorKeyboardEvent } from './types
 import style from './anchor.module.scss';
 
 const cn = classNames.bind(style);
+const CLASS_NAME = 'Anchor';
 
 export type AnchorProps = {
   /** Флаг активного состояния */
@@ -45,6 +46,10 @@ export type AnchorProps = {
   rel?: string;
   /** Указывает, где открыть связанный документ */
   target?: '_blank' | '_self' | '_parent' | '_top';
+  /** Добавляет оформление текста */
+  textDecoration?: 'none' | 'line-through' | 'overline' | 'underline' | 'inherit';
+  /** Задает цвет ссылки */
+  themeColor?: 'base' | 'accent' | 'primary' | 'secondary' | 'success' | 'error';
   /** Определяет заголовок ссылки, который отображается во всплывающей подсказке */
   title?: string;
   /** Формат связанного URL с типом MIME */
@@ -69,6 +74,8 @@ export const Anchor = memo(
     ping,
     rel = 'noreferrer noopener',
     target = '_blank',
+    textDecoration = 'none',
+    themeColor = 'accent',
     title,
     withPreventedEvent = true,
   }: AnchorProps) => {
@@ -109,10 +116,11 @@ export const Anchor = memo(
     return (
       <a
         ref={anchorRef}
-        className={cn('Anchor', {
-          'Anchor--active': active && withPreventedEvent,
-          'Anchor--disabled': disabled,
-          'Anchor--native': !withPreventedEvent,
+        className={cn(CLASS_NAME, {
+          [`${CLASS_NAME}--active`]: active && withPreventedEvent,
+          [`${CLASS_NAME}--disabled`]: disabled,
+          [`${CLASS_NAME}--decoration-${textDecoration}`]: textDecoration,
+          [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
         })}
         download={download}
         href={href}
@@ -122,7 +130,7 @@ export const Anchor = memo(
         onKeyPress={handleKeyPress}
         ping={ping}
         rel={rel}
-        tabIndex={!withPreventedEvent && (active || disabled) ? -1 : 0}
+        tabIndex={(active || disabled) ? -1 : 0}
         target={target}
         title={title}
       >
