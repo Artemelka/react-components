@@ -59,6 +59,14 @@ storiesOf('Label', module)
           <GridCell>
             <h5>
               <Highlighter color="accent" isFilled>
+                isActive
+              </Highlighter>
+            </h5>
+            <Label isActive>It`s a label active</Label>
+          </GridCell>
+          <GridCell>
+            <h5>
+              <Highlighter color="accent" isFilled>
                 isError
               </Highlighter>
             </h5>
@@ -143,6 +151,7 @@ storiesOf('Label', module)
       <Label
         disabled={boolean('disabled', false)}
         htmlFor={text('htmlFor', 'someId')}
+        isActive={boolean('isActive', false)}
         isError={boolean('isError', false)}
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore

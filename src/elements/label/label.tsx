@@ -12,6 +12,8 @@ type LabelProps = {
   disabled?: boolean;
   /** id инпута для которого предназначен лейбл */
   htmlFor?: string | number;
+  /** Флаг активного состояния */
+  isActive?: boolean;
   /** Флаг состояния ошибки */
   isError?: boolean;
   /** Задает отступ лейбла в зависимости от позици расположения */
@@ -26,6 +28,7 @@ export const Label = memo(({
   children,
   disabled,
   htmlFor,
+  isActive,
   isError,
   position = 'top',
   size = 'medium',
@@ -35,6 +38,7 @@ export const Label = memo(({
     className={cn(CLASS_NAME, {
       [`${CLASS_NAME}--clickable`]: htmlFor,
       [`${CLASS_NAME}--disabled`]: disabled,
+      [`${CLASS_NAME}--active`]: isActive,
       [`${CLASS_NAME}--error`]: isError,
       [`${CLASS_NAME}--size-${size}`]: size,
       [`${CLASS_NAME}--position-${position}`]: position,

@@ -4,13 +4,14 @@
 // import { boolean, text, select } from '@storybook/addon-knobs';
 // import {  } from '@artemelka/react-components';
 // import {
-// Grid,
-// GridCell,
-// GridRow,
-// Group,
-// GroupItem,
-// Highlighter,
-// StoriesItem,
+//  Grid,
+//  GridCell,
+//  GridDivider,
+//  GridRow,
+//  Group,
+//  GroupItem,
+//  Highlighter,
+//  StoriesItem,
 // } from '../../_story-components';
 // import { IntroComponent } from './_components/intro-component';
 
@@ -23,18 +24,19 @@
 //     <>
 //       <IntroComponent />
 //
-// <h2>
-//   <Highlighter>{}</Highlighter>
-// </h2>
-// <Grid>
-//   <GridRow>
-//     <GridCell>{}</GridCell>
-//   </GridRow>
-// </Grid>
+//        <h2>
+//          <Highlighter>{}</Highlighter>
+//        </h2>
+//        <Grid>
+//          <GridDivider />
+//          <GridRow>
+//            <GridCell>{}</GridCell>
+//          </GridRow>
+//        </Grid>
 //     </>
 //   ))
-// .add('Knobs', () => (
-//   <StoriesItem>
-//     {}
-//   </StoriesItem>
-// ));
+//  .add('Knobs', () => (
+//    <StoriesItem>
+//      {}
+//    </StoriesItem>
+//  ));

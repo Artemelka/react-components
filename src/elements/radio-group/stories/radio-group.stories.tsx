@@ -40,7 +40,7 @@ const INITIAL_VALUES = {
 storiesOf('RadioGroup', module)
   .addParameters({
     component: RadioGroup,
-    componentSubtitle: 'Компонент для реализации группы радиокнопок',
+    componentSubtitle: 'Компонент для реализации группы input type=radio',
   })
   .add('Examples', () => {
     const RadioController = (props: any) => {

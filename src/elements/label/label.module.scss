@@ -72,6 +72,10 @@
     }
   }
 
+  &--active {
+    color: var(--activeColor);
+  }
+
   &--error {
     color: var(--errorColor);
   }
