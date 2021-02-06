@@ -132,7 +132,7 @@ export class DropdownList extends PureComponent<DropdownListProps> {
           <li
             key={id}
             className={cn(`${CLASS_NAME}__item`, {
-              [`${CLASS_NAME}__item--active`]: !customItem && selectedItems.some((el) => el.id === id)
+              [`${CLASS_NAME}__item--active`]: !customItem && selectedItems.some((el) => el.id === id),
             })}
           >
             <DropdownItem

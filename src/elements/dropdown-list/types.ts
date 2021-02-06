@@ -25,5 +25,5 @@ export type CustomDropdownItemType =
 export type ItemKeyDownParams = {
   keyCode: number;
   index: number;
-  item: DropdownItemParams,
+  item: DropdownItemParams;
 };
