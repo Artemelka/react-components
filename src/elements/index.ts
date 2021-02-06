@@ -36,6 +36,12 @@ export {
   CheckboxFocusEvent,
   CheckboxChangeEvent,
 } from './checkbox/types';
+export { DropdownList, DropdownMultiItem } from './dropdown-list';
+export {
+  CustomDropdownItemProps,
+  CustomDropdownItemType,
+  DropdownItemParams,
+} from './dropdown-list/types';
 export { Input } from './input';
 export {
   InputChangeEvent,

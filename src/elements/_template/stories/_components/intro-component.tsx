@@ -4,7 +4,5 @@ import {
 } from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
-  <>
-    <Intro name="" />
-  </>
+  <Intro name="">{}</Intro>
 ));

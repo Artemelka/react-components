@@ -40,7 +40,7 @@ const INITIAL_STATE = {
 storiesOf('Toggle', module)
   .addParameters({
     component: Toggle,
-    componentSubtitle: 'Компонент для реализации ',
+    componentSubtitle: 'Компонент для реализации переключателя типа input type=checkbox',
   })
   .add('Examples', () => {
     const ToggleController = (props: any) => {

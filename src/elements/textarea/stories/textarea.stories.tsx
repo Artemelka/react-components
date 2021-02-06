@@ -63,7 +63,7 @@ const INITIAL_STATE = {
 storiesOf('Textarea', module)
   .addParameters({
     component: Textarea,
-    componentSubtitle: 'Компонент для отображения стилизованного текста',
+    componentSubtitle: 'Компонент для отображения ???',
   })
   .add('Examples', () => {
     const TextareaController = (props: any) => {
