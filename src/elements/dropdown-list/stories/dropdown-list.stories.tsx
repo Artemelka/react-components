@@ -18,6 +18,7 @@ import {
   StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
+import { CustomDropdownItemDescription } from './_components/custom-dropdown-item-description';
 
 type ChildrenParams = {
   onClick: (item: DropdownItemParams) => void;
@@ -212,12 +213,7 @@ storiesOf('DropdownList', module)
         <h2>
           <Highlighter>customItem</Highlighter>
         </h2>
-        <p>Компонент может иметь кастомный компонент списка.</p>
-        <p>
-          Вы всегда можете передать дополнительную информацию в кастомный компонент,
-          используя параметр
-          <Highlighter isFilled>extraData</Highlighter> в объекте параметров элемента списка.
-        </p>
+        <CustomDropdownItemDescription />
         <Grid>
           <GridDivider />
           <GridRow>

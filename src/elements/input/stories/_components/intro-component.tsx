@@ -27,9 +27,7 @@ export const IntroComponent = () => (
         </span>
         <p>
           Кликабельная иконка отображается только когда передано
-          <Highlighter isFilled>value</Highlighter>
-          !=
-          <Highlighter color="error" isFilled>пустой строке</Highlighter>.
+          <Highlighter color="error" isFilled>value != пустой строке</Highlighter>.
         </p>
       </ListItem>
       <ListItem>
@@ -42,6 +40,10 @@ export const IntroComponent = () => (
           тогда иконка будет отображаться всегда в состоянии
           <Highlighter color="accent" isFilled>disabled</Highlighter>.
         </p>
+      </ListItem>
+      <ListItem isRow>
+        <Highlighter isFilled>alwaysVisible</Highlighter>
+        - флаг для постоянного отображения иконки.
       </ListItem>
     </List>
     <p>

@@ -31,7 +31,6 @@ export const IntroComponent = memo(() => (
         </List>
       </ListItem>
     </List>
-    <br />
     <List>
       <ListItem isRow>
         <Highlighter isFilled>selectedItems</Highlighter>

@@ -153,6 +153,23 @@ storiesOf('Input', module)
                     value={state['input-base-icon']}
                   />
                 </GridCell>
+                <GridCell>
+                  <h5>
+                    <Highlighter isFilled>iconConfig</Highlighter>
+                    with
+                    <Highlighter color="accent" isFilled>alwaysVisible</Highlighter>
+                  </h5>
+                  <Input
+                    iconConfig={{
+                      alwaysVisible: true,
+                      icon: <Clear fontSize="inherit" />,
+                      onClick: onClear,
+                    }}
+                    name="input-base-always-visible"
+                    onChange={onChange}
+                    value={state['input-base-always-visible']}
+                  />
+                </GridCell>
               </GridRow>
             </Grid>
 

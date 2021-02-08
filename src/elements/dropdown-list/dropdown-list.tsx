@@ -25,6 +25,8 @@ type DropdownListProps = {
   onClick: (item: DropdownItemParams) => void;
   /** Массив параметров выбраного(ых) элемента(ов) */
   selectedItems?: Array<DropdownItemParams>;
+  /** Задает размер компонента */
+  size?: 'small' | 'medium' | 'big';
   /** Задает цветовую тему списка */
   themeColor?: 'base' | 'accent' | 'primary' | 'secondary';
 };
@@ -120,7 +122,11 @@ export class DropdownList extends PureComponent<DropdownListProps> {
   };
 
   render() {
-    const { customItem, selectedItems = [], themeColor = 'base' } = this.props;
+    const {
+      customItem,
+      selectedItems = [],
+      themeColor = 'base',
+    } = this.props;
 
     return (
       <ul
@@ -144,6 +150,7 @@ export class DropdownList extends PureComponent<DropdownListProps> {
               onClick={this.props.onClick}
               onKeyDown={this.handleItemKeyDown}
               selectedItems={selectedItems}
+              size={this.props.size}
               themeColor={themeColor}
               value={value}
             />

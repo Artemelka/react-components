@@ -59,7 +59,7 @@ type InputProps = {
   /** Задает размер инпута */
   size?: 'small' | 'medium' | 'big';
   /** Задает цветовую тему инпута */
-  themeColor?: 'base' | 'accent' | 'secondary' | 'primary' | 'success';
+  themeColor?: 'base' | 'accent' | 'secondary' | 'primary';
   /** Задает тип инпута */
   type?: 'text' | 'number' | 'password';
   /** Содержимое инпута */
@@ -153,7 +153,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
     const {
       autoComplete = 'off',
       disabled = false,
-      iconConfig: { icon, onClick: onIconClick } = {},
+      iconConfig: { alwaysVisible, icon, onClick: onIconClick } = {},
       isError = false,
       readOnly = false,
       size = 'medium',
@@ -162,7 +162,9 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
       value,
       variant = 'base',
     } = this.props;
-    const hasIcon = icon && !disabled && !readOnly && (!onIconClick || Boolean(value));
+    const isNoInteractive = !disabled && !readOnly;
+    const isVisible = isNoInteractive && (!onIconClick || Boolean(value));
+    const hasIcon = icon && (alwaysVisible || isVisible);
 
     return (
       <div
@@ -203,7 +205,7 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
         {hasIcon && (
           <div className={cn(`${CLASS_NAME}__icon`)}>
             <Button
-              disabled={!Boolean(onIconClick)}
+              disabled={!Boolean(onIconClick) || disabled}
               icon={icon}
               onClick={this.handleIconClick}
               onKeyDown={this.handleIconKeyDown}

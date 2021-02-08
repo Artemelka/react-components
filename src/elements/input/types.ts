@@ -30,6 +30,7 @@ export type InputIconMouseEvent = {
 };
 
 export type InputIconConfig = {
+  alwaysVisible?: boolean;
   icon: ReactNode;
   onClick?: (iconButtonEvent: InputIconMouseEvent) => void;
 };

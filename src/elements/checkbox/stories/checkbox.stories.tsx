@@ -153,9 +153,7 @@ storiesOf('Checkbox', module)
               <GridRow>
                 <GridCell horizontalAlign="center" size={3}>
                   <h5>
-                    <Highlighter isFilled>checked</Highlighter>
-                    =
-                    <Highlighter color="error" isFilled>false</Highlighter>
+                    <Highlighter color="error" isFilled>checked</Highlighter>
                   </h5>
                   <Checkbox
                     checked={false}
@@ -165,9 +163,7 @@ storiesOf('Checkbox', module)
                 </GridCell>
                 <GridCell horizontalAlign="center" size={3}>
                   <h5>
-                    <Highlighter isFilled>checked</Highlighter>
-                    =
-                    <Highlighter color="accent" isFilled>true</Highlighter>
+                    <Highlighter color="accent" isFilled>checked</Highlighter>
                   </h5>
                   <Checkbox
                     checked

@@ -1,24 +1,31 @@
 import {
   ComponentType,
+  FocusEvent,
   FC,
   RefObject,
   SyntheticEvent,
 } from 'react';
 
-type Params = {
+export type DropdownItemEvent = {
   event: SyntheticEvent<any>;
 }
-export type DropdownItemParams = {
-  extraData?: Record<string, any>;
+
+export type DropdownItemFocusEvent = {
+  event: FocusEvent;
+};
+
+export type DropdownItemParams<T = any> = {
+  extraData?: T;
   id: string | number;
   value: string;
 };
 export type CustomDropdownItemProps = DropdownItemParams & {
   itemRef: RefObject<any>;
   onClick: () => void;
-  onKeyDown: (params: Params) => void;
-  selectedItems?: Array<DropdownItemParams>;
-  themeColor: 'base' | 'accent' | 'primary' | 'secondary';
+  onKeyDown: (params: DropdownItemEvent) => void;
+  selectedItems: Array<DropdownItemParams>;
+  size?: 'small' | 'medium' | 'big';
+  themeColor?: 'base' | 'accent' | 'primary' | 'secondary';
 };
 export type CustomDropdownItemType =
   ComponentType<CustomDropdownItemProps> | FC<CustomDropdownItemProps>;

@@ -15,6 +15,7 @@ export const DropdownMultiItem = memo(({
   onClick,
   onKeyDown,
   selectedItems = [],
+  size,
   themeColor,
   value,
 }: CustomDropdownItemProps) => {
@@ -29,17 +30,22 @@ export const DropdownMultiItem = memo(({
         name={extraData.name || id}
         onChange={onClick}
         onKeyDown={onKeyDown}
+        size={size}
         themeColor={themeColor}
         variant="only-text"
       />
-      <Label
-        htmlFor={id}
-        isActive={checked}
-        position="right"
-        themeColor={themeColor}
-      >
-        {value}
-      </Label>
+      <div className={cn(`${CLASS_NAME}__label`)}>
+        <Label
+          htmlFor={id}
+          isActive={checked}
+          isFullWidth
+          position="right"
+          size={size}
+          themeColor={themeColor}
+        >
+          {value}
+        </Label>
+      </div>
     </div>
   );
 });

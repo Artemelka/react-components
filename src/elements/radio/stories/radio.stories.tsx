@@ -54,7 +54,9 @@ storiesOf('Radio', module)
               <GridDivider />
               <GridRow>
                 <GridCell size={3}>
-                  <h5>checked = false</h5>
+                  <h5>
+                    <Highlighter color="error" isFilled>checked</Highlighter>
+                  </h5>
                   <Radio
                     checked={false}
                     id="radio-off"
@@ -63,7 +65,9 @@ storiesOf('Radio', module)
                   />
                 </GridCell>
                 <GridCell size={3}>
-                  <h5>checked = true</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>checked</Highlighter>
+                  </h5>
                   <Radio
                     checked
                     id="radio-on"
@@ -72,7 +76,9 @@ storiesOf('Radio', module)
                   />
                 </GridCell>
                 <GridCell size={3}>
-                  <h5>disabled</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>disabled</Highlighter>
+                  </h5>
                   <Radio
                     checked={state.state}
                     disabled
@@ -83,7 +89,9 @@ storiesOf('Radio', module)
                   />
                 </GridCell>
                 <GridCell size={3}>
-                  <h5>disabled</h5>
+                  <h5>
+                    <Highlighter color="accent" isFilled>disabled</Highlighter>
+                  </h5>
                   <Radio
                     checked
                     disabled

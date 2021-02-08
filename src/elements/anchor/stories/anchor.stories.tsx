@@ -98,8 +98,7 @@ storiesOf('Anchor', module)
           </GridRow>
           <p>
             Если вам необходимо нативное поведение ссылки - задайте
-            <Highlighter isFilled>withPreventedEvent</Highlighter>=
-            <Highlighter color="error" isFilled>false</Highlighter>.
+            <Highlighter color="error" isFilled>withPreventedEvent = false</Highlighter>
           </p>
         </Grid>
 

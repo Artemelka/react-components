@@ -5,4 +5,9 @@
   justify-content: flex-start;
   line-height: 0;
   padding: 10px 30px;
+
+  &__label {
+    align-self: stretch;
+    flex-basis: 100%;
+  }
 }

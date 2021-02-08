@@ -78,9 +78,7 @@ storiesOf('Toggle', module)
               <GridRow>
                 <GridCell>
                   <h5>
-                    <Highlighter isFilled>checked</Highlighter>
-                    =
-                    <Highlighter color="error" isFilled>false</Highlighter>
+                    <Highlighter color="error" isFilled>checked</Highlighter>
                   </h5>
                   <Toggle
                     checked={false}
@@ -90,9 +88,7 @@ storiesOf('Toggle', module)
                 </GridCell>
                 <GridCell>
                   <h5>
-                    <Highlighter isFilled>checked</Highlighter>
-                    =
-                    <Highlighter color="accent" isFilled>true</Highlighter>
+                    <Highlighter color="accent" isFilled>checked</Highlighter>
                   </h5>
                   <Toggle
                     checked

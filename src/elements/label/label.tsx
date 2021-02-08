@@ -16,6 +16,8 @@ type LabelProps = {
   isActive?: boolean;
   /** Флаг состояния ошибки */
   isError?: boolean;
+  /** Флаг устанавливает свойство width: 100% */
+  isFullWidth?: boolean;
   /** Задает отступ лейбла в зависимости от позици расположения */
   position?: 'left' | 'right' |'top' ;
   /** Задает размер лейбла */
@@ -30,6 +32,7 @@ export const Label = memo(({
   htmlFor,
   isActive,
   isError,
+  isFullWidth,
   position = 'top',
   size = 'medium',
   themeColor = 'main',
@@ -40,6 +43,7 @@ export const Label = memo(({
       [`${CLASS_NAME}--disabled`]: disabled,
       [`${CLASS_NAME}--active`]: isActive,
       [`${CLASS_NAME}--error`]: isError,
+      [`${CLASS_NAME}--full-width`]: isFullWidth,
       [`${CLASS_NAME}--size-${size}`]: size,
       [`${CLASS_NAME}--position-${position}`]: position,
       [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,

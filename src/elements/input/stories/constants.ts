@@ -5,7 +5,7 @@ export const INPUT_SIZE = [undefined, 'big', 'medium', 'small'];
 export const INPUT_TYPE = [undefined, 'text', 'number', 'password'];
 export const INPUT_VARIANTS = [undefined, 'base', 'filled', 'only-text'];
 export const PLACEHOLDER_TEXT = 'Enter value';
-export const THEME_COLOR = [undefined, 'base', 'accent', 'primary', 'secondary', 'success'];
+export const THEME_COLOR = [undefined, 'base', 'accent', 'primary', 'secondary'];
 
 export const INITIAL_VALUES: Record<string, string> = {
   'input-text': 'qwerty',
@@ -15,6 +15,7 @@ export const INITIAL_VALUES: Record<string, string> = {
   'input-base-read-only': ' read only value',
   'input-base-icon': '',
   'input-base-placeholder': '',
+  'input-base-always-visible': '',
   'input-base-error': 'qwerty error',
   'input-base': 'qwerty',
   'input-filled-base': 'qwerty filled',
