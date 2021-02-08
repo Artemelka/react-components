@@ -4,7 +4,7 @@ import { ValuesFormatterParams } from '../types';
 type Params = {
   isMultiSelect?: boolean;
   values: Array<DropdownItemParams>;
-  valuesFormatter?: (params: ValuesFormatterParams) => string;
+  valuesFormatter?: (params: ValuesFormatterParams<any>) => string;
 };
 
 export const getValue = ({ isMultiSelect, values, valuesFormatter }: Params): string => {
