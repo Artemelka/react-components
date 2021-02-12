@@ -1,0 +1,87 @@
+$asideWidth: 350px;
+$headerHeight: 60px;
+$footerHeight: 80px;
+
+
+.Layout {
+  background-color: var(--backgroundColor);
+  color: var(--baseColor);
+  height: 100%;
+  max-height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+
+  &__inner {
+    box-sizing: border-box;
+    height: calc(100% - #{$headerHeight});
+    margin-top: $headerHeight;
+    overflow-y: scroll;
+    position: relative;
+
+    &--without-header {
+      height: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &__main {
+    box-sizing: border-box;
+    padding-left: $asideWidth;
+    position: relative;
+
+    &--aside-right {
+      left: auto;
+      padding-left: 0;
+      padding-right: $asideWidth;
+      right: 0;
+    }
+
+    &--without-aside {
+      left: 0;
+      padding-left: 0;
+      padding-right: 0;
+      right: 0;
+    }
+
+    &-content {
+      min-height: 100%;
+    }
+  }
+
+  &__header {
+    height: $headerHeight;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__aside {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: $asideWidth;
+
+    &--right {
+      left: auto;
+      right: 0;
+    }
+
+    &-inner {
+      max-height: 100%;
+      overflow-y: scroll;
+
+      &--sticky {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+  }
+}
