@@ -52,6 +52,7 @@ export {
   InputMouseEvent,
 } from './input/types';
 export { Label } from './label';
+export { Layout } from './layout';
 export { Overlay } from './overlay';
 export {
   ProgressCircular,

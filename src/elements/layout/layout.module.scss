@@ -1,0 +1,64 @@
+$asideWidth: 330px;
+
+.Layout {
+  align-content: flex-start;
+  background-color: var(--backgroundColor);
+  color: var(--baseColor);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 12;
+    flex-shrink: 20;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  &__content {
+    align-items: stretch;
+    display: flex;
+    flex-grow: 12;
+    flex-shrink: 20;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    &--aside-right {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__aside {
+    width: $asideWidth;
+
+    &-inner {
+      &--sticky {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+
+  &__main {
+    width: calc(100% - #{$asideWidth});
+
+    &--without-aside {
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    width: 100%;
+  }
+}
