@@ -12,24 +12,25 @@ export const createList = (count: number) => (
 export const createLorem = (count: number) => [...Array(count)].map(() => <p>{LOREM}</p>);
 
 export const StoryAside = memo(({ count = 8 }: { count?: number }) => (
-  <div style={{ padding: '20px' }}>
-    <div style={{ padding: '20px', backgroundColor: 'green' }}>
+  <div style={{ backgroundColor: 'grey', padding: '20px' }}>
+    <div style={{ backgroundColor: 'green', padding: '20px' }}>
       <h2>aside</h2>
       {createList(count)}
     </div>
   </div>
 ));
 
-export const StoryHeader = memo(() => (
-  <div style={{ backgroundColor: 'blue', height: '100%', padding: '5px' }}>
+export const StoryHeader = memo(({ count = 0 }: { count?: number }) => (
+  <div style={{ backgroundColor: 'blue', padding: '5px' }}>
     <p>header</p>
+    {Boolean(count) && createList(count)}
   </div>
 ));
 
-export const StoryMain = memo(() => (
+export const StoryMain = memo(({ count = 6 }: { count?: number }) => (
   <div style={{ backgroundColor: 'red', padding: '20px' }}>
     <h1>main</h1>
-    {createLorem(6)}
+    {createLorem(count)}
   </div>
 ));
 
@@ -38,8 +39,8 @@ export const StoryFooter = memo(({ count = 4 }: { count?: number }) => (
     style={{
       backgroundColor: 'yellow',
       color: '#000',
-      height: '100%',
-      padding: '20px',
+      // height: '100%',
+      padding: '5px',
     }}
   >
     <p>footer</p>

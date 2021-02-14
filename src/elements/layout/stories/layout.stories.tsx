@@ -1,6 +1,5 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { storiesOf } from '@storybook/react';
-// import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Layout } from '@artemelka/react-components';
 import {
@@ -9,7 +8,6 @@ import {
   GridDivider,
   GridRow,
   Highlighter,
-  StoriesItem,
 } from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 import {
@@ -28,7 +26,13 @@ storiesOf('Layout', module)
   })
   .add('Examples', () => {
     const LayoutWrapper = (props: PropsWithChildren<{ height?: number }>) => (
-      <div style={{ height: `${props.height || 300}px`, width: '100%' }}>
+      <div
+        style={{
+          boxShadow: '0 0 6px #fff',
+          height: `${props.height || 300}px`,
+          width: '100%',
+        }}
+      >
         {props.children}
       </div>
     );
@@ -54,13 +58,9 @@ storiesOf('Layout', module)
           <GridRow>
             <GridCell size={12}>
               <LayoutWrapper>
-                <Layout
-                  // asideElement={<StoryAside />}
-                  // footerElement={<StoryFooter />}
-                  // headerElement={<StoryHeader />}
-                  // isAsideRight={boolean('isAsideRight', false)}
-                  mainElement={<PageContent count={2} />}
-                />
+                <Layout>
+                  <PageContent count={2} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -75,10 +75,9 @@ storiesOf('Layout', module)
           <GridRow>
             <GridCell size={12}>
               <LayoutWrapper>
-                <Layout
-                  asideElement={<AsideContent count={20} />}
-                  mainElement={<PageContent count={2} />}
-                />
+                <Layout asideElement={<AsideContent count={20} />}>
+                  <PageContent count={2} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -92,12 +91,13 @@ storiesOf('Layout', module)
           <GridDivider />
           <GridRow>
             <GridCell size={12}>
-              <LayoutWrapper>
+              <LayoutWrapper height={320}>
                 <Layout
-                  asideElement={<AsideContent count={20} />}
+                  asideElement={<AsideContent count={5} />}
                   isAsideRight
-                  mainElement={<PageContent count={2} />}
-                />
+                >
+                  <PageContent count={1} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -115,8 +115,9 @@ storiesOf('Layout', module)
                 <Layout
                   asideElement={<AsideContent count={10} />}
                   isAsideSticky
-                  mainElement={<PageContent count={4} />}
-                />
+                >
+                  <PageContent count={4} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -133,9 +134,10 @@ storiesOf('Layout', module)
               <LayoutWrapper height={500}>
                 <Layout
                   asideElement={<AsideContent count={5} />}
-                  footerElement={<StoryFooter count={2} />}
-                  mainElement={<PageContent count={1} />}
-                />
+                  footerElement={<StoryFooter count={1} />}
+                >
+                  <PageContent count={1} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -153,8 +155,9 @@ storiesOf('Layout', module)
                 <Layout
                   asideElement={<AsideContent count={5} />}
                   headerElement={<StoryHeader />}
-                  mainElement={<PageContent count={1} />}
-                />
+                >
+                  <PageContent count={1} />
+                </Layout>
               </LayoutWrapper>
             </GridCell>
           </GridRow>
@@ -163,16 +166,21 @@ storiesOf('Layout', module)
     );
   })
   .add('Knobs', () => (
-    <StoriesItem>
-      <div style={{ height: '400px', width: '100%' }}>
-        <Layout
-          asideElement={<StoryAside />}
-          footerElement={<StoryFooter />}
-          headerElement={<StoryHeader />}
-          isAsideRight={boolean('isAsideRight', false)}
-          isAsideSticky={boolean('isAsideSticky', false)}
-          mainElement={<StoryMain />}
-        />
-      </div>
-    </StoriesItem>
+    <div
+      style={{
+        boxShadow: '0 0 6px #fff',
+        height: '500px',
+        width: '100%',
+      }}
+    >
+      <Layout
+        asideElement={<StoryAside count={10} />}
+        footerElement={<StoryFooter count={4} />}
+        headerElement={<StoryHeader count={0} />}
+        isAsideRight={boolean('isAsideRight', false)}
+        isAsideSticky={boolean('isAsideSticky', false)}
+      >
+        <StoryMain count={5} />
+      </Layout>
+    </div>
   ));

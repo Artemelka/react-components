@@ -8,7 +8,7 @@ export const IntroComponent = memo(() => (
   <Intro name="Layout">
     <p>
       Для работы компонента необходимо передать параметр
-      <Highlighter isFilled>mainElement</Highlighter>.
+      <Highlighter isFilled>children</Highlighter>.
     </p>
     <p>
       Компонент занимает всю допустимую ширну и высоту родителя и

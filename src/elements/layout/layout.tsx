@@ -1,45 +1,40 @@
-import React, { memo } from 'react';
+import React, { memo, PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 import style from './layout.module.scss';
 
 const cn = classNames.bind(style);
 const CLASS_NAME = 'Layout';
 
-type TemplateProps = {
+type TemplateProps = PropsWithChildren<{
   asideElement?: JSX.Element;
   footerElement?: JSX.Element;
   headerElement?: JSX.Element;
   isAsideRight?: boolean;
   isAsideSticky?: boolean;
-  mainElement: JSX.Element;
-};
+}>;
 
 export const Layout = memo(({
   asideElement,
+  children,
   footerElement,
   headerElement,
   isAsideRight,
   isAsideSticky,
-  mainElement,
 }: TemplateProps) => (
   <div className={cn(CLASS_NAME)}>
-    <div
-      className={cn(`${CLASS_NAME}__inner`, {
-        [`${CLASS_NAME}__inner--without-header`]: !headerElement,
-      })}
-    >
+    {Boolean(headerElement) && (
+      <header className={cn(`${CLASS_NAME}__header`)}>
+        {headerElement}
+      </header>
+    )}
+    <div className={cn(`${CLASS_NAME}__inner`)}>
       <div
-        className={cn(`${CLASS_NAME}__main`, {
-          [`${CLASS_NAME}__main--aside-right`]: isAsideRight,
-          [`${CLASS_NAME}__main--without-aside`]: !asideElement,
+        className={cn(`${CLASS_NAME}__content`, {
+          [`${CLASS_NAME}__content--aside-right`]: isAsideRight,
         })}
       >
         {Boolean(asideElement) && (
-          <aside
-            className={cn(`${CLASS_NAME}__aside`, {
-              [`${CLASS_NAME}__aside--right`]: isAsideRight,
-            })}
-          >
+          <aside className={cn(`${CLASS_NAME}__aside`)}>
             <div
               className={cn(`${CLASS_NAME}__aside-inner`, {
                 [`${CLASS_NAME}__aside-inner--sticky`]: isAsideSticky,
@@ -49,10 +44,13 @@ export const Layout = memo(({
             </div>
           </aside>
         )}
-        <main className={cn(`${CLASS_NAME}__main-content`)}>
-          {mainElement}
+        <main
+          className={cn(`${CLASS_NAME}__main`, {
+            [`${CLASS_NAME}__main--without-aside`]: !asideElement,
+          })}
+        >
+          {children}
         </main>
-
       </div>
       {Boolean(footerElement) && (
         <footer className={cn(`${CLASS_NAME}__footer`)}>
@@ -60,10 +58,5 @@ export const Layout = memo(({
         </footer>
       )}
     </div>
-    {Boolean(headerElement) && (
-      <header className={cn(`${CLASS_NAME}__header`)}>
-        {headerElement}
-      </header>
-    )}
   </div>
 ));
