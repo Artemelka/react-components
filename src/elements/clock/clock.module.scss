@@ -4,9 +4,9 @@
   align-items: center;
   background-image: url("./assets/clock.png");
   background-size: cover;
-  border: 4px solid var(--clockBorderColor);
+  border: 4px solid var(--clockBorderColor, $clockBorderColor);
   border-radius: 50%;
-  box-shadow: 0 -15px 15px var(--clockShadowWhiteColor), inset 0 -15px 15px var(--clockShadowWhiteColor), 0 15px 15px var(--clockShadowBlackColor), inset 0 15px 15px var(--clockShadowBlackColor);
+  box-shadow: 0 -15px 15px var(--clockShadowWhiteColor, $clockShadowWhiteColor), inset 0 -15px 15px var(--clockShadowWhiteColor, $clockShadowWhiteColor), 0 15px 15px var(--clockShadowBlackColor, $clockShadowBlackColor), inset 0 15px 15px var(--clockShadowBlackColor, $clockShadowBlackColor);
   box-sizing: border-box;
   display: flex;
   height: 350px;
@@ -15,7 +15,7 @@
   width: 350px;
 
   &::before {
-    background-color: var(--mainColor);
+    background-color: var(--mainColor, $mainColor);
     border-radius: 50%;
     content: "";
     position: absolute;
@@ -77,7 +77,7 @@
 
   &__arrow-alarm {
     &::before {
-      background-color: var(--errorColor);
+      background-color: var(--errorColor, $errorColor);
       z-index: 1;
     }
 
@@ -113,7 +113,7 @@
   }
   &__arrow-hour {
     &::before {
-      background-color: var(--secondaryColor);
+      background-color: var(--secondaryColor, $secondaryColor);
       z-index: 1;
     }
 
@@ -150,7 +150,7 @@
 
   &__arrow-min {
     &::before {
-      background-color: var(--mainColor);
+      background-color: var(--mainColor, $mainColor);
       z-index: 2;
     }
 
@@ -187,7 +187,7 @@
 
   &__arrow-sec {
     &::before {
-      background-color: var(--mainColor);
+      background-color: var(--mainColor, $mainColor);
       z-index: 3;
     }
 

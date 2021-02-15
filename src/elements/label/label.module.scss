@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Label {
   display: inline-block;
   vertical-align: bottom;
@@ -52,32 +54,32 @@
 
   &--theme {
     &-base {
-      color: var(--baseColor);
+      color: var(--baseColor, $baseColor);
     }
 
     &-accent {
-      color: var(--accentColor);
+      color: var(--accentColor, $accentColor);
     }
 
     &-main {
-      color: var(--mainColor);
+      color: var(--mainColor, $mainColor);
     }
 
     &-primary {
-      color: var(--primaryColor);
+      color: var(--primaryColor, $primaryColor);
     }
 
     &-secondary {
-      color: var(--secondaryColor);
+      color: var(--secondaryColor, $secondaryColor);
     }
   }
 
   &--active {
-    color: var(--activeColor);
+    color: var(--activeColor, $activeColor);
   }
 
   &--error {
-    color: var(--errorColor);
+    color: var(--errorColor, $errorColor);
   }
 
   &--full-width {
@@ -85,7 +87,7 @@
   }
 
   &--disabled {
-    color: var(--disabledColor);
+    color: var(--disabledColor, $disabledColor);
     cursor: default;
     pointer-events: none;
 

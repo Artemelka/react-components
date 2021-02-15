@@ -1,6 +1,8 @@
+@import "../../styles/constants.module";
+
 .Highlighter {
   border-radius: 8px;
-  color: var(--baseColor);
+  color: var(--baseColor, $baseColor);
   font-size: inherit;
 
   &--filled {
@@ -10,34 +12,34 @@
 
   &--color {
     &-accent {
-      color: var(--accentColor);
+      color: var(--accentColor, $accentColor);
 
       &-filled {
-        background-color: var(--accentColor);
+        background-color: var(--accentColor, $accentColor);
       }
     }
 
     &-primary {
-      color: var(--primaryColor);
+      color: var(--primaryColor, $primaryColor);
 
       &-filled {
-        background-color: var(--primaryColor);
+        background-color: var(--primaryColor, $primaryColor);
       }
     }
 
     &-secondary {
-      color: var(--secondaryColor);
+      color: var(--secondaryColor, $secondaryColor);
 
       &-filled {
-        background-color: var(--secondaryColor);
+        background-color: var(--secondaryColor, $secondaryColor);
       }
     }
 
     &-error {
-      color: var(--errorColor);
+      color: var(--errorColor, $errorColor);
 
       &-filled {
-        background-color: var(--errorColor);
+        background-color: var(--errorColor, $errorColor);
       }
     }
   }

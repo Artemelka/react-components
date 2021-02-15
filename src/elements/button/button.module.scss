@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 $border-radius: 12px;
 
 .Button {
@@ -5,7 +7,7 @@ $border-radius: 12px;
   border: none;
   border-radius: 2px;
   box-sizing: border-box;
-  color: var(--baseColor);
+  color: var(--baseColor, $baseColor);
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
@@ -19,7 +21,7 @@ $border-radius: 12px;
 
   &::after,
   &::before {
-    background-color: var(--progressContourColor);
+    background-color: var(--progressContourColor, rgba(255, 255, 255, .3));
     content: "";
     height: 100%;
     position: absolute;
@@ -43,7 +45,7 @@ $border-radius: 12px;
 
   &:hover,
   &:focus {
-    box-shadow: 0 0 6px var(--buttonShadowColor);
+    box-shadow: 0 0 6px var(--buttonShadowColor, $buttonShadowColor);
   }
 
   &:active,
@@ -97,13 +99,13 @@ $border-radius: 12px;
 
   &--theme {
     &-base {
-      background-color: var(--mainColor);
-      border-color: var(--mainColor);
-      color: var(--baseColor);
+      background-color: var(--mainColor, $mainColor);
+      border-color: var(--mainColor, $mainColor);
+      color: var(--baseColor, $baseColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--baseColor);
+        box-shadow: 0 0 6px var(--baseColor, $baseColor);
 
         &:disabled {
           box-shadow: none;
@@ -111,62 +113,62 @@ $border-radius: 12px;
       }
     }
     &-accent {
-      background-color: var(--accentColor);
-      border-color: var(--accentColor);
-      color: var(--accentColor);
+      background-color: var(--accentColor, $accentColor);
+      border-color: var(--accentColor, $accentColor);
+      color: var(--accentColor, $accentColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--accentColor);
+        box-shadow: 0 0 6px var(--accentColor, $accentColor);
       }
     }
     &-primary {
-      background-color: var(--primaryColor);
-      border-color: var(--primaryColor);
-      color: var(--primaryColor);
+      background-color: var(--primaryColor, $primaryColor);
+      border-color: var(--primaryColor, $primaryColor);
+      color: var(--primaryColor, $primaryColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--primaryColor);
+        box-shadow: 0 0 6px var(--primaryColor, $primaryColor);
       }
     }
     &-secondary {
-      background-color: var(--secondaryColor);
-      border-color: var(--secondaryColor);
-      color: var(--secondaryColor);
+      background-color: var(--secondaryColor, $secondaryColor);
+      border-color: var(--secondaryColor, $secondaryColor);
+      color: var(--secondaryColor, $secondaryColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--secondaryColor);
+        box-shadow: 0 0 6px var(--secondaryColor, $secondaryColor);
       }
     }
     &-success {
-      background-color: var(--successColor);
-      border-color: var(--successColor);
-      color: var(--successColor);
+      background-color: var(--successColor, $successColor);
+      border-color: var(--successColor, $successColor);
+      color: var(--successColor, $successColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--successColor);
+        box-shadow: 0 0 6px var(--successColor, $successColor);
       }
     }
     &-error {
-      background-color: var(--errorColor);
-      border-color: var(--errorColor);
-      color: var(--errorColor);
+      background-color: var(--errorColor, $errorColor);
+      border-color: var(--errorColor, $errorColor);
+      color: var(--errorColor, $errorColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--errorColor);
+        box-shadow: 0 0 6px var(--errorColor, $errorColor);
       }
     }
   }
 
   &--active {
-    background-color: var(--activeColor);
-    border-color: var(--activeColor);
+    background-color: var(--activeColor, $activeColor);
+    border-color: var(--activeColor, $activeColor);
     box-shadow: none;
-    color: var(--activeColor);
+    color: var(--activeColor, $activeColor);
 
     &:hover,
     &:focus {
@@ -207,11 +209,11 @@ $border-radius: 12px;
       }
     }
     &-filled {
-      color: var(--baseColor);
+      color: var(--baseColor, $baseColor);
 
       &:hover,
       &:focus {
-        box-shadow: 0 0 6px var(--baseColor);
+        box-shadow: 0 0 6px var(--baseColor, $baseColor);
 
         &:disabled {
           box-shadow: none;
@@ -219,13 +221,13 @@ $border-radius: 12px;
       }
 
       &-no-icon {
-        color: var(--baseColor);
+        color: var(--baseColor, $baseColor);
       }
 
       &-base {
 
         &:disabled {
-          color: var(--mainColor);
+          color: var(--mainColor, $mainColor);
         }
       }
     }
@@ -251,10 +253,10 @@ $border-radius: 12px;
   }
 
   &--disabled {
-    background-color: var(--disabledColor);
-    border-color: var(--disabledColor);
+    background-color: var(--disabledColor, $disabledColor);
+    border-color: var(--disabledColor, $disabledColor);
     box-shadow: none;
-    color: var(--mainColor);
+    color: var(--mainColor, $mainColor);
     cursor: default;
 
     &::after,
@@ -264,7 +266,7 @@ $border-radius: 12px;
 
     &:hover,
     &:focus {
-      background-color: var(--disabledColor);
+      background-color: var(--disabledColor, $disabledColor);
       box-shadow: none;
       opacity: 1;
     }

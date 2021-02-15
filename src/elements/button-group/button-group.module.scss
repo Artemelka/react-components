@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Button-group {
   align-items: center;
   display: inline-flex;
@@ -34,7 +36,7 @@
     }
 
     &--separated {
-      border-right: 1px solid var(--mainColor);
+      border-right: 1px solid var(--mainColor, $mainColor);
       padding: 0 4px;
 
       &:first-child {
@@ -55,7 +57,7 @@
       }
 
       &-vertical {
-        border-bottom: 1px solid var(--mainColor);
+        border-bottom: 1px solid var(--mainColor, $mainColor);
         border-right: none;
         margin-bottom: 0;
         padding: 4px 0;
