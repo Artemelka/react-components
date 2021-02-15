@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Radio-group {
   display: inline-block;
   line-height: 0;
@@ -11,7 +13,7 @@
   }
 
   &__error {
-    color: var(--errorColor);
+    color: var(--errorColor, $errorColor);
     font-size: 12px;
     line-height: 12px;
     margin: 8px 0 16px 0;

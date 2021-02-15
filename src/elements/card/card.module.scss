@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Card {
   height: 400px;
   max-width: 650px;
@@ -32,38 +34,38 @@
   &--theme {
     &-base {
       &::before {
-        background: linear-gradient(315deg, var(--darkColor), var(--baseColor));
+        background: linear-gradient(315deg, var(--darkColor, $darkColor), var(--baseColor, $baseColor));
       }
     }
 
     &-accent {
       &::before {
-        background: linear-gradient(315deg, var(--secondaryColor), var(--accentColor));
+        background: linear-gradient(315deg, var(--secondaryColor, $secondaryColor), var(--accentColor, $accentColor));
       }
     }
 
     &-primary {
       &::before {
-        background: linear-gradient(315deg, var(--errorColor), var(--primaryColor));
+        background: linear-gradient(315deg, var(--errorColor, $errorColor), var(--primaryColor, $primaryColor));
       }
     }
 
     &-secondary {
       &::before {
-        background: linear-gradient(315deg, var(--activeColor), var(--secondaryColor));
+        background: linear-gradient(315deg, var(--activeColor, $activeColor), var(--secondaryColor, $secondaryColor));
       }
     }
 
     &-error {
       &::before {
-        background: linear-gradient(315deg, var(--activeColor), var(--errorColor));
+        background: linear-gradient(315deg, var(--activeColor, $activeColor), var(--errorColor, $errorColor));
       }
     }
   }
 
   &__decorator {
     align-items: center;
-    background: var(--backgroundColor);
+    background: var(--backgroundColor, $backgroundColor);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -73,7 +75,7 @@
   }
 
   &__container {
-    color: var(--baseColor);
+    color: var(--baseColor, $baseColor);
     padding: 20px;
     position: relative;
     transform: translateY(40px);
@@ -81,7 +83,7 @@
   }
 
   &__index {
-    color: var(--baseColor);
+    color: var(--baseColor, $baseColor);
     font-size: 160px;
     font-weight: 700;
     margin: 0;

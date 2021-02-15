@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Input {
   border-radius: 2px;
   display: inline-block;
@@ -7,7 +9,7 @@
 
   &::before,
   &::after {
-    background-color: var(--activeColor);
+    background-color: var(--activeColor, $activeColor);
     bottom: 0;
     content: "";
     height: 1px;
@@ -26,7 +28,7 @@
 
   &--focused {
     &-error {
-      box-shadow: 0 0 8px var(--errorColor);
+      box-shadow: 0 0 8px var(--errorColor, $errorColor);
     }
 
     &::before,
@@ -46,7 +48,7 @@
     background: none;
     border: none;
     box-sizing: border-box;
-    color: var(--baseColor);
+    color: var(--baseColor, $baseColor);
     display: inline-block;
     outline: none;
     vertical-align: middle;
@@ -72,12 +74,12 @@
 
     /* Chrome/Opera/Safari */
     &::-webkit-input-placeholder {
-      color: var(--disabledColor);
+      color: var(--disabledColor, $disabledColor);
     }
 
     /* Firefox 19+ */
     &::-moz-placeholder {
-      color: var(--disabledColor);
+      color: var(--disabledColor, $disabledColor);
       opacity: 1;
     }
 
@@ -118,21 +120,21 @@
 
     &--disabled,
     &:disabled {
-      border-color: var(--disabledColor);
-      color: var(--disabledColor);
+      border-color: var(--disabledColor, $disabledColor);
+      color: var(--disabledColor, $disabledColor);
     }
 
     &--variant {
       &-filled {
-        border: 1px solid var(--secondaryColor);
+        border: 1px solid var(--secondaryColor, $secondaryColor);
 
         &:focus {
-          border-color: var(--activeColor);
+          border-color: var(--activeColor, $activeColor);
         }
       }
 
       &-base {
-        border-bottom: 1px solid var(--secondaryColor);
+        border-bottom: 1px solid var(--secondaryColor, $secondaryColor);
       }
 
       &-only-text {
@@ -142,31 +144,31 @@
 
     &--theme {
       &-base {
-        border-color: var(--baseColor);
+        border-color: var(--baseColor, $baseColor);
       }
 
       &-accent {
-        border-color: var(--accentColor);
+        border-color: var(--accentColor, $accentColor);
       }
 
       &-secondary {
-        border-color: var(--secondaryColor);
+        border-color: var(--secondaryColor, $secondaryColor);
       }
 
       &-primary {
-        border-color: var(--primaryColor);
+        border-color: var(--primaryColor, $primaryColor);
       }
 
       &-success {
-        border-color: var(--successColor);
+        border-color: var(--successColor, $successColor);
       }
     }
 
     &--error {
-      border-color: var(--errorColor);
+      border-color: var(--errorColor, $errorColor);
 
       &:focus {
-        border-color: var(--errorColor);
+        border-color: var(--errorColor, $errorColor);
       }
     }
 

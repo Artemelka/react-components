@@ -1,6 +1,8 @@
+@import "../styles/constants.module";
+
 .Overlay {
   align-items: center;
-  background-color: var(--overlayColor);
+  background-color: var(--overlayColor, $overlayColor);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -19,7 +21,7 @@
   }
 
   &--light-color {
-    background-color: var(--overlayLightColor);
+    background-color: var(--overlayLightColor, $overlayLightColor);
   }
 
   &--transparent {

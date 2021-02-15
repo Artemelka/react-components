@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Anchor {
   background-color: transparent;
   border: none;
@@ -37,55 +39,55 @@
 
   &--theme {
     &-base {
-      color: var(--baseColor);
+      color: var(--baseColor, $baseColor);
     }
 
     &-accent {
-      color: var(--accentColor);
+      color: var(--accentColor, $accentColor);
     }
 
     &-primary {
-      color: var(--primaryColor);
+      color: var(--primaryColor, $primaryColor);
     }
 
     &-secondary {
-      color: var(--secondaryColor);
+      color: var(--secondaryColor, $secondaryColor);
     }
 
     &-success {
-      color: var(--successColor);
+      color: var(--successColor, $successColor);
     }
 
     &-error {
-      color: var(--errorColor);
+      color: var(--errorColor, $errorColor);
     }
   }
 
   &--active {
-    color: var(--activeColor);
+    color: var(--activeColor, $activeColor);
     cursor: auto;
 
     &:hover,
     &:focus {
-      color: var(--activeColor);
+      color: var(--activeColor,$activeColor);
       opacity: 1;
       text-decoration: none;
     }
 
     &:disabled {
-      color: var(--disabledColor);
+      color: var(--disabledColor, $disabledColor);
     }
   }
 
   &--disabled,
   &:disabled {
-    color: var(--disabledColor);
+    color: var(--disabledColor, $disabledColor);
     cursor: auto;
 
     &:focus,
     &:hover,
     &:visited {
-      color: var(--disabledColor);
+      color: var(--disabledColor, $disabledColor);
       opacity: 1;
       text-decoration: none;
     }

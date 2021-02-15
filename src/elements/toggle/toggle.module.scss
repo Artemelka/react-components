@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Toggle {
   display: inline-block;
   font-size: 0;
@@ -40,82 +42,82 @@
 
     &--theme {
       &-base {
-        border-color: var(--baseColor);
+        border-color: var(--baseColor, $baseColor);
 
         &::after {
-          color: var(--baseColor);
+          color: var(--baseColor, $baseColor);
         }
 
         &::before {
-          background-color: var(--baseColor);
+          background-color: var(--baseColor, $baseColor);
         }
 
         &--focused {
-          box-shadow: 0 0 6px var(--baseColor);
+          box-shadow: 0 0 6px var(--baseColor, $baseColor);
         }
       }
 
       &-accent {
-        border-color: var(--accentColor);
+        border-color: var(--accentColor, $accentColor);
 
         &::after {
-          color: var(--accentColor);
+          color: var(--accentColor, $accentColor);
         }
 
         &::before {
-          background-color: var(--accentColor);
+          background-color: var(--accentColor, $accentColor);
         }
 
         &--focused {
-          box-shadow: 0 0 6px var(--accentColor);
+          box-shadow: 0 0 6px var(--accentColor, $accentColor);
         }
       }
 
       &-primary {
-        border-color: var(--primaryColor);
+        border-color: var(--primaryColor, $primaryColor);
 
         &::after {
-          color: var(--primaryColor);
+          color: var(--primaryColor, $primaryColor);
         }
 
         &::before {
-          background-color: var(--primaryColor);
+          background-color: var(--primaryColor, $primaryColor);
         }
 
         &--focused {
-          box-shadow: 0 0 6px var(--primaryColor);
+          box-shadow: 0 0 6px var(--primaryColor, $primaryColor);
         }
       }
 
       &-secondary {
-        border-color: var(--secondaryColor);
+        border-color: var(--secondaryColor, $secondaryColor);
 
         &::after {
-          color: var(--secondaryColor);
+          color: var(--secondaryColor, $secondaryColor);
         }
 
         &::before {
-          background-color: var(--secondaryColor);
+          background-color: var(--secondaryColor, $secondaryColor);
         }
 
         &--focused {
-          box-shadow: 0 0 6px var(--secondaryColor);
+          box-shadow: 0 0 6px var(--secondaryColor, $secondaryColor);
         }
       }
 
       &-error {
-        border-color: var(--errorColor);
+        border-color: var(--errorColor, $errorColor);
 
         &::after {
-          color: var(--errorColor);
+          color: var(--errorColor, $errorColor);
         }
 
         &::before {
-          background-color: var(--errorColor);
+          background-color: var(--errorColor, $errorColor);
         }
 
         &--focused {
-          box-shadow: 0 0 6px var(--errorColor);
+          box-shadow: 0 0 6px var(--errorColor, $errorColor);
         }
       }
     }
@@ -176,35 +178,35 @@
     &--variant {
       &-filled {
         &::after {
-          color: var(--baseColor);
+          color: var(--baseColor, $baseColor);
         }
 
         &::before {
-          background-color: var(--baseColor);
+          background-color: var(--baseColor, $baseColor);
         }
 
         &-base {
-          background-color: var(--baseColor);
+          background-color: var(--baseColor, $baseColor);
 
           &::before {
-            background-color: var(--mainColor);
+            background-color: var(--mainColor, $mainColor);
           }
         }
 
         &-accent {
-          background-color: var(--accentColor);
+          background-color: var(--accentColor, $accentColor);
         }
 
         &-primary {
-          background-color: var(--primaryColor);
+          background-color: var(--primaryColor, $primaryColor);
         }
 
         &-secondary {
-          background-color: var(--secondaryColor);
+          background-color: var(--secondaryColor, $secondaryColor);
         }
 
         &-error {
-          background-color: var(--errorColor);
+          background-color: var(--errorColor, $errorColor);
         }
       }
     }
@@ -222,16 +224,16 @@
 
     &--disabled,
     &:disabled {
-      background-color: var(--disabledColor);
-      border-color: var(--disabledColor);
+      background-color: var(--disabledColor, $disabledColor);
+      border-color: var(--disabledColor, $disabledColor);
       cursor: default;
 
       &::after {
-        color: var(--disabledColor);
+        color: var(--disabledColor, $disabledColor);
       }
 
       &::before {
-        background-color: var(--mainColor);
+        background-color: var(--mainColor, $mainColor);
       }
 
       &:hover {

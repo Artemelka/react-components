@@ -1,9 +1,11 @@
+@import "../styles/constants.module";
+
 $asideWidth: 330px;
 
 .Layout {
   align-content: flex-start;
-  background-color: var(--backgroundColor);
-  color: var(--baseColor);
+  background-color: var(--backgroundColor, $backgroundColor);
+  color: var(--baseColor, $baseColor);
   display: flex;
   flex-direction: column;
   height: 100%;

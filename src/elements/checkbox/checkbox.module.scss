@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 .Checkbox {
   align-items: center;
   border-radius: 2px;
@@ -17,47 +19,47 @@
 
   &--theme {
     &-base {
-      background-color: var(--baseColor);
-      border-color: var(--baseColor);
+      background-color: var(--baseColor, $baseColor);
+      border-color: var(--baseColor, $baseColor);
 
       &-focused {
-        box-shadow: 0 0 6px var(--baseColor);
+        box-shadow: 0 0 6px var(--baseColor, $baseColor);
       }
     }
 
     &-accent {
-      background-color: var(--accentColor);
-      border-color: var(--accentColor);
+      background-color: var(--accentColor, $accentColor);
+      border-color: var(--accentColor, $accentColor);
 
       &-focused {
-        box-shadow: 0 0 6px var(--accentColor);
+        box-shadow: 0 0 6px var(--accentColor, $accentColor);
       }
     }
 
     &-primary {
-      background-color: var(--primaryColor);
-      border-color: var(--primaryColor);
+      background-color: var(--primaryColor, $primaryColor);
+      border-color: var(--primaryColor, $primaryColor);
 
       &-focused {
-        box-shadow: 0 0 6px var(--primaryColor);
+        box-shadow: 0 0 6px var(--primaryColor, $primaryColor);
       }
     }
 
     &-secondary {
-      background-color: var(--secondaryColor);
-      border-color: var(--secondaryColor);
+      background-color: var(--secondaryColor, $secondaryColor);
+      border-color: var(--secondaryColor, $secondaryColor);
 
       &-focused {
-        box-shadow: 0 0 6px var(--secondaryColor);
+        box-shadow: 0 0 6px var(--secondaryColor, $secondaryColor);
       }
     }
 
     &-error {
-      background-color: var(--errorColor);
-      border-color: var(--errorColor);
+      background-color: var(--errorColor, $errorColor);
+      border-color: var(--errorColor, $errorColor);
 
       &-focused {
-        box-shadow: 0 0 6px var(--errorColor);
+        box-shadow: 0 0 6px var(--errorColor, $errorColor);
       }
     }
   }
@@ -78,8 +80,8 @@
 
   &--disabled,
   &:disabled {
-    background-color: var(--disabledColor);
-    border-color: var(--disabledColor);
+    background-color: var(--disabledColor, $disabledColor);
+    border-color: var(--disabledColor, $disabledColor);
     cursor: default;
 
     &:hover {
@@ -146,38 +148,38 @@
 
     &--theme {
       &-base {
-        background-color: var(--baseColor);
+        background-color: var(--baseColor, $baseColor);
       }
 
       &-accent {
-        background-color: var(--accentColor);
+        background-color: var(--accentColor, $accentColor);
       }
 
       &-secondary {
-        background-color: var(--secondaryColor);
+        background-color: var(--secondaryColor, $secondaryColor);
       }
 
       &-primary {
-        background-color: var(--primaryColor);
+        background-color: var(--primaryColor, $primaryColor);
       }
 
       &-error {
-        background-color: var(--errorColor);
+        background-color: var(--errorColor, $errorColor);
       }
     }
 
     &--variant {
       &-filled {
-        background-color: var(--baseColor);
+        background-color: var(--baseColor, $baseColor);
 
         &-base {
-          background-color: var(--mainColor);
+          background-color: var(--mainColor, $mainColor);
         }
       }
     }
 
     &--disabled {
-      background-color: var(--mainColor);
+      background-color: var(--mainColor, $mainColor);
     }
   }
 }

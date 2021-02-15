@@ -1,10 +1,12 @@
+@import "../styles/constants.module";
+
 .Textarea {
   position: relative;
   width: 100%;
 
   &::before,
   &::after {
-    background-color: var(--activeColor);
+    background-color: var(--activeColor, $activeColor);
     bottom: 4px;
     content: "";
     height: 1px;
@@ -46,7 +48,7 @@
     background-color: transparent;
     border: none;
     box-sizing: border-box;
-    color: var(--baseColor);
+    color: var(--baseColor, $baseColor);
     font-size: 18px;
     outline: none;
     padding: 8px;
@@ -54,8 +56,8 @@
 
     &:disabled,
     &--disabled {
-      border-color: var(--disabledColor);
-      color: var(--disabledColor);
+      border-color: var(--disabledColor, $disabledColor);
+      color: var(--disabledColor, $disabledColor);
     }
 
     &--size {
@@ -92,42 +94,42 @@
 
     &--variant {
       &-base {
-        border-bottom: 1px solid var(--secondaryColor);
+        border-bottom: 1px solid var(--secondaryColor, $secondaryColor);
       }
 
       &-filled {
-        border: 1px solid var(--secondaryColor);
+        border: 1px solid var(--secondaryColor, $secondaryColor);
 
         &:focus {
-          border-color: var(--activeColor);
+          border-color: var(--activeColor, $activeColor);
         }
       }
     }
 
     &--theme {
       &-base {
-        border-color: var(--baseColor);
+        border-color: var(--baseColor, $baseColor);
       }
 
       &-accent {
-        border-color: var(--accentColor);
+        border-color: var(--accentColor, $accentColor);
       }
 
       &-secondary {
-        border-color: var(--secondaryColor);
+        border-color: var(--secondaryColor, $secondaryColor);
       }
 
       &-primary {
-        border-color: var(--primaryColor);
+        border-color: var(--primaryColor, $primaryColor);
       }
     }
 
     &--error {
-      border-color: var(--errorColor);
+      border-color: var(--errorColor, $errorColor);
 
       &:focus {
-        border-color: var(--errorColor);
-        box-shadow: 0 0 8px var(--errorColor);
+        border-color: var(--errorColor, $errorColor);
+        box-shadow: 0 0 8px var(--errorColor, $errorColor);
       }
     }
   }
@@ -147,7 +149,7 @@
   }
 
   &__error {
-    color: var(--errorColor);
+    color: var(--errorColor, $errorColor);
   }
 
   &__counter {
@@ -157,7 +159,7 @@
 
     &-value {
       &--error {
-        color: var(--errorColor);
+        color: var(--errorColor, $errorColor);
       }
     }
   }

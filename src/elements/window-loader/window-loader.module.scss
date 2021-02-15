@@ -1,3 +1,5 @@
+@import "../styles/constants.module";
+
 $circlesMaxDuration: 5;
 $animationTranslateSize: $circlesMaxDuration * 6px;
 $containerSize: $circlesMaxDuration * 20px;
@@ -29,20 +31,20 @@ $animationTime: $circlesMaxDuration * 20s / 100;
     position: absolute;
 
     &--main {
-      border-color: var(--activeColor);
-      box-shadow: 0 5px 0 var(--activeColor), inset 0 5px 0 var(--activeColor);
+      border-color: var(--activeColor, $activeColor);
+      box-shadow: 0 5px 0 var(--activeColor, $activeColor), inset 0 5px 0 var(--activeColor, $activeColor);
     }
     &--accent {
-      border-color: var(--accentColor);
-      box-shadow: 0 5px 0 var(--accentColor), inset 0 5px 0 var(--accentColor);
+      border-color: var(--accentColor, $accentColor);
+      box-shadow: 0 5px 0 var(--accentColor, $accentColor), inset 0 5px 0 var(--accentColor, $accentColor);
     }
     &--primary {
-      border-color: var(--primaryColor);
-      box-shadow: 0 5px 0 var(--primaryColor), inset 0 5px 0 var(--primaryColor);
+      border-color: var(--primaryColor, $primaryColor);
+      box-shadow: 0 5px 0 var(--primaryColor, $primaryColor), inset 0 5px 0 var(--primaryColor, $primaryColor);
     }
     &--secondary {
-      border-color: var(--secondaryColor);
-      box-shadow: 0 5px 0 var(--secondaryColor), inset 0 5px 0 var(--secondaryColor);
+      border-color: var(--secondaryColor, $secondaryColor);
+      box-shadow: 0 5px 0 var(--secondaryColor, $secondaryColor), inset 0 5px 0 var(--secondaryColor, $secondaryColor);
     }
 
     @for $i from 1 to $circlesMaxDuration + 1 {
