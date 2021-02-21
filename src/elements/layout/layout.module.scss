@@ -21,10 +21,13 @@ $asideWidth: 330px;
     display: flex;
     flex-direction: column;
     flex-grow: 12;
-    flex-shrink: 20;
     flex-wrap: nowrap;
-    justify-content: flex-start;
     overflow-y: scroll;
+
+    &--disabled-scroll {
+      height: 100%;
+      overflow: hidden;
+    }
   }
 
   &__content {
@@ -37,6 +40,10 @@ $asideWidth: 330px;
 
     &--aside-right {
       flex-direction: row-reverse;
+    }
+
+    &--disabled-scroll {
+      height: 100%;
     }
   }
 

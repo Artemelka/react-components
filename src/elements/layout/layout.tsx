@@ -7,6 +7,7 @@ const CLASS_NAME = 'Layout';
 
 type TemplateProps = PropsWithChildren<{
   asideElement?: JSX.Element;
+  disabledScroll?: boolean;
   footerElement?: JSX.Element;
   headerElement?: JSX.Element;
   isAsideRight?: boolean;
@@ -16,6 +17,7 @@ type TemplateProps = PropsWithChildren<{
 export const Layout = memo(({
   asideElement,
   children,
+  disabledScroll,
   footerElement,
   headerElement,
   isAsideRight,
@@ -27,10 +29,15 @@ export const Layout = memo(({
         {headerElement}
       </header>
     )}
-    <div className={cn(`${CLASS_NAME}__inner`)}>
+    <div
+      className={cn(`${CLASS_NAME}__inner`, {
+        [`${CLASS_NAME}__inner--disabled-scroll`]: disabledScroll,
+      })}
+    >
       <div
         className={cn(`${CLASS_NAME}__content`, {
           [`${CLASS_NAME}__content--aside-right`]: isAsideRight,
+          [`${CLASS_NAME}__content--disabled-scroll`]: disabledScroll,
         })}
       >
         {Boolean(asideElement) && (
