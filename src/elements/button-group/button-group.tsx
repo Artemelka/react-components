@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { Button } from '../button';
 import {
-  ButtonAlignText,
+  ButtonAlignText, ButtonMouseEvent,
   ButtonSize,
   ButtonThemeColor,
   ButtonVariant,
@@ -26,6 +26,8 @@ type ButtonGroupPropsType = {
   isOnlyIcons?: boolean;
   /** Флаг для отображения кнопок вертикально */
   isVertical?: boolean;
+  /** Колбэк события клика по кнопке */
+  onClick?: (buttonClickEvent: ButtonMouseEvent) => void;
   /** Задает размер кнопок */
   size?: ButtonSize;
   /** Задает цветовую тему кнопок */
@@ -41,6 +43,7 @@ export const ButtonGroup = memo(({
   isFullWidth,
   isOnlyIcons,
   isVertical,
+  onClick = () => false,
   size,
   themeColor,
   variant,
@@ -60,7 +63,7 @@ export const ButtonGroup = memo(({
         icon,
         id,
         onBlur,
-        onClick,
+        onClick: personalHandler,
         onFocus,
         onKeyPress,
         value,
@@ -85,7 +88,7 @@ export const ButtonGroup = memo(({
             isActive={activeId === id}
             isFullWidth={isVertical}
             onBlur={onBlur}
-            onClick={onClick}
+            onClick={personalHandler || onClick}
             onFocus={onFocus}
             onKeyPress={onKeyPress}
             roundSide={
