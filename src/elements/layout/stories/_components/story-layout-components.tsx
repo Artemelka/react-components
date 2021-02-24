@@ -12,7 +12,7 @@ export const createList = (count: number) => (
 export const createLorem = (count: number) => [...Array(count)].map(() => <p>{LOREM}</p>);
 
 export const StoryAside = memo(({ count = 8 }: { count?: number }) => (
-  <div style={{ backgroundColor: 'grey', padding: '20px' }}>
+  <div style={{ backgroundColor: 'grey', height: '100%', padding: '20px' }}>
     <div style={{ backgroundColor: 'green', padding: '20px' }}>
       <h2>aside</h2>
       {createList(count)}

@@ -29,41 +29,29 @@ export const Layout = memo(({
         {headerElement}
       </header>
     )}
-    <div
-      className={cn(`${CLASS_NAME}__inner`, {
-        [`${CLASS_NAME}__inner--disabled-scroll`]: disabledScroll,
+    <main
+      className={cn(`${CLASS_NAME}__main`, {
+        [`${CLASS_NAME}__main--scroll-disabled`]: disabledScroll,
       })}
     >
-      <div
-        className={cn(`${CLASS_NAME}__content`, {
-          [`${CLASS_NAME}__content--aside-right`]: isAsideRight,
-          [`${CLASS_NAME}__content--disabled-scroll`]: disabledScroll,
-        })}
-      >
-        {Boolean(asideElement) && (
-          <aside className={cn(`${CLASS_NAME}__aside`)}>
-            <div
-              className={cn(`${CLASS_NAME}__aside-inner`, {
-                [`${CLASS_NAME}__aside-inner--sticky`]: isAsideSticky,
-              })}
-            >
-              {asideElement}
-            </div>
-          </aside>
-        )}
-        <main
-          className={cn(`${CLASS_NAME}__main`, {
-            [`${CLASS_NAME}__main--without-aside`]: !asideElement,
+      {Boolean(asideElement) && (
+        <aside
+          className={cn(`${CLASS_NAME}__aside`, {
+            [`${CLASS_NAME}__aside--right`]: isAsideRight,
+            [`${CLASS_NAME}__aside--sticky`]: isAsideSticky,
           })}
         >
-          {children}
-        </main>
-      </div>
-      {Boolean(footerElement) && (
-        <footer className={cn(`${CLASS_NAME}__footer`)}>
-          {footerElement}
-        </footer>
+          {asideElement}
+        </aside>
       )}
-    </div>
+      <article className={cn(`${CLASS_NAME}__article`)}>
+        {children}
+      </article>
+    </main>
+    {Boolean(footerElement) && (
+      <footer className={cn(`${CLASS_NAME}__footer`)}>
+        {footerElement}
+      </footer>
+    )}
   </div>
 ));
