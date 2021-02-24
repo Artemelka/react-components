@@ -45,10 +45,10 @@ storiesOf('Layout', module)
     );
 
     const AsideContent = ({ count }: { count: number}) => (
-      <>
+      <div style={{ width: '200px' }}>
         <h2>Aside</h2>
         {createList(count)}
-      </>
+      </div>
     );
 
     return (
@@ -162,6 +162,23 @@ storiesOf('Layout', module)
             </GridCell>
           </GridRow>
         </Grid>
+
+        <h2>
+          <Highlighter>disabledScroll</Highlighter>
+        </h2>
+        <p>Компонент может быть без возможности прокрутки контентной области.</p>
+        <p>Параметр <Highlighter isFilled>isAsideSticky</Highlighter> не будет работать.</p>
+        <Grid>
+          <GridRow>
+            <GridCell size={12}>
+              <LayoutWrapper>
+                <Layout disabledScroll>
+                  <PageContent count={2} />
+                </Layout>
+              </LayoutWrapper>
+            </GridCell>
+          </GridRow>
+        </Grid>
       </>
     );
   })
@@ -169,12 +186,13 @@ storiesOf('Layout', module)
     <div
       style={{
         boxShadow: '0 0 6px #fff',
-        height: '500px',
+        height: '900px',
         width: '100%',
       }}
     >
       <Layout
         asideElement={<StoryAside count={10} />}
+        disabledScroll={boolean('disabledScroll', false)}
         footerElement={<StoryFooter count={4} />}
         headerElement={<StoryHeader count={0} />}
         isAsideRight={boolean('isAsideRight', false)}
