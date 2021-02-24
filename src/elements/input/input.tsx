@@ -7,7 +7,7 @@ import React, {
   MouseEvent,
   RefObject,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../button';
 import { KEY_CODES } from '../constants';
 import { ButtonMouseEvent, ButtonKeyboardEvent } from '../button/types';
@@ -20,7 +20,7 @@ import {
 } from './types';
 import style from './input.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Input';
 
 type InputProps = {
@@ -184,10 +184,10 @@ export class Input extends Component<InputProps, { isFocus: boolean }> {
             [`${CLASS_NAME}__element--disabled`]: disabled,
             [`${CLASS_NAME}__element--error`]: isError,
             [`${CLASS_NAME}__element--number`]: type === 'number',
-            [`${CLASS_NAME}__element--size-${size}`]: size,
-            [`${CLASS_NAME}__element--size-${size}-icon`]: hasIcon && size,
-            [`${CLASS_NAME}__element--theme-${themeColor}`]: themeColor,
-            [`${CLASS_NAME}__element--variant-${variant}`]: variant,
+            [`${CLASS_NAME}__element--size-${size}`]: Boolean(size),
+            [`${CLASS_NAME}__element--size-${size}-icon`]: Boolean(hasIcon && size),
+            [`${CLASS_NAME}__element--theme-${themeColor}`]: Boolean(themeColor),
+            [`${CLASS_NAME}__element--variant-${variant}`]: Boolean(variant),
           })}
           disabled={disabled}
           id={this.props.id}

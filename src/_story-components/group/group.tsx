@@ -1,8 +1,8 @@
 import React, { memo, PropsWithChildren, ReactNode } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import styles from './group.module.scss';
 
-const cn = classNames.bind(styles);
+const cn = fastClassName(styles);
 const CLASS_NAME = 'Group';
 
 export const Group = memo(({ children }: PropsWithChildren<ReactNode>) => (

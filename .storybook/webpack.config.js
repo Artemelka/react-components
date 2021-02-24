@@ -16,6 +16,7 @@ const commonConfig = {
         alias: {
             '@artemelka/react-components': path.resolve(__dirname, '../src/elements'),
             '@artemelka/storybook': path.resolve(__dirname, '../src/storybook'),
+            '@utils': path.resolve(__dirname, '../src/utils'),
         },
     },
     module: {

@@ -1,9 +1,9 @@
 import React, { memo, PropsWithChildren } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { TextAlign, TextFontWeight, TextTagName } from './types';
 import style from './text.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Text';
 
 type TextPropsType = PropsWithChildren<{
@@ -28,9 +28,9 @@ export const Text = memo(({
     className={cn(CLASS_NAME, {
       [`${CLASS_NAME}--center`]: align === 'center',
       [`${CLASS_NAME}--right`]: align === 'right',
-      [`${CLASS_NAME}--${fontWeight}`]: fontWeight,
+      [`${CLASS_NAME}--${fontWeight}`]: Boolean(fontWeight),
       [`${CLASS_NAME}--upper`]: upper,
-      [`${CLASS_NAME}--${TagName}`]: TagName,
+      [`${CLASS_NAME}--${TagName}`]: Boolean(TagName),
     })}
   >
     {children}

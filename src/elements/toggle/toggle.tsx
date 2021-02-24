@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import {
   ToggleChangeEvent,
   ToggleFocusEvent,
@@ -17,7 +17,7 @@ import {
 } from './types';
 import style from './toggle.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Toggle';
 
 type ToggleProps = {
@@ -117,11 +117,11 @@ export const Toggle = memo(({
         className={cn(`${CLASS_NAME}__label`, {
           [`${CLASS_NAME}__label--checked`]: !checked,
           [`${CLASS_NAME}__label--disabled`]: disabled,
-          [`${CLASS_NAME}__label--size-${size}`]: size,
-          [`${CLASS_NAME}__label--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}__label--size-${size}`]: Boolean(size),
+          [`${CLASS_NAME}__label--theme-${themeColor}`]: Boolean(themeColor),
           [`${CLASS_NAME}__label--theme-${themeColor}--focused`]: themeColor && isFocused,
-          [`${CLASS_NAME}__label--variant-${variant}`]: variant,
-          [`${CLASS_NAME}__label--variant-${variant}-${themeColor}`]: variant && themeColor,
+          [`${CLASS_NAME}__label--variant-${variant}`]: Boolean(variant),
+          [`${CLASS_NAME}__label--variant-${variant}-${themeColor}`]: Boolean(variant && themeColor),
         })}
         htmlFor={`${id}`}
       >

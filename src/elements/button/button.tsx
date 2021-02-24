@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { KEY_CODES } from '../constants';
 import {
   ButtonAlignText,
@@ -22,7 +22,7 @@ import {
 } from './types';
 import style from './button.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Button';
 
 type ButtonProps = {
@@ -69,11 +69,11 @@ type ButtonProps = {
 export const Button = memo(({
   alignText = 'center',
   buttonRef,
-  disabled,
+  disabled = false,
   icon,
   id,
-  isActive,
-  isFullWidth,
+  isActive = false,
+  isFullWidth = false,
   onBlur = () => false,
   onClick = () => false,
   onFocus = () => false,
@@ -136,19 +136,19 @@ export const Button = memo(({
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--active`]: isActive,
         [`${CLASS_NAME}--active-disabled`]: isActive && disabled,
-        [`${CLASS_NAME}--align-${alignText}`]: alignText,
+        [`${CLASS_NAME}--align-${alignText}`]: Boolean(alignText),
         [`${CLASS_NAME}--disabled`]: disabled,
         [`${CLASS_NAME}--focused`]: isFocused,
         [`${CLASS_NAME}--full-width`]: isFullWidth,
-        [`${CLASS_NAME}--rounded`]: roundSide,
-        [`${CLASS_NAME}--round-${roundSide}`]: roundSide,
-        [`${CLASS_NAME}--icon`]: !value,
-        [`${CLASS_NAME}--icon-${size}`]: !value && size,
-        [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
-        [`${CLASS_NAME}--size-${size}`]: size,
-        [`${CLASS_NAME}--size-${size}-base`]: size && variant === 'base',
-        [`${CLASS_NAME}--variant-${variant}`]: variant,
-        [`${CLASS_NAME}--variant-${variant}-no-icon`]: themeColor === 'base' && value,
+        [`${CLASS_NAME}--rounded`]: Boolean(roundSide),
+        [`${CLASS_NAME}--round-${roundSide}`]: Boolean(roundSide),
+        [`${CLASS_NAME}--icon`]: Boolean(!value),
+        [`${CLASS_NAME}--icon-${size}`]: Boolean(!value && size),
+        [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
+        [`${CLASS_NAME}--size-${size}`]: Boolean(size),
+        [`${CLASS_NAME}--size-${size}-base`]: Boolean(size && variant === 'base'),
+        [`${CLASS_NAME}--variant-${variant}`]: Boolean(variant),
+        [`${CLASS_NAME}--variant-${variant}-no-icon`]: Boolean(themeColor === 'base' && value),
       })}
       disabled={disabled || isActive}
       onBlur={handleBlur}

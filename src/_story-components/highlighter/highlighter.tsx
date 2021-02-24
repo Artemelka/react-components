@@ -1,8 +1,8 @@
 import React, { memo, PropsWithChildren } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import styles from './highlighter.module.scss';
 
-const cn = classNames.bind(styles);
+const cn = fastClassName(styles);
 const CLASS_NAME = 'Highlighter';
 
 type HighlighterProps = PropsWithChildren<{
@@ -13,7 +13,7 @@ type HighlighterProps = PropsWithChildren<{
 export const Highlighter = memo(({
   children,
   color = 'primary',
-  isFilled,
+  isFilled = false,
 }: HighlighterProps) => (
   <span
     className={cn(CLASS_NAME, {

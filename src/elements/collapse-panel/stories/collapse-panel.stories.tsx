@@ -15,7 +15,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../_story-components';
+} from '../../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 import { CustomPanelDescription } from './_components/custom-panel-description';
 import { HeaderActionsDescription } from './_components/header-actions-description';
@@ -52,7 +52,7 @@ storiesOf('CollapsePanel', module)
                     onClick={onClick}
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -76,7 +76,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="it`s big"
                     size="big"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -91,7 +91,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="it`s medium"
                     size="medium"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -106,7 +106,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="it`s small"
                     size="small"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -136,7 +136,7 @@ storiesOf('CollapsePanel', module)
                     isOpen={isOpen}
                     size="big"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -172,7 +172,7 @@ storiesOf('CollapsePanel', module)
                     onClick={onClick}
                     panelTitle="you can't click me"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -215,7 +215,7 @@ storiesOf('CollapsePanel', module)
                     onClick={onClick}
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -239,7 +239,7 @@ storiesOf('CollapsePanel', module)
                     onClick={onClick}
                     panelTitle="you can't open me"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -262,7 +262,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     variant="base"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -277,7 +277,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -292,7 +292,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -316,7 +316,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     themeColor="accent"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -341,7 +341,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="you can't click me"
                     themeColor="accent"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -356,7 +356,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="accent"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -382,7 +382,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="accent"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -397,7 +397,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="accent"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -423,7 +423,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="accent"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -440,7 +440,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     themeColor="primary"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -465,7 +465,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="you can't click me"
                     themeColor="primary"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -480,7 +480,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="primary"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -506,7 +506,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="primary"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -521,7 +521,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="primary"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -547,7 +547,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="primary"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -564,7 +564,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     themeColor="secondary"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -589,7 +589,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="you can't click me"
                     themeColor="secondary"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -604,7 +604,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="secondary"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -630,7 +630,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="secondary"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -645,7 +645,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="secondary"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -671,7 +671,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="secondary"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -688,7 +688,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     themeColor="success"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -713,7 +713,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="you can't click me"
                     themeColor="success"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -728,7 +728,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="success"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -754,7 +754,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="success"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -769,7 +769,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="success"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -795,7 +795,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="success"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -812,7 +812,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle={`Click me to ${isOpen ? 'close' : 'open'}`}
                     themeColor="error"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -837,7 +837,7 @@ storiesOf('CollapsePanel', module)
                     panelTitle="you can't click me"
                     themeColor="error"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -852,7 +852,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="error"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -878,7 +878,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="error"
                     variant="filled"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -893,7 +893,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="error"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -919,7 +919,7 @@ storiesOf('CollapsePanel', module)
                     themeColor="error"
                     variant="only-text"
                   >
-                    {LOREM}
+                    <p>{LOREM}</p>
                   </CollapsePanel>
                 )}
               </PanelController>
@@ -956,7 +956,7 @@ storiesOf('CollapsePanel', module)
       return (
         <ul>
           {items.map(({ id, title, content }) => (
-            <li>
+            <li key={id}>
               <CollapsePanel
                 id={id}
                 isOpen={openId === `${id}`}

@@ -19,7 +19,8 @@
     "baseUrl": "./src",
     "skipLibCheck": true,
     "paths": {
-      "@artemelka/react-components": ["elements"]
+      "@artemelka/react-components": ["elements"],
+      "@utils": ["utils"]
     }
   },
   "include": [

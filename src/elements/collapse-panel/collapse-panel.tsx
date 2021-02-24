@@ -5,7 +5,7 @@ import React, {
   createRef,
   PropsWithChildren,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import {
   ButtonAlignText,
   ButtonMouseEvent,
@@ -21,7 +21,7 @@ import {
 } from './types';
 import style from './collapse-panel.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Collapse-panel';
 
 export type CollapsePanelProps = PropsWithChildren<{
@@ -108,8 +108,8 @@ export class CollapsePanel extends PureComponent<CollapsePanelProps> {
         ref={this.panelRef}
         className={cn(CLASS_NAME, {
           [`${CLASS_NAME}--disabled`]: this.props.disabled,
-          [`${CLASS_NAME}--variant-${this.props.variant}`]: this.props.variant,
-          [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}--variant-${this.props.variant}`]: Boolean(this.props.variant),
+          [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
         })}
       >
         <CollapseHeader

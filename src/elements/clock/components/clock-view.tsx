@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import style from '../clock.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Clock';
 
 type ClockViewProps = {
@@ -16,12 +16,16 @@ type ClockViewProps = {
 export const ClockView = memo(({
   alarm, hour, min, sec, size,
 }: ClockViewProps) => (
-  <div className={cn(CLASS_NAME, { [`${CLASS_NAME}--size-${size}`]: size })}>
+  <div
+    className={cn(CLASS_NAME, {
+      [`${CLASS_NAME}--size-${size}`]: Boolean(size),
+    })}
+  >
     {alarm && (
     <div className={cn(`${CLASS_NAME}__arrow-wrapper`)}>
       <div
         className={cn(`${CLASS_NAME}__arrow-alarm`, {
-          [`${CLASS_NAME}__arrow-alarm--size-${size}`]: size,
+          [`${CLASS_NAME}__arrow-alarm--size-${size}`]: Boolean(size),
         })}
         style={{ transform: `rotateZ(${alarm}deg)` }}
       />
@@ -30,7 +34,7 @@ export const ClockView = memo(({
     <div className={cn(`${CLASS_NAME}__arrow-wrapper`)}>
       <div
         className={cn(`${CLASS_NAME}__arrow-hour`, {
-          [`${CLASS_NAME}__arrow-hour--size-${size}`]: size,
+          [`${CLASS_NAME}__arrow-hour--size-${size}`]: Boolean(size),
         })}
         style={{ transform: `rotateZ(${hour}deg)` }}
       />
@@ -38,7 +42,7 @@ export const ClockView = memo(({
     <div className={cn(`${CLASS_NAME}__arrow-wrapper`)}>
       <div
         className={cn(`${CLASS_NAME}__arrow-min`, {
-          [`${CLASS_NAME}__arrow-min--size-${size}`]: size,
+          [`${CLASS_NAME}__arrow-min--size-${size}`]: Boolean(size),
         })}
         style={{ transform: `rotateZ(${min}deg)` }}
       />
@@ -46,7 +50,7 @@ export const ClockView = memo(({
     <div className={cn(`${CLASS_NAME}__arrow-wrapper`)}>
       <div
         className={cn(`${CLASS_NAME}__arrow-sec`, {
-          [`${CLASS_NAME}__arrow-sec--size-${size}`]: size,
+          [`${CLASS_NAME}__arrow-sec--size-${size}`]: Boolean(size),
         })}
         style={{ transform: `rotateZ(${sec}deg)` }}
       />

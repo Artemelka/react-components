@@ -129,6 +129,7 @@ module.exports = {
         map: [
           ['@artemelka/react-components', './src/elements'],
           ['@artemelka/storybook', './src/storybook'],
+          ['@utils', './src/utils'],
         ],
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },

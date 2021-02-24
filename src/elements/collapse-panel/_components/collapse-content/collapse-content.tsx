@@ -1,11 +1,11 @@
 import React, { memo, PropsWithChildren, RefObject } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../../../button';
 import { ButtonSize, ButtonThemeColor } from '../../../button/types';
 import { CollapseContentActionsAlign, ContentButtonGroupItem } from '../../types';
 import style from './collapse-content.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Collapse-content';
 
 type CollapseContentProps = PropsWithChildren<{
@@ -44,9 +44,9 @@ export const CollapseContent = memo(({
     {Boolean(actionButtons.length) && !mainDisabled && (
       <div
         className={cn(`${CLASS_NAME}__actions`, {
-          [`${CLASS_NAME}__actions--align-${actionsAlign}`]: actionsAlign,
+          [`${CLASS_NAME}__actions--align-${actionsAlign}`]: Boolean(actionsAlign),
           [`${CLASS_NAME}__actions--open`]: isOpen,
-          [`${CLASS_NAME}__actions--theme-${mainThemeColor}`]: mainThemeColor,
+          [`${CLASS_NAME}__actions--theme-${mainThemeColor}`]: Boolean(mainThemeColor),
         })}
       >
         {actionButtons.map(({

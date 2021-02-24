@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Label } from '../label';
 import { Radio } from '../radio';
 import { RadioChangeEvent } from '../radio/types';
 import style from './radio-group.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Radio-group';
 
 type RadioGroupItem = {

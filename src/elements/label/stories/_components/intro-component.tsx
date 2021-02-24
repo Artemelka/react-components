@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import {
   Highlighter,
   Intro,
-} from '../../../_story-components';
+} from '../../../../_story-components';
 
 export const IntroComponent = memo(() => (
   <>

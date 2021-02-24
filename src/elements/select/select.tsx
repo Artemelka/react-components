@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { DropdownList, DropdownMultiItem } from '../dropdown-list';
 import {
   CustomDropdownItemType,
@@ -19,7 +19,7 @@ import { getMultiItems, getValue } from './_utils';
 import { IconConfig, SelectChangeEvent, ValuesFormatterType } from './types';
 import style from './select.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Select';
 
 type SelectProps = {

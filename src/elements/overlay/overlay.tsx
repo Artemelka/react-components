@@ -5,11 +5,11 @@ import React, {
   useCallback,
   useEffect, useRef,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { KEY_CODES } from '../constants';
 import style from './overlay.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Overlay';
 type DocumentKeyboardEvent = Event & {
   keyCode: number;

@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../button';
 import {
   ButtonAlignText, ButtonMouseEvent,
@@ -10,7 +10,7 @@ import {
 import { ButtonGroupItem } from './types';
 import style from './button-group.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Button-group';
 
 type ButtonGroupPropsType = {
@@ -71,10 +71,10 @@ export const ButtonGroup = memo(({
         <li
           key={value || id || index}
           className={cn(`${CLASS_NAME}__item`, {
-            [`${CLASS_NAME}__item--separated`]: variant === 'only-text' && value,
-            [`${CLASS_NAME}__item--separated-filled`]: variant === 'filled' && value,
-            [`${CLASS_NAME}__item--separated-vertical`]: variant === 'only-text' && value && isVertical,
-            [`${CLASS_NAME}__item--separated-vertical-filled`]: variant === 'filled' && value && isVertical,
+            [`${CLASS_NAME}__item--separated`]: Boolean(variant === 'only-text' && value),
+            [`${CLASS_NAME}__item--separated-filled`]: Boolean(variant === 'filled' && value),
+            [`${CLASS_NAME}__item--separated-vertical`]: Boolean(variant === 'only-text' && value && isVertical),
+            [`${CLASS_NAME}__item--separated-vertical-filled`]: Boolean(variant === 'filled' && value && isVertical),
             [`${CLASS_NAME}__item--only-icon`]: isOnlyIcons,
             [`${CLASS_NAME}__item--only-icon-vertical`]: isOnlyIcons && isVertical,
             [`${CLASS_NAME}__item--vertical`]: isVertical,

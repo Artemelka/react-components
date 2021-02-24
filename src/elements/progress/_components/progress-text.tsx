@@ -1,10 +1,10 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressTextProps } from '../types';
 import style from '../progress.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 
 export const ProgressText = ({
   label,

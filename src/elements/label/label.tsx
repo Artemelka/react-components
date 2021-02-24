@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import style from './label.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Label';
 
 type LabelProps = {
@@ -39,14 +39,14 @@ export const Label = memo(({
 }: LabelProps) => (
   <label
     className={cn(CLASS_NAME, {
-      [`${CLASS_NAME}--clickable`]: htmlFor,
+      [`${CLASS_NAME}--clickable`]: Boolean(htmlFor),
       [`${CLASS_NAME}--disabled`]: disabled,
       [`${CLASS_NAME}--active`]: isActive,
       [`${CLASS_NAME}--error`]: isError,
       [`${CLASS_NAME}--full-width`]: isFullWidth,
-      [`${CLASS_NAME}--size-${size}`]: size,
-      [`${CLASS_NAME}--position-${position}`]: position,
-      [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+      [`${CLASS_NAME}--size-${size}`]: Boolean(size),
+      [`${CLASS_NAME}--position-${position}`]: Boolean(position),
+      [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
     })}
     htmlFor={`${htmlFor}`}
   >

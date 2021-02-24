@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { WindowLoaderThemeColor } from './types';
 import style from './window-loader.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const loaderCircleItems = [...new Array(5)];
 const CLASS_NAME = 'Window-loader';
 
@@ -18,7 +18,7 @@ export const WindowLoader = memo(({ themeColor = 'main' }: LoaderProps) => (
       <span
         key={i}
         className={cn(`${CLASS_NAME}__circle`, {
-          [`${CLASS_NAME}__circle--${themeColor}`]: themeColor,
+          [`${CLASS_NAME}__circle--${themeColor}`]: Boolean(themeColor),
         })}
       />
     ))}

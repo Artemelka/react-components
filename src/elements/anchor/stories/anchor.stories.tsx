@@ -12,7 +12,7 @@ import {
   GroupItem,
   Highlighter,
   StoriesItem,
-} from '../../_story-components';
+} from '../../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
 const PROJECT_LINK = 'https://github.com/Artemelka/react-components';
