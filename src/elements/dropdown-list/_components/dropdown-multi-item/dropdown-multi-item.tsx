@@ -1,11 +1,11 @@
 import React, { memo, useMemo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Checkbox } from '../../../checkbox';
 import { Label } from '../../../label';
 import { CustomDropdownItemProps } from '../../types';
 import style from './dropdown-multi-item.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Dropdown-multi-item';
 
 export const DropdownMultiItem = memo(({

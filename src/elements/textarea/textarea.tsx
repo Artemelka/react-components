@@ -7,7 +7,7 @@ import React, {
   RefObject,
   useCallback, useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../button';
 import { ButtonMouseEvent } from '../button/types';
 import {
@@ -19,7 +19,7 @@ import {
 } from './types';
 import styles from './textarea.module.scss';
 
-const cn = classNames.bind(styles);
+const cn = fastClassName(styles);
 const CLASS_NAME = 'Textarea';
 
 type TextareaProps = {
@@ -154,7 +154,7 @@ export const Textarea = memo(({
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--focused`]: isFocus,
         [`${CLASS_NAME}--focused-error`]: isFocus && isError,
-        [`${CLASS_NAME}--with-information`]: maxlength || errorMessage,
+        [`${CLASS_NAME}--with-information`]: Boolean(maxlength || errorMessage),
       })}
     >
       <textarea
@@ -162,11 +162,11 @@ export const Textarea = memo(({
         className={cn(`${CLASS_NAME}__input`, {
           [`${CLASS_NAME}__input--disabled`]: disabled,
           [`${CLASS_NAME}__input--error`]: isError,
-          [`${CLASS_NAME}__input--size-${size}`]: size,
-          [`${CLASS_NAME}__input--size-${size}-icon`]: iconConfig,
-          [`${CLASS_NAME}__input--variant-${variant}`]: variant,
+          [`${CLASS_NAME}__input--size-${size}`]: Boolean(size),
+          [`${CLASS_NAME}__input--size-${size}-icon`]: Boolean(iconConfig),
+          [`${CLASS_NAME}__input--variant-${variant}`]: Boolean(variant),
           [`${CLASS_NAME}__input--variant-${variant}-error`]: variant && isError,
-          [`${CLASS_NAME}__input--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}__input--theme-${themeColor}`]: Boolean(themeColor),
         })}
         disabled={disabled}
         id={`${id}`}

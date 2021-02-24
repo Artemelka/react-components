@@ -4,12 +4,14 @@ import { LOREM } from '../../../constants';
 export const createList = (count: number) => (
   <ul>
     {[...Array(count)].map((_, index) => (
-      <li>item {index + 1}</li>
+      <li key={index}>item {index + 1}</li>
     ))}
   </ul>
 );
 
-export const createLorem = (count: number) => [...Array(count)].map(() => <p>{LOREM}</p>);
+export const createLorem = (count: number) => (
+  [...Array(count)].map((_, index) => <p key={index}>{LOREM}</p>)
+);
 
 export const StoryAside = memo(({ count = 8 }: { count?: number }) => (
   <div style={{ backgroundColor: 'grey', height: '100%', padding: '20px' }}>

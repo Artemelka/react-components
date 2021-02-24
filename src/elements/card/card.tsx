@@ -4,13 +4,13 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../button';
 import { Text } from '../text';
 import { ButtonMouseEvent } from '../button/types';
 import style from './card.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Card';
 
 type TemplateProps = {
@@ -55,7 +55,7 @@ export const Card = memo(({
   return (
     <div
       className={cn(CLASS_NAME, {
-        [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+        [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
       })}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

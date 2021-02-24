@@ -19,7 +19,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../_story-components';
+} from '../../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
 const TEXTAREA_SIZE = [undefined, 'small', 'medium', 'big'];

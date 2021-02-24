@@ -13,7 +13,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../_story-components';
+} from '../../../_story-components';
 import { COMPONENT_TITLE, NUMBER_OPTIONS } from './constants';
 import { IntroComponent } from './_components/intro-component';
 

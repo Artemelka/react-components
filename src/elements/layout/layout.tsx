@@ -1,8 +1,8 @@
 import React, { memo, PropsWithChildren } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import style from './layout.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Layout';
 
 type TemplateProps = PropsWithChildren<{

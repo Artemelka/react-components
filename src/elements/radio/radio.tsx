@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import {
   RadioChangeEvent,
   RadioFocusEvent,
@@ -17,7 +17,7 @@ import {
 } from './types';
 import styles from './radio.module.scss';
 
-const cn = classNames.bind(styles);
+const cn = fastClassName(styles);
 const CLASS_NAME = 'Radio';
 
 type RadioProps = {
@@ -110,10 +110,10 @@ export const Radio = memo(({
       className={cn(CLASS_NAME, {
         [`${CLASS_NAME}--checked`]: checked,
         [`${CLASS_NAME}--disabled`]: disabled,
-        [`${CLASS_NAME}--size-${size}`]: size,
-        [`${CLASS_NAME}--variant-${variant}`]: variant,
+        [`${CLASS_NAME}--size-${size}`]: Boolean(size),
+        [`${CLASS_NAME}--variant-${variant}`]: Boolean(variant),
         [`${CLASS_NAME}--variant-${variant}-checked`]: variant && checked,
-        [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+        [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
         [`${CLASS_NAME}--theme-${themeColor}-focused`]: themeColor && isFocused,
       })}
       htmlFor={`${id}`}
@@ -139,10 +139,10 @@ export const Radio = memo(({
         className={cn(`${CLASS_NAME}__marker`, {
           [`${CLASS_NAME}__marker--checked`]: checked,
           [`${CLASS_NAME}__marker--disabled`]: disabled,
-          [`${CLASS_NAME}__marker--size-${size}`]: size,
-          [`${CLASS_NAME}__marker--variant-${variant}`]: variant,
+          [`${CLASS_NAME}__marker--size-${size}`]: Boolean(size),
+          [`${CLASS_NAME}__marker--variant-${variant}`]: Boolean(variant),
           [`${CLASS_NAME}__marker--variant-filled-base`]: variant === 'filled' && themeColor === 'base',
-          [`${CLASS_NAME}__marker--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}__marker--theme-${themeColor}`]: Boolean(themeColor),
         })}
       />
     </label>

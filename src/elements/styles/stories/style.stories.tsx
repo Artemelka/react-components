@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { StoriesItem } from '../../_story-components';
+import { StoriesItem } from '../../../_story-components';
 
 storiesOf('Styles', module)
   .addParameters({

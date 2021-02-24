@@ -1,11 +1,11 @@
 import React, { memo, useMemo } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { getValidPercent, getStatuses } from '../_utils';
 import { CIRCLE_SIZE_CONFIG, CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressProps } from '../types';
 import style from '../progress.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 
 export const ProgressCircular = memo(
   ({
@@ -38,7 +38,7 @@ export const ProgressCircular = memo(
     ]);
 
     return (
-      <div className={cn('Progress', 'Progress--circular')}>
+      <div className={cn('Progress', { 'Progress--circular': true })}>
         <svg
           className={cn('Progress__circle')}
           height={diameter}

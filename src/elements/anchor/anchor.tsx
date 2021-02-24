@@ -8,11 +8,11 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { AnchorFocusEvent, AnchorMouseEvent, AnchorKeyboardEvent } from './types';
 import style from './anchor.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Anchor';
 
 export type AnchorProps = {
@@ -60,10 +60,10 @@ export type AnchorProps = {
 
 export const Anchor = memo(
   ({
-    active,
+    active = false,
     anchorRef,
     children,
-    disabled,
+    disabled = false,
     download,
     href,
     id,
@@ -119,8 +119,8 @@ export const Anchor = memo(
         className={cn(CLASS_NAME, {
           [`${CLASS_NAME}--active`]: active && withPreventedEvent,
           [`${CLASS_NAME}--disabled`]: disabled,
-          [`${CLASS_NAME}--decoration-${textDecoration}`]: textDecoration,
-          [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}--decoration-${textDecoration}`]: Boolean(textDecoration),
+          [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
         })}
         download={download}
         href={href}

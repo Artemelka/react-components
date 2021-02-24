@@ -1,5 +1,5 @@
 import React, { memo, ReactNode, RefObject } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { Button } from '../../../button';
 import {
   ButtonAlignText,
@@ -12,7 +12,7 @@ import { ButtonGroup } from '../../../button-group';
 import { ButtonGroupItem } from '../../../button-group/types';
 import style from './collapse-header.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Collapse-header';
 
 type CollapseHeaderProps = {
@@ -55,8 +55,8 @@ export const CollapseHeader = memo(({
       [`${CLASS_NAME}--disabled`]: disabled,
       [`${CLASS_NAME}--disabled-filled`]: disabled && variant === 'filled',
       [`${CLASS_NAME}--opened`]: isOpen,
-      [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
-      [`${CLASS_NAME}--variant-${variant}`]: variant,
+      [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
+      [`${CLASS_NAME}--variant-${variant}`]: Boolean(variant),
       [`${CLASS_NAME}--variant-${variant}-no-action`]: !hasAction && variant === 'filled',
     })}
   >
@@ -80,7 +80,7 @@ export const CollapseHeader = memo(({
         </div>
         <div
           className={cn(`${CLASS_NAME}__content`, {
-            [`${CLASS_NAME}__content--size-${size}`]: size,
+            [`${CLASS_NAME}__content--size-${size}`]: Boolean(size),
           })}
         >
           {title}

@@ -1,11 +1,11 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { getValidPercent, getStatuses } from '../_utils';
 import { CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressProps } from '../types';
 import style from '../progress.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 
 export const ProgressLinear = ({
   percent,
@@ -25,7 +25,7 @@ export const ProgressLinear = ({
   );
 
   return (
-    <div className={cn('Progress', 'Progress--linear')}>
+    <div className={cn('Progress', { 'Progress--linear': true })}>
       <div
         className={cn('Progress__line', {
           'Progress__line--size-x': size === CIRCLE_SIZE.S,

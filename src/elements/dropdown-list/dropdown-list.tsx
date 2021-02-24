@@ -3,7 +3,7 @@ import React, {
   createRef,
   RefObject,
 } from 'react';
-import classNames from 'classnames/bind';
+import { fastClassName } from '@utils';
 import { KEY_CODES } from '../constants';
 import { DropdownItem } from './_components';
 import {
@@ -13,7 +13,7 @@ import {
 } from './types';
 import style from './dropdown-list.module.scss';
 
-const cn = classNames.bind(style);
+const cn = fastClassName(style);
 const CLASS_NAME = 'Dropdown-list';
 
 type DropdownListProps = {
@@ -131,7 +131,7 @@ export class DropdownList extends PureComponent<DropdownListProps> {
     return (
       <ul
         className={cn(CLASS_NAME, {
-          [`${CLASS_NAME}--theme-${themeColor}`]: themeColor,
+          [`${CLASS_NAME}--theme-${themeColor}`]: Boolean(themeColor),
         })}
       >
         {this.props.items.map(({ extraData, id, value }, index) => (
