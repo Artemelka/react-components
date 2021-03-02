@@ -7,7 +7,7 @@ import React, {
   RefObject,
   useCallback, useState,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { Button } from '../button';
 import { ButtonMouseEvent } from '../button/types';
 import {

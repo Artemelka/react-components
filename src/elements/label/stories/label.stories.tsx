@@ -9,7 +9,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
 const LABEL_SIZE = [undefined, 'big', 'medium', 'small'];

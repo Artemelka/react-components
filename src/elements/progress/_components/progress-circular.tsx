@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../utils';
 import { getValidPercent, getStatuses } from '../_utils';
 import { CIRCLE_SIZE_CONFIG, CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressProps } from '../types';

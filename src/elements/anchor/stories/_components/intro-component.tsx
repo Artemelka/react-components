@@ -4,7 +4,7 @@ import {
   Intro,
   List,
   ListItem,
-} from '../../../../_story-components';
+} from '../../../_story-components';
 
 export const IntroComponent = memo(() => (
   <>

@@ -24,7 +24,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 import {
   CustomDropdownItemDescription,
 } from '../../dropdown-list/stories/_components/custom-dropdown-item-description';

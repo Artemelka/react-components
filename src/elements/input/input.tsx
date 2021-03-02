@@ -7,7 +7,7 @@ import React, {
   MouseEvent,
   RefObject,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { Button } from '../button';
 import { KEY_CODES } from '../constants';
 import { ButtonMouseEvent, ButtonKeyboardEvent } from '../button/types';

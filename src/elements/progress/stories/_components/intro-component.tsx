@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Highlighter, Intro } from '../../../../_story-components';
+import { Highlighter, Intro } from '../../../_story-components';
 
 export const IntroComponent = memo(({ name }: { name: string }) => (
   <Intro name={name}>

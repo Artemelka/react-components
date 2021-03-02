@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { Button } from '../button';
 import {
   ButtonAlignText, ButtonMouseEvent,

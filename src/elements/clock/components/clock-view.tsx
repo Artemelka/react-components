@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../utils';
 import style from '../clock.module.scss';
 
 const cn = fastClassName(style);

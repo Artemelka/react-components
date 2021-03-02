@@ -11,7 +11,7 @@ import {
   Highlighter,
   Intro,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 
 const wrapperStyle: CSSProperties = {
   margin: '40px',

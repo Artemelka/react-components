@@ -4,7 +4,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { Button } from '../button';
 import { Text } from '../text';
 import { ButtonMouseEvent } from '../button/types';

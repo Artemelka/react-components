@@ -1,5 +1,5 @@
 import React from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../utils';
 import { CIRCLE_SIZE, PROGRESS_STATUSES } from '../constants';
 import { ProgressTextProps } from '../types';
 import style from '../progress.module.scss';

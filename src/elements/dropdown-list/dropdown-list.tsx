@@ -3,7 +3,7 @@ import React, {
   createRef,
   RefObject,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { KEY_CODES } from '../constants';
 import { DropdownItem } from './_components';
 import {

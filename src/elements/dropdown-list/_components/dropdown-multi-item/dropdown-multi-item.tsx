@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../../utils';
 import { Checkbox } from '../../../checkbox';
 import { Label } from '../../../label';
 import { CustomDropdownItemProps } from '../../types';

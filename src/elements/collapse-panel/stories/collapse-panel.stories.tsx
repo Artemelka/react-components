@@ -15,7 +15,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 import { CustomPanelDescription } from './_components/custom-panel-description';
 import { HeaderActionsDescription } from './_components/header-actions-description';

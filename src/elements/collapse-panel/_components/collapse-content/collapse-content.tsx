@@ -1,5 +1,5 @@
 import React, { memo, PropsWithChildren, RefObject } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../../utils';
 import { Button } from '../../../button';
 import { ButtonSize, ButtonThemeColor } from '../../../button/types';
 import { CollapseContentActionsAlign, ContentButtonGroupItem } from '../../types';

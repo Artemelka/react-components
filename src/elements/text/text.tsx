@@ -1,5 +1,5 @@
 import React, { memo, PropsWithChildren } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { TextAlign, TextFontWeight, TextTagName } from './types';
 import style from './text.module.scss';
 

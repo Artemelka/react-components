@@ -10,7 +10,7 @@ import {
   Highlighter,
   Intro,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 
 const THEME_COLOR = ['main', 'accent', 'primary', 'secondary'];
 

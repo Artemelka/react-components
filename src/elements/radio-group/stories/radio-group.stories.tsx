@@ -10,7 +10,7 @@ import {
   GridRow,
   Highlighter,
   StoriesItem,
-} from '../../../_story-components';
+} from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 
 const LABEL_THEME = [undefined, 'base', 'accent', 'main', 'primary', 'secondary'];

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { WindowLoaderThemeColor } from './types';
 import style from './window-loader.module.scss';
 

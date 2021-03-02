@@ -1,5 +1,5 @@
 import React, { memo, PropsWithChildren } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import style from './layout.module.scss';
 
 const cn = fastClassName(style);

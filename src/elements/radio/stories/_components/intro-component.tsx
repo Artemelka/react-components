@@ -1,5 +1,5 @@
 import React from 'react';
-import { Highlighter, Intro } from '../../../../_story-components';
+import { Highlighter, Intro } from '../../../_story-components';
 
 export const IntroComponent = () => (
   <Intro name="Radio">

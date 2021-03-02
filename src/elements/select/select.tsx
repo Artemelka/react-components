@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { DropdownList, DropdownMultiItem } from '../dropdown-list';
 import {
   CustomDropdownItemType,

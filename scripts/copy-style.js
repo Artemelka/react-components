@@ -2,13 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
+const ignoredDirectories = [
+  'stories',
+  '_story-component',
+  '_template'
+];
 const pathToElements = path.resolve('src/elements');
 const stylesPath = glob.sync(`${pathToElements}/**/*.?(svg|less|sass|scss|css)`);
 const assetsPath = glob.sync(`${pathToElements}/**/*.?(png|jpg|jpeg)`);
 const allPath = assetsPath.concat(stylesPath);
 
 const filterPath = allPath.filter(item =>
-  !item.includes('stories')
+  ignoredDirectories.every(str => !item.includes(str))
 );
 
 filterPath.forEach(item => {

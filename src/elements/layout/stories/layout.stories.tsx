@@ -8,7 +8,7 @@ import {
   GridDivider,
   GridRow,
   Highlighter,
-} from '../../../_story-components';
+} from '../../_story-components';
 import { IntroComponent } from './_components/intro-component';
 import {
   createList,

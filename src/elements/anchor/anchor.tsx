@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { AnchorFocusEvent, AnchorMouseEvent, AnchorKeyboardEvent } from './types';
 import style from './anchor.module.scss';
 

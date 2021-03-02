@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useEffect, useRef,
 } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { KEY_CODES } from '../constants';
 import style from './overlay.module.scss';
 

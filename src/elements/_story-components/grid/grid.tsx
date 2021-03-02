@@ -1,5 +1,5 @@
 import React, { memo, PropsWithChildren } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../../utils';
 import styles from './grid.module.scss';
 
 const cn = fastClassName(styles);
@@ -35,9 +35,9 @@ export const GridCell = memo(({
 }: GridCellProps) => (
   <div
     className={cn(`${CLASS_NAME}__cell`, {
-      [`${CLASS_NAME}__cell--size-${size}`]: size,
-      [`${CLASS_NAME}__cell--vertical-align-${verticalAlign}`]: verticalAlign,
-      [`${CLASS_NAME}__cell--horizontal-align-${horizontalAlign}`]: horizontalAlign,
+      [`${CLASS_NAME}__cell--size-${size}`]: Boolean(size),
+      [`${CLASS_NAME}__cell--vertical-align-${verticalAlign}`]: Boolean(verticalAlign),
+      [`${CLASS_NAME}__cell--horizontal-align-${horizontalAlign}`]: Boolean(horizontalAlign),
     })}
   >
     {children}

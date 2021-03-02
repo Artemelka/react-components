@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { fastClassName } from '@utils';
+import { fastClassName } from '../utils';
 import { Label } from '../label';
 import { Radio } from '../radio';
 import { RadioChangeEvent } from '../radio/types';

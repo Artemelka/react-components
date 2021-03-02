@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Highlighter } from '../../../../_story-components';
+import { Highlighter } from '../../../_story-components';
 
 export const CustomPanelDescription = memo(() => (
   <div>

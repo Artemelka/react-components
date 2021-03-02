@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Highlighter, List, ListItem } from '../../../../_story-components';
+import { Highlighter, List, ListItem } from '../../../_story-components';
 
 export const HeaderActionsDescription = memo(() => (
   <>
