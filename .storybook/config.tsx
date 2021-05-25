@@ -2,6 +2,7 @@ import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Container } from './container';
 import { withKnobs } from '@storybook/addon-knobs';
+// @ts-ignore
 import { create } from '@storybook/theming/create';
 // ToDo: need update storybook to version ^6.0.0
 // @ts-ignore

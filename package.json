@@ -1,6 +1,6 @@
 {
   "name": "@artemelka/react-components",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "homepage": ".",
   "description": "library of react ui components",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "dependencies": {
-    "node-sass": "4.13.1",
+    "node-sass": "6.0.0",
     "postcss-flexbugs-fixes": "4.2.0",
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
@@ -22,8 +22,7 @@
   },
   "peerDependencies": {
     "react": "16.13.0",
-    "react-dom": "16.13.0",
-    "react-transition-group": "4.3.0"
+    "react-dom": "16.13.0"
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
